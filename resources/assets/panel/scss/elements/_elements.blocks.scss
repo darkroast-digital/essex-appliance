@@ -1,0 +1,39 @@
+/*
+|--------------------------------------------------------------------------
+| #BLOCKS
+|--------------------------------------------------------------------------
+*/
+
+
+
+
+.block {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: $gutter;
+
+    @if not $is-dark {
+        background: color(white);
+    } @else {
+        background: color(grey, 90);
+    }
+    
+    @if not $has-shadow {
+        
+        @if not $is-dark {
+            border: solid 1px color(grey, 30);
+        } @else {
+            border: solid 1px color(grey, 80);
+        }
+
+    } @else {
+
+        @include shadow(raised);
+          
+    }
+
+    @if $has-radius {
+        border-radius: radius(small);
+    }
+}

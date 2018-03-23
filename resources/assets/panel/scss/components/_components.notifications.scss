@@ -1,0 +1,65 @@
+/*
+|--------------------------------------------------------------------------
+| #NOTIFICATIONS
+|--------------------------------------------------------------------------
+*/
+
+
+
+
+.notification {
+    position: fixed;
+    z-index: z(highest);
+    top: $gutter;
+    right: $gutter;
+    max-width: 400px;
+    padding: $gutter * .5;
+
+    @if not $is-dark {
+        background: color(white);
+    } @else {
+        background: color(grey, 90);
+    }
+
+    @include shadow(raised);
+    opacity: 1;
+    transition: all .2s ease(inOutSine);
+    pointer-events: all;
+    visibility: visible;
+
+    @if $has-radius {
+        border-radius: radius(small);
+    }
+
+    &-close {
+        position: absolute;
+        top: $gutter * .25;
+        right: $gutter * .25;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: $gutter;
+        width: $gutter;
+        color: color(font);
+        font-weight: bold;
+        border-radius: radius(round);
+        cursor: pointer;
+        transition: all .1s ease(inOutSine);
+
+        &:hover {
+
+            @if not $is-dark {
+                background: color(grey, 30);
+            } @else {
+                background: color(grey, 80);
+            }
+        }
+    }
+
+    &-closed {
+        opacity: 0;
+        transform: translateX(150%);
+        pointer-events: none;
+        visibility: hidden;
+    }
+}

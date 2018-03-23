@@ -1,0 +1,82 @@
+/*
+|--------------------------------------------------------------------------
+| #TABLES
+|--------------------------------------------------------------------------
+*/
+
+
+$table-border: solid .1rem color(grey, 30);
+
+@if $is-dark {
+    $table-border: solid .1rem color(grey, 80);
+}
+
+table {
+    @include rhythm(0);
+    width: 100%;
+    border-collapse: collapse;
+
+    * {
+        margin: 0;
+    }
+
+    &.table-striped {
+        tr {
+            
+            &:nth-of-type(odd) {
+
+                @if not $is-dark {
+                    background: color(grey, 20);
+                } @else {
+                    background: color(grey, 80);
+                }
+            }
+        }
+
+        thead {
+
+            tr:nth-of-type(odd) {
+                background: transparent;
+            }
+        }
+    }
+}
+
+thead {
+
+    tr:nth-of-type(odd) {
+        background: transparent;
+    }
+}
+
+thead {
+    border-bottom: $table-border;
+}
+
+tfoot {
+    border-top: $table-border;
+}
+
+th {
+    text-align: left;
+    border-bottom: $table-border;
+}
+
+td {
+    border-bottom: $table-border;
+}
+
+tr {
+
+    &:last-of-type {
+
+        td {
+            border-bottom: none;
+        }
+    }
+}
+
+td,
+th {
+    padding: $gutter * .5;
+}

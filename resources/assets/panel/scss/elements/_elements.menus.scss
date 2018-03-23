@@ -1,0 +1,59 @@
+/*
+|--------------------------------------------------------------------------
+| #MENU
+|--------------------------------------------------------------------------
+*/
+
+
+
+
+.menu {
+    display: block;
+    min-width: 200px;
+    padding: $gutter * .5;
+
+    @if not $is-dark {
+        background: color(white);
+    } @else {
+        background: color(black);
+    }
+
+    list-style-type: none;
+
+    @if $has-radius {
+        border-radius: radius(small);
+    }
+
+    @if $has-shadow {
+        @include shadow(raised);
+    } @else {
+
+        @if not $is-dark {
+            border: solid 1px color(grey, 30);
+        } @else {
+            border: solid 1px color(grey, 80);
+        }
+    }
+
+    li {
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    a {
+        display: flex;
+        padding: $gutter * .15 $gutter * .5;
+        color: color(font);
+        text-decoration: none;
+
+        @if ($has-radius) {
+            border-radiius: radius(small);
+        }
+
+        &:hover {
+            background: rgba(color(primary), .1);
+        }
+    }
+}

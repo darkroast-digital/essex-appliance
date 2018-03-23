@@ -1,0 +1,52 @@
+/*
+|--------------------------------------------------------------------------
+| #BLOCKS
+|--------------------------------------------------------------------------
+*/
+$panelBorder: solid 1px color(grey, 30);
+@if $is-dark {
+    $panelBorder: solid 1px color(grey, 80);
+}
+
+
+.panel {
+    position: relative;
+    width: 100%;
+    margin-bottom: $global-trail;
+    margin: 0 auto;
+
+    @if not $is-dark {
+        background: color(white);
+    } @else {
+        background: color(grey, 90);
+    }
+
+    @if $has-radius {
+        border-radius: radius(small);
+    }
+
+    @if $has-shadow {
+        @include shadow(raised);
+    } @else {
+        border: $panelBorder;
+    }
+
+    &-title {
+        padding: $gutter * .25 $gutter * .5;
+        border-bottom: $panelBorder;
+
+        >* {
+            margin-bottom: 0;
+        }
+    }
+
+    &-body {
+        padding: $gutter;
+    }
+
+    &-footer {
+        padding: $gutter * .5;
+        border-top: $panelBorder;
+    }
+
+}

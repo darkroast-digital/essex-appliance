@@ -1,0 +1,74 @@
+/*
+|--------------------------------------------------------------------------
+| #AVATARS
+|--------------------------------------------------------------------------
+*/
+
+
+
+
+.avatar {
+    --avatarSize: $gutter * 1.5;
+    
+    position: relative;
+    height: var(--avatarSize);
+    width: var(--avatarSize);
+
+    img {
+        height: 100%;
+        width: 100%;
+        border-radius: radius(circle);
+        object-fit: cover;
+    }
+
+    &-medium {
+        --avatarSize: $gutter * 3;   
+    }
+
+    &-large {
+        --avatarSize: $gutter * 4.5;   
+    }
+
+    &[data-indicator] {
+
+        &:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            height: 10px;
+            width: 10px;
+            background: color(grey, 50);
+            border-radius: radius(round);
+            box-shadow: 0 0 0 2px color(white);
+        }
+    }
+
+    &[data-indicator="info"] {
+
+        &:before {
+            background: color(info);
+        }
+    }
+
+    &[data-indicator="success"] {
+
+        &:before {
+            background: color(success);
+        }
+    }
+
+    &[data-indicator="error"] {
+
+        &:before {
+            background: color(error);
+        }
+    }
+
+    &[data-indicator="warning"] {
+
+        &:before {
+            background: color(warning);
+        }
+    }
+}

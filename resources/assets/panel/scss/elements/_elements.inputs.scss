@@ -1,0 +1,560 @@
+/*
+|--------------------------------------------------------------------------
+| #INPUTS
+|--------------------------------------------------------------------------
+*/
+
+
+
+
+input,
+select,
+textarea {
+    display: block;
+    width: 100%;
+    padding: $gutter * .25;
+    background: transparent;
+
+    @if not $is-dark {
+        border: solid 1px color(grey, 30);
+    } @else {
+        border: solid 1px color(grey, 80);
+    }
+
+    color: color(font);
+    transition: all .1s ease(inOutSine);
+
+    &::placeholder {
+        color: rgba(color(font), .25);
+    }
+
+    @if $has-radius {
+        border-radius: radius(small);
+    }
+
+    &:hover {
+
+        @if not $is-dark {
+            border-color: color(grey, 50);
+        } @else {
+            border-color: color(grey, 60);
+        }
+    }
+
+    &:active,
+    &:focus {
+        @include focus();
+    }
+
+        @each $state in $states {
+
+        &.input-#{$state} {
+            @if $state == 'dark' {
+
+                background: transparent;
+                border: solid 1px color(grey, 80);
+                color: color(display);
+
+                &:hover {
+                    border-color: color(black);
+                }
+
+                &:active,
+                &:focus {
+                    @include focus(color(black));
+                }
+
+            } @elseif $state == 'light' {
+
+                background: transparent;
+                border: solid 1px color(grey, 10);
+                color: color(font);
+
+                &:hover {
+                    border-color: color(grey, 20);
+                }
+
+                &:active,
+                &:focus {
+                    @include focus(color(grey, 50));
+                }
+
+
+            } @else {
+
+                background: transparent;
+                border: solid 1px color(#{$state}, light);
+                color: color(#{$state});
+
+                &::placeholder {
+                    color: rgba(color(#{$state}), .25);
+                }
+
+                &:hover {
+                    border-color: color(#{$state});
+                }
+
+                &:active,
+                &:focus {
+                    @include focus(color(#{$state}));
+                }
+
+            }
+        } 
+    }
+}
+
+select:not([multiple]) {
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDE4IDE4Ij4KICAgIDxnIGNsYXNzPSJuYy1pY29uLXdyYXBwZXIiIGZpbGw9IiM0NDQ0NDQiPgogICAgICAgIDxwYXRoIGQ9Ik05IDQuMTJsMi4zOCAyLjM4IDEuMDYtMS4wNkw5IDIgNS41NiA1LjQ0IDYuNjIgNi41IDkgNC4xMnptMCA5Ljc2TDYuNjIgMTEuNWwtMS4wNiAxLjA2TDkgMTZsMy40NC0zLjQ0LTEuMDYtMS4wNkw5IDEzLjg4eiI+PC9wYXRoPgogICAgPC9nPgo8L3N2Zz4=');
+    background-repeat: no-repeat;
+    background-position: center right;
+    cursor: pointer;
+}
+
+textarea {
+    min-height: 150px;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+
+    @if not $is-dark {
+        border: solid 1px color(grey, 30);
+    } @else {
+        border: solid 1px color(grey, 80);
+    }
+
+    height: 2px;
+    width: 100%;
+    padding: 0;
+
+    &::-webkit-slider-thumb {
+      appearance: none;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: color(primary);
+      cursor: pointer;
+      transition: all .2s ease(inOutSine);
+
+      &:hover {
+        background: color(primary);
+      }
+    }
+
+    &:active::-webkit-slider-thumb {
+      background: color(primary, light);
+      transform: scale(1.1);
+    }
+
+    &::-moz-range-thumb {
+      width: 15px;
+      height: 15px;
+      border: 0;
+      border-radius: 50%;
+      background: color(primary);
+      cursor: pointer;
+
+      &:hover {
+        background: color(primary);
+      }
+    }
+
+    &:active::-moz-range-thumb {
+      background: color(primary, light);
+      transform: scale(1.1);
+    }
+}
+
+
+
+
+// #RADIO
+// =========================================================================
+
+.radio {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+
+    &-button {
+        position: relative;
+        display: block;
+        height: 1rem;
+        width: 1rem;
+        margin-right: $gutter * .25;
+
+        @if not $is-dark {
+            background: color(white);
+            border: .05rem solid color(grey, 30);
+        } @else {
+            background: color(black);
+            border: .05rem solid color(grey, 70);
+        }
+
+        border-radius: radius(circle);
+        transition: all .2s ease(inOutSine);
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: color(primary);
+            border-radius: radius(circle);
+            transition: all .2s ease(inOutSine);
+            transform: scale(0);
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: .25rem;
+            width: .25rem;
+            background: color(white);
+            border-radius: radius(circle);
+            transition: all .2s ease(inOutSine);
+            transform: translate(-50%, -50%) scale(0);
+        }
+    }
+
+    input {
+        display: none;
+
+        &:checked {
+
+            &+.radio-button {
+                border-color: color(primary);
+                @include focus();
+
+                &:before {
+                    transform: scale(1);
+                }
+
+                &:after {
+                    transform: translate(-50%, -50%) scale(1);
+                }
+            }
+        }
+    }
+    
+    @each $state in $states {
+        &.radio-#{$state} {
+            
+            @if $state == 'light' {
+
+                input {
+
+                    &:checked {
+
+                        &+.radio-button {
+                            border-color: color(grey, 10);
+                            @include focus($color: color(grey, 10));
+
+                            &:before {
+                                background: color(grey, 10);
+                            }
+                        }
+                    }
+                }
+
+            } @elseif $state == 'dark' {
+
+                input {
+
+                    &:checked {
+
+                        &+.radio-button {
+                            border-color: color(grey, 80);
+                            @include focus($color: color(grey, 80));
+
+                            &:before {
+                                background: color(grey, 80);
+                            }
+                        }
+                    }
+                }
+
+            } @else {
+
+                input {
+
+                    &:checked {
+
+                        &+.radio-button {
+                            border-color: color(#{$state});
+                            @include focus($color: color(#{$state}));
+
+                            &:before {
+                                background: color(#{$state});
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+
+
+
+// #CHECKBOX
+// =========================================================================
+
+.checkbox {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    margin-right: $gutter * .25;
+
+    &-button {
+        position: relative;
+        display: block;
+        height: 1rem;
+        width: 1rem;
+        
+        @if not $is-dark {
+            background: color(white);
+            border: .05rem solid color(grey, 30);
+        } @else {
+            background: color(black);
+            border: .05rem solid color(grey, 70);
+        }
+
+        border-radius: 4px;
+        transition: all .2s ease(inOutSine);
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: color(primary);
+            transition: all .2s ease(inOutSine);
+            transform: scale(0);
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: 100%;
+            width: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDE4IDE4Ij4KICAgIDxnIGNsYXNzPSJuYy1pY29uLXdyYXBwZXIiIGZpbGw9IiNmZmZmZmYiPgogICAgICAgIDxwYXRoIGQ9Ik02LjYxIDExLjg5TDMuNSA4Ljc4IDIuNDQgOS44NCA2LjYxIDE0bDguOTUtOC45NUwxNC41IDR6Ij48L3BhdGg+CiAgICA8L2c+Cjwvc3ZnPg==');
+            background-position: center center;
+            background-size: 90%;
+            background-repeat: no-repeat;
+            transition: all .1s ease(inOutSine);
+            transform: translate(-50%, -50%) scale(0);
+        }
+    }
+
+    input {
+        display: none;
+
+        &:checked {
+
+            &+.checkbox-button {
+                border-color: color(primary);
+                @include focus();
+
+                &:before {
+                    transform: scale(1);
+                }
+
+                &:after {
+                    transform: translate(-50%, -50%) scale(1);
+                }
+            }
+        }
+    }
+
+    @each $state in $states {
+        &.checkbox-#{$state} {
+
+            @if $state == 'light' {
+
+                input {
+
+                    &:checked {
+
+                        &+.checkbox-button {
+                            border-color: color(grey, 20);
+                            @include focus($color: color(grey, 20));
+
+                            &:before {
+                                background: color(grey, 20);
+                            }
+                        }
+                    }
+                }
+
+            } @elseif $state == 'dark' {
+
+               input {
+
+                    &:checked {
+
+                        &+.checkbox-button {
+                            border-color: color(grey, 80);
+                            @include focus($color: color(grey, 80));
+
+                            &:before {
+                                background: color(grey, 80);
+                            }
+                        }
+                    }
+                } 
+
+            } @else {
+
+                input {
+
+                    &:checked {
+
+                        &+.checkbox-button {
+                            border-color: color(#{$state});
+                            @include focus($color: color(#{$state}));
+
+                            &:before {
+                                background: color(#{$state});
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+
+// #TOGGLE
+// =========================================================================
+
+.toggle {
+    cursor: pointer;
+    display: inline-block;
+
+    &-button {
+        position: relative;
+        display: block;
+        height: 1rem;
+        width: 2rem;
+        
+        @if not $is-dark {
+            background: color(grey, 30);
+            border: .05rem solid color(grey, 30);
+        } @else {
+            background: color(black);
+            border: .05rem solid color(grey, 70);
+        }
+        
+        border-radius: radius(round);
+        pointer-events: none;
+        transition: all .2s ease(inOutSine);
+
+        &:before {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 50%;
+            background: color(white);
+            border-radius: radius(round);
+            transition: all .2s ease(inOutSine);
+        }
+    }
+
+    input {
+        display: none;
+        
+        &:checked {
+
+            &+.toggle-button {
+                background: color(primary);
+                border-color: color(primary);
+
+                &:before {
+                    transform: translateX(100%);
+                }
+            }
+        }
+    }
+
+    &:hover {
+
+        .toggle-button {
+
+            &:after {
+                transform: scaleX(1.1);
+            }
+        }
+    }
+
+    @each $state in $states {
+        &.toggle-#{$state} {
+            
+            @if $state == 'light' {
+
+                input {
+                    
+                    &:checked {
+
+                        &+.toggle-button {
+                            background: color(grey, 20);
+                            border-color: color(grey, 20);
+
+                            &:before {
+                                transform: translateX(100%);
+                            }
+                        }
+                    }
+                }
+
+            } @elseif $state == 'dark' {
+
+                input {
+                    
+                    &:checked {
+
+                        &+.toggle-button {
+                            background: color(grey, 80);
+                            border-color: color(grey, 80);
+
+                            &:before {
+                                transform: translateX(100%);
+                            }
+                        }
+                    }
+                }                
+
+            } @else {
+
+                input {
+                    
+                    &:checked {
+
+                        &+.toggle-button {
+                            background: color(#{$state});
+                            border-color: color(#{$state});
+
+                            &:before {
+                                transform: translateX(100%);
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}

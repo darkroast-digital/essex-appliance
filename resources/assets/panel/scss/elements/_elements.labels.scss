@@ -1,0 +1,30 @@
+/*
+|--------------------------------------------------------------------------
+| #LABELS
+|--------------------------------------------------------------------------
+*/
+
+
+
+
+.label {
+    display: inline-block;
+    padding: $gutter * .1 $gutter * .5;
+    color: color(white);
+    background: color(grey, 80);
+    border-radius: radius(round);
+
+    @each $state in $states {
+        &.label-#{$state} {
+            
+            @if $state == 'light' {
+                background: color(grey, 20);
+            } @elseif $state == 'dark' {
+                background: color(grey, 80);
+            } @else {
+                background: color(#{$state});
+            }
+
+        }
+    }
+}

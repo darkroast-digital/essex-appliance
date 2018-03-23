@@ -1,0 +1,83 @@
+/*
+|--------------------------------------------------------------------------
+| #COLORS
+|--------------------------------------------------------------------------
+*/
+
+
+$font-color: rgba($black, .6);
+$display-color: $black;
+
+@if $is-dark {
+    $font-color: rgba($white, .8);
+    $display-color: $white;
+}
+
+// #COLOR MAP
+// =========================================================================
+
+$colors: (
+    'black': $black,
+    'white': $white,
+    'primary-lightest': tint($primary, 75%),
+    'primary-lighter': tint($primary, 50%),
+    'primary-light': tint($primary, 5%),
+    'primary': $primary,
+    'primary-dark': shade($primary, 5%),
+    'secondary-lightest': tint($secondary, 75%),
+    'secondary-lighter': tint($secondary, 50%),
+    'secondary-light': tint($secondary, 25%),
+    'secondary': $secondary,
+    'secondary-dark': shade($secondary, 5%),
+    'info-lightest': tint($info, 75%),
+    'info-lighter': tint($info, 50%),
+    'info-light': tint($info, 25%),
+    'info': $info,
+    'info-dark': shade($info, 5%),
+    'error-lightest': tint($error, 75%),
+    'error-lighter': tint($error, 50%),
+    'error-light': tint($error, 25%),
+    'error': $error,
+    'error-dark': shade($error, 5%),
+    'success-lightest': tint($success, 75%),
+    'success-lighter': tint($success, 50%),
+    'success-light': tint($success, 25%),
+    'success': $success,
+    'success-dark': shade($success, 5%),
+    'warning-lightest': tint($warning, 75%),
+    'warning-lighter': tint($warning, 50%),
+    'warning-light': tint($warning, 25%),
+    'warning': $warning,
+    'warning-dark': shade($warning, 5%),
+    'grey-10': $grey-10,
+    'grey-20': $grey-20,
+    'grey-30': $grey-30,
+    'grey-40': $grey-40,
+    'grey-50': $grey-50,
+    'grey-60': $grey-60,
+    'grey-70': $grey-70,
+    'grey-80': $grey-80,
+    'grey-90': $grey-90,
+    'font': $font-color,
+    'display': $display-color
+);
+
+
+
+
+// #COLOR FUNCTION
+// =========================================================================
+
+@function color($key, $type: '') {
+    
+    @if $type != '' {
+        $type: '-#{$type}';
+    }
+
+    @if map-has-key($colors, $key + $type) {
+        @return map-get($colors, $key + $type);
+    }
+
+    @warn "Unknown `#{$key}` in $colors.";
+    @return null;
+}

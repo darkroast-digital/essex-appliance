@@ -1,0 +1,85 @@
+/*
+|--------------------------------------------------------------------------
+| #ALERTS
+|--------------------------------------------------------------------------
+*/
+
+
+
+
+.alert {
+    position: fixed;
+    z-index: z(highest);
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: $gutter * .5 $gutter * 2;
+    background: color(grey, 80);
+    color: color(white);
+    text-align: center;
+    transform: translateY(0);
+    visibility: visible;
+    transition: all .2s ease(outSine);
+
+    @if $has-radius {
+        border-bottom-left-radius: radius(small);
+        border-bottom-right-radius: radius(small);
+    }
+
+    @if $has-shadow {
+        @include shadow(medium);
+    }
+
+    &-closed {
+        transform: translateY(-100%);
+        visibility: hidden;
+    }
+
+    &-close {
+        position: absolute;
+        top: 50%;
+        right: $gutter * .25;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: $gutter;
+        width: $gutter;
+        color: color(white);
+        font-weight: bold;
+        border-radius: radius(round);
+        cursor: pointer;
+        transform: translateY(-50%);
+        transition: all .1s ease(inOutSine);
+
+        &:hover {
+
+            @if not $is-dark {
+                background: rgba(color(white), .15);
+            } @else {
+                background: rgba(color(white), .15);
+            }
+        }
+    }
+
+    @each $state in $states {
+        
+        &.alert-#{$state} {
+
+            @if $state == 'light' {
+                
+                background: color(grey, 30);
+                
+            } @elseif $state == 'dark' {
+                
+                background: color(grey, 80);
+                
+            } @else {
+                
+                background: color(#{$state});
+                
+            }
+
+        }
+
+    }
+}

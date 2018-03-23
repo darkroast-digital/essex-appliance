@@ -1,0 +1,40 @@
+/*
+|--------------------------------------------------------------------------
+| #BADGES
+|--------------------------------------------------------------------------
+*/
+
+
+
+
+.badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: $gutter * .75;
+    width: $gutter * .75;
+    color: color(white);
+    font-size: ms(-1);
+    background: color(grey, 50);
+    border-radius: radius(round);
+    box-shadow: 0 0 0 2px color(white);
+
+    &-info {
+        background: color(info);
+    }
+
+    &-success {
+        background: color(success);
+    }
+
+    &-error {
+        background: color(error);
+    }
+
+    &-warning {
+        background: color(warning);
+    }
+}

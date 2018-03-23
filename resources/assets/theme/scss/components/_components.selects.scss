@@ -1,0 +1,115 @@
+/*
+|--------------------------------------------------------------------------
+| Select
+|--------------------------------------------------------------------------
+*/
+
+
+
+$select-border-light: solid 1px color(grey, 30); 
+$select-border-dark: solid 1px color(grey, 80); 
+
+.select {
+    position: relative;
+
+    select {
+        display: none;
+    }
+
+    &-input {
+        display: block;
+        width: 100%;
+        padding: $gutter * .25;
+        @include rhythm(0);
+        margin-bottom: 0;
+        background: transparent;
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDE4IDE4Ij4KICAgIDxnIGNsYXNzPSJuYy1pY29uLXdyYXBwZXIiIGZpbGw9IiM0NDQ0NDQiPgogICAgICAgIDxwYXRoIGQ9Ik05IDQuMTJsMi4zOCAyLjM4IDEuMDYtMS4wNkw5IDIgNS41NiA1LjQ0IDYuNjIgNi41IDkgNC4xMnptMCA5Ljc2TDYuNjIgMTEuNWwtMS4wNiAxLjA2TDkgMTZsMy40NC0zLjQ0LTEuMDYtMS4wNkw5IDEzLjg4eiI+PC9wYXRoPgogICAgPC9nPgo8L3N2Zz4=');
+        background-repeat: no-repeat;
+        background-position: center right;
+
+        @if not $is-dark {
+            border: $select-border-light;
+        } @else {
+            border: $select-border-dark;
+        }
+
+        @if $has-radius {
+            border-radius: radius(small);
+        }
+
+        color: color(font);
+        transition: all .1s ease(inOutSine);
+        cursor: pointer;
+
+        &:hover {
+
+            @if not $is-dark {
+                border-color: color(grey, 50);
+            } @else {
+                border-color: color(grey, 60);
+            }
+        }
+
+        &:active,
+        &:focus {
+            @include focus();
+        }
+    }
+
+    &-menu {
+        position: absolute;
+        z-index: z(low);
+        width: 100%;
+        padding: $gutter * .5;
+        background: color(white);
+
+        @if not $is-dark {
+            border-right: $select-border-light;
+            border-bottom: $select-border-light;
+            border-left: $select-border-light;
+        } @else {
+            border-right: $select-border-dark;
+            border-bottom: $select-border-dark;
+            border-left: $select-border-dark;
+        }
+
+        @if $has-radius {
+            border-top-right-radius: 0;
+            border-top-left-radius: 0;
+            border-bottom-right-radius: radius(small);
+            border-bottom-left-radius: radius(small);
+        }
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    li {
+        padding: $gutter * .15 $gutter * .5;
+        color: color(font);
+        cursor: pointer;
+
+        @if ($has-radius) {
+            border-radiius: radius(small);
+        }
+
+        &:hover {
+            background: rgba(color(primary), .1);
+        }
+    }
+
+    &-open {
+
+        .select-input {
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        .select-menu {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: all;
+        }
+    }
+}

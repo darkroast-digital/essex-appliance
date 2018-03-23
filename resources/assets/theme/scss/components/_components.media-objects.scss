@@ -1,0 +1,59 @@
+/*
+|--------------------------------------------------------------------------
+| #MEDIA OBJECT
+|--------------------------------------------------------------------------
+*/
+
+
+
+
+.media-object {
+    display: flex;
+    align-items: flex-start;
+    padding: $gutter * .5;
+    margin-bottom: $gutter;
+    
+    @if not $is-dark {
+        background: color(white);
+    } @else {
+        background: color(grey, 90);
+    }
+
+    @if ($has-radius) {
+        border-radius: radius(small);
+    }
+
+    @if not $has-shadow {
+        
+        @if not $is-dark {
+            border: solid 1px color(grey, 30);
+        } @else {
+            border: solid 1px color(grey, 80);
+        }
+
+    } @else {
+
+        @include shadow(raised);
+          
+    }
+
+    &-image {
+        height: 75px;
+        width: 75px;
+        margin-right: $gutter;
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+
+            @if ($has-radius) {
+                border-radius: radius(small);
+            }
+        }
+    }
+
+    &-content {
+        width: calc(100% - (100px + #{$gutter}));
+    }
+}
