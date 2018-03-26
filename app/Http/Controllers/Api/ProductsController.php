@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Product;
+use Spatie\Fractal\Fractal;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Transformers\ProductTransformer;
@@ -21,7 +22,7 @@ class ProductsController extends Controller
         $products = $paginator->getCollection();
 
         $data = Fractal::create()
-                ->collection($users, new ProductTransformer())
+                ->collection($products, new ProductTransformer())
                 ->paginateWith(new IlluminatePaginatorAdapter($paginator))
                 ->toArray();
 
