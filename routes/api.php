@@ -2,6 +2,8 @@
 
 
 /**
- * Returns list of users
+ * Returns users data
+ *
+ * @return mixed
  */
-Route::get('/users', 'UsersController@index');
+route::resource('/users', 'UsersController');
