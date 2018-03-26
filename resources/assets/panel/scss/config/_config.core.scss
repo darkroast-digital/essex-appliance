@@ -10,7 +10,7 @@
 // #BASE SIZES
 // =========================================================================
 
-$global-font-size: 16px;
+$global-font-size: 18px;
 $global-line-height: 1.5;
 
 
@@ -37,7 +37,9 @@ $global-trail: $gutter * 0.5;
 // #FONTS
 // =========================================================================
 
-$font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+@import url('https://fonts.googleapis.com/css?family=Karla:400,700');
+
+$font-stack: 'Karla', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 
 $font-body: $font-stack;
 $font-display: $font-stack;

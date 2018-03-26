@@ -3,3 +3,29 @@
 | #THEME
 |--------------------------------------------------------------------------
 */
+
+
+// Variables
+// =========================================================================
+
+$introBGHeight: 250px;
+
+
+// Content
+// =========================================================================
+
+.content {
+    position: relative;
+    padding-top: $gutter * 6;
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -10;
+        height: $introBGHeight;
+        width: 100%;
+        background: color(grey, 20);
+    }
+}

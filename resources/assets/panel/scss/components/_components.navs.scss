@@ -11,14 +11,12 @@
     width: 100%;
     position: relative;
     z-index: z(middle);
-    background: color(primary);
+    background: color(white);
+    border-top: .15rem solid color(primary);
+    box-shadow: 0 0 0 .1rem rgba(color(black), .15);
 
     @if ($nav-fixed) {
         position: fixed;
-    }
-
-    @if ($has-shadow) {
-        @include shadow(raised);
     }
 
     .container {
@@ -60,11 +58,11 @@
         display: block;
         padding: .75rem;
         text-decoration: none;
-        color: color(white);
+        color: color(font);
         transition: all .3s ease(inOutSine);
 
         &:hover {
-            color: rgba(color(white), .5);
+            color: rgba(color(font), .5);
         }
     }
 
@@ -95,10 +93,30 @@
     }
 
     &-brand {
-        max-width: 150px;
+        max-width: 100px;
 
         img {
             width: 100%;
+        }
+
+        .circle {
+            fill: color(primary);
+        }
+    }
+
+    &-user {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        @include flex-position(right);
+        color: color(white);
+
+        a {
+
+            &:after {
+                display: none;
+            }
         }
     }
 }
