@@ -7,7 +7,7 @@
         </div>
 
         <div class="column-9">
-            sdaf
+            {{--  <h1 class="page-title">{{ $mode === 'create' ? 'Add Product' : 'Edit Product' }}</h1>  --}}
         </div>
 
     </div>

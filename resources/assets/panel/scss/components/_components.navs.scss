@@ -8,12 +8,17 @@
 
 
 .nav {
+    height: 75px;
     width: 100%;
     position: relative;
     z-index: z(middle);
     background: color(white);
     border-top: .15rem solid color(primary);
     box-shadow: 0 0 0 .1rem rgba(color(black), .15);
+
+    .container {
+
+    }
 
     @if ($nav-fixed) {
         position: fixed;
@@ -49,13 +54,18 @@
     }
 
     li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         height: 100%;
         margin-bottom: 0;
     }
 
     a {
         position: relative;
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         padding: .75rem;
         text-decoration: none;
         color: color(font);
@@ -63,6 +73,16 @@
 
         &:hover {
             color: rgba(color(font), .5);
+        }
+
+        svg {
+            height: 1rem;
+            width: 1rem;
+            margin-right: $gutter * .25;
+        }
+
+        .icon {
+            fill: color(grey, 70);
         }
     }
 
