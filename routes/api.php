@@ -6,11 +6,11 @@
  *
  * @return mixed
  */
-route::resource('/users', 'UsersController');
+route::resource('/users', 'UsersController', ['only' => ['index', 'show']]);
 
 /**
  * Return products data
  *
  * @return mixed
  */
-route::resource('/products', 'ProductsController');
+route::resource('/products', 'ProductsController', ['only' => ['index', 'show']]);
