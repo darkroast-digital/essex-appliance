@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "5fb7d0afe492eabdc1fdba88477f96cb",
+    "content-hash": "07809fe4e7d58b00bd366807239d2104",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -1082,6 +1082,56 @@
                 "random"
             ],
             "time": "2017-09-27T21:40:39+00:00"
+        },
+        {
+            "name": "parttimenobody/tags",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/parttimenobody/tags.git",
+                "reference": "4f21cfe7d239d750e35ff172bd729c879b623d27"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/parttimenobody/tags/zipball/4f21cfe7d239d750e35ff172bd729c879b623d27",
+                "reference": "4f21cfe7d239d750e35ff172bd729c879b623d27",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": ">= 5.0",
+                "illuminate/support": ">= 5.0",
+                "php": ">= 7.0.0"
+            },
+            "require-dev": {
+                "orchestra/database": "~3.4.0",
+                "orchestra/testbench": "~3.0",
+                "phpunit/phpunit": "~5.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Parttimenobody\\Tags\\TagsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Parttimenobody\\Tags\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Josh Stobbs",
+                    "email": "info@joshstobbs.com"
+                }
+            ],
+            "description": "A laravel tagging package.",
+            "time": "2018-02-12 14:21:33"
         },
         {
             "name": "psr/container",
@@ -2551,6 +2601,50 @@
                 "test"
             ],
             "time": "2016-01-20T08:20:44+00:00"
+        },
+        {
+            "name": "laracasts/generators",
+            "version": "dev-develop",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bogdankharchenko/Laravel-5-Generators-Extended",
+                "reference": "75d7d987f37455a9a9b6e86decf9d0c737d09ad3"
+            },
+            "require": {
+                "illuminate/support": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpspec/phpspec": "~2.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Laracasts\\Generators\\GeneratorsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laracasts\\Generators\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jeffrey Way",
+                    "email": "jeffrey@laracasts.com"
+                }
+            ],
+            "description": "Extend Laravel 5's generators.",
+            "keywords": [
+                "generators",
+                "laravel"
+            ],
+            "time": "2018-02-10 22:36:34"
         },
         {
             "name": "mockery/mockery",
@@ -4082,7 +4176,10 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "parttimenobody/tags": 20,
+        "laracasts/generators": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
