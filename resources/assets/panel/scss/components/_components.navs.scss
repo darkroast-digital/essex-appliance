@@ -11,12 +11,7 @@
     width: 100%;
     position: relative;
     z-index: z(middle);
-    
-    @if not $is-dark {
-        background: color(white);
-    } @else {
-        background: color(grey, 90);
-    }
+    background: color(primary);
 
     @if ($nav-fixed) {
         position: fixed;
@@ -65,11 +60,11 @@
         display: block;
         padding: .75rem;
         text-decoration: none;
-        color: color(font);
+        color: color(white);
         transition: all .3s ease(inOutSine);
 
         &:hover {
-            color: lighten(color(font), 25%);
+            color: rgba(color(white), .5);
         }
     }
 
