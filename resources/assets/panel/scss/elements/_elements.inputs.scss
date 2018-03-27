@@ -13,19 +13,14 @@ textarea {
     display: block;
     width: 100%;
     padding: $gutter * .25;
-    background: transparent;
-
-    @if not $is-dark {
-        border: solid 1px color(grey, 30);
-    } @else {
-        border: solid 1px color(grey, 80);
-    }
+    background: color(grey, 10);
+    border: solid 1px transparent;
 
     color: color(font);
     transition: all .1s ease(inOutSine);
 
     &::placeholder {
-        color: rgba(color(font), .25);
+        color: rgba(color(font), .15);
     }
 
     @if $has-radius {
