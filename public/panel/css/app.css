@@ -4267,7 +4267,15 @@ progress[value]::-webkit-progress-value {
           transform: translateY(1rem);
   -webkit-transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
   transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-  background: #343a40;
+  background: #ffffff;
+}
+
+.dropdown li {
+  display: block !important;
+}
+
+.dropdown li a {
+  display: block !important;
 }
 
 /*
@@ -4971,6 +4979,10 @@ th {
   width: 100%;
   -webkit-transition: all 0.15s cubic-bezier(0.455, 0.03, 0.515, 0.955);
   transition: all 0.15s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.tabs-nav li label {
+  pointer-events: none;
 }
 
 .tabs-nav li.tabs-nav-active:after {

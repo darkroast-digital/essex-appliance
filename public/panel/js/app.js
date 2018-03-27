@@ -13869,11 +13869,53 @@ __webpack_require__(13);
 
 window.Vue = __webpack_require__(36);
 
+Vue.config.productionTip = false;
+
 Vue.component('title-field', __webpack_require__(39));
 
 var app = new Vue({
     el: '#app'
 });
+
+// #Tabs
+// =========================================================================
+
+var tabsSection = document.querySelectorAll('.tabs');
+
+if (tabsSection) {
+
+    tabsSection.forEach(function (tabs) {
+
+        var nav = tabs.querySelector('.tabs-nav');
+        var navLinks = nav.querySelectorAll('[data-tab]');
+        var body = tabs.querySelector('.tabs-body');
+        var content = body.querySelectorAll('.tabs-content');
+
+        console.log(content);
+
+        navLinks.forEach(function (link) {
+
+            var thisTab = link.dataset.tab;
+
+            link.addEventListener('click', function (e) {
+
+                navLinks.forEach(function (l) {
+                    l.classList.remove('tabs-nav-active');
+                });
+
+                e.target.classList.add('tabs-nav-active');
+
+                content.forEach(function (tab) {
+                    tab.classList.remove('tabs-content-active');
+
+                    if (tab.dataset.tab === thisTab) {
+                        tab.classList.add('tabs-content-active');
+                    }
+                });
+            });
+        });
+    });
+}
 
 /***/ }),
 /* 13 */

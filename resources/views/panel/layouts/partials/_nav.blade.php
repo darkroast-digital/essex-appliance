@@ -7,17 +7,13 @@
             <!-- /.nav-brand -->
     
             <ul class="nav-menu">
-                <li class="dropdown">
+                <li>
                     <a href="{{ route('panel.dashboard') }}" class="{{ strpos(app('request')->url(), 'dashboard') ? 'active' : '' }}">
                         <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 20 20">
                             <path d="M8 20H3V10H0L10 0l10 10h-3v10h-5v-6H8v6z" class="icon" />
                         </svg>
                         Dashboard
                     </a>
-
-                    <ul class="menu">
-                        
-                    </ul>
                 </li>
 
                 <li class="dropdown">
@@ -29,7 +25,8 @@
                     </a>
 
                     <ul class="menu">
-                        
+                        <li><a href="{{ route('panel.products.index') }}">All Products</a></li>
+                        <li><a href="{{ route('panel.products.create') }}">Add Product</a></li>
                     </ul>
                 </li>
 

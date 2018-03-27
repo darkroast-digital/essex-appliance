@@ -54,6 +54,10 @@
                 transition: all .15s ease(inOutQuad);
             }
 
+            label {
+                pointer-events: none;
+            }
+
             &.tabs-nav-active {
 
                 &:after {
