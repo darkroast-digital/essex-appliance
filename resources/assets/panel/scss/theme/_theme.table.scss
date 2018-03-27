@@ -1,0 +1,22 @@
+/*
+|--------------------------------------------------------------------------
+| #TABLES
+|--------------------------------------------------------------------------
+*/
+
+.table {
+    
+    &-name {
+        color: color(font);
+        font-weight: bold;
+        text-decoration: none;
+
+        &:hover {
+            color: color(primary);
+        }
+
+        &:before {
+            font-weight: normal;
+        }
+    }
+}
