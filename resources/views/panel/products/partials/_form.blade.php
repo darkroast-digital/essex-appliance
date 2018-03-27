@@ -70,6 +70,7 @@
             <!-- /.block -->
 
             <div class="block --has-margin-bottom">
+                <label>Choose Appliance Colours</label>
                 <color-select></color-select>
             </div>
 

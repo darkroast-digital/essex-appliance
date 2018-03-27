@@ -5122,6 +5122,31 @@ th {
 | #COLOR SELECT
 |--------------------------------------------------------------------------
 */
+.color-select {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.color-select li {
+  height: 30px;
+  width: calc(20% - 0.75rem);
+  margin-right: 0.75rem;
+  border: solid 1px #dee2e6;
+  border-radius: 2px;
+  cursor: pointer;
+  -webkit-transition: all 0.05s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  transition: all 0.05s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.color-select li.selected {
+  border-color: rgba(71, 193, 191, 0.75);
+  -webkit-box-shadow: 0 0 0 2px rgba(71, 193, 191, 0.35);
+          box-shadow: 0 0 0 2px rgba(71, 193, 191, 0.35);
+}
+
 /*
 |--------------------------------------------------------------------------
 | #Image UPLOAD

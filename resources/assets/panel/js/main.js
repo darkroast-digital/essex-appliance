@@ -64,8 +64,6 @@ if (tabsSection) {
 
 var selectContainer = document.querySelectorAll('.select');
 
-console.log(selectContainer)
-
 if (selectContainer) {
 
     selectContainer.forEach(function (select) {

@@ -1,7 +1,13 @@
 <template>
     <div>
         <ul class="color-select">
-            <li v-for="(color, i) in colors" :key="i" :style="{ background: color}"></li>
+            <li 
+                v-for="(color, i) in colors" 
+                :key="i" 
+                :style="{ background: color}" 
+                :data-color="color" 
+                @click="toggleSelection">
+            </li>
         </ul>
     </div>
 </template>
@@ -9,18 +15,41 @@
 <script>
     export default {
         props: [
-            'selectedColors'
+            'initialColors'
         ],
         data () {
             return {
-                colors: {
-                    white: '#ffffff',
-                    black: '#000000',
-                    copper: '#B76443',
-                    gold: '#FAB005'
-                },
-                selected: this.initalColors
+                colors: [
+                    '#ffffff',
+                    '#000000',
+                    '#B76443',
+                    '#FAB005'
+                ],
+                selected: this.initialColors
             }
+        },
+        methods: {
+
+            toggleSelection (e) {
+                let color = e.target.dataset.color
+
+                console.log(this.selected)
+
+                if (true) {
+                    
+                    e.target.classList.remove('selected')
+
+                    return
+
+                }
+
+                this.selected.push(color)
+
+                e.target.classList.add('selected')
+
+
+            }
+
         },
         mounted() {
             //

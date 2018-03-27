@@ -13921,8 +13921,6 @@ if (tabsSection) {
 
 var selectContainer = document.querySelectorAll('.select');
 
-console.log(selectContainer);
-
 if (selectContainer) {
 
     selectContainer.forEach(function (select) {
@@ -47645,19 +47643,39 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['selectedColors'],
+    props: ['initialColors'],
     data: function data() {
         return {
-            colors: {
-                white: '#ffffff',
-                black: '#000000',
-                copper: '#B76443',
-                gold: '#FAB005'
-            },
-            selected: this.initalColors
+            colors: ['#ffffff', '#000000', '#B76443', '#FAB005'],
+            selected: this.initialColors
         };
+    },
+
+    methods: {
+        toggleSelection: function toggleSelection(e) {
+            var color = e.target.dataset.color;
+
+            console.log(this.selected);
+
+            if (true) {
+
+                e.target.classList.remove('selected');
+
+                return;
+            }
+
+            this.selected.push(color);
+
+            e.target.classList.add('selected');
+        }
     },
     mounted: function mounted() {
         //
@@ -47677,7 +47695,12 @@ var render = function() {
       "ul",
       { staticClass: "color-select" },
       _vm._l(_vm.colors, function(color, i) {
-        return _c("li", { key: i, style: { background: color } })
+        return _c("li", {
+          key: i,
+          style: { background: color },
+          attrs: { "data-color": color },
+          on: { click: _vm.toggleSelection }
+        })
       })
     )
   ])
