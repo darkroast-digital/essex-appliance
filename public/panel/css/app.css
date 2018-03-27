@@ -4710,6 +4710,43 @@ label {
 
 /*
 |--------------------------------------------------------------------------
+| #Pagination
+|--------------------------------------------------------------------------
+*/
+.pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 1.5rem;
+}
+
+.pagination a,
+.pagination span {
+  display: block;
+  padding: 0.225rem;
+  margin: 0 0.375rem;
+  color: rgba(33, 37, 41, 0.6);
+  text-decoration: none;
+}
+
+.pagination .page-item:not(.disabled) {
+  border-radius: 2px;
+}
+
+.pagination .page-item:not(.disabled):hover {
+  background: rgba(11, 114, 133, 0.05);
+}
+
+.pagination .page-item:not(.disabled).active {
+  background: #c2dce1;
+  color: rgba(33, 37, 41, 0.5);
+}
+
+/*
+|--------------------------------------------------------------------------
 | Select
 |--------------------------------------------------------------------------
 */

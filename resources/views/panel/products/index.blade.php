@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="container block --has-margin-bottom">
+    <div class="container block">
         <div class="column-12 title-bar">
             <h6>Products</h6>
             <div class="button-group">
@@ -79,10 +79,12 @@
 
         <!-- /.table -->
 
-        <div class="column-12">
+    </div>
+
+    <div class="container --has-margin-bottom">
+        <div class="column">
             {{ $products->links() }}
         </div>
-
     </div>
 
 @endsection

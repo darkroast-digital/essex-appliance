@@ -1,0 +1,36 @@
+/*
+|--------------------------------------------------------------------------
+| #Pagination
+|--------------------------------------------------------------------------
+*/
+
+
+
+
+.pagination {
+    display: flex;
+    align-items: center;
+    margin-top: $gutter;
+
+    a,
+    span {
+        display: block;
+        padding: $gutter * .15;
+        margin: 0 $gutter * .25;
+        color: color(font);
+        text-decoration: none;
+    }
+
+    .page-item:not(.disabled) {
+        border-radius: radius(small);
+
+        &:hover {
+            background: rgba(color(primary), .05);
+        }
+
+        &.active {
+            background: color(primary, lightest);
+            color: rgba(color(font), .5);
+        }
+    }
+}
