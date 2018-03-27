@@ -667,8 +667,8 @@ select:focus {
           flex: 1 1 auto;
   max-width: 100%;
   min-height: 1px;
-  margin-left: 0.84375rem;
-  margin-right: 0.84375rem;
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
 }
 
 @media only screen and (max-width: 48rem) {
@@ -683,13 +683,13 @@ select:focus {
 .column-1 {
   position: relative;
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 calc(100% * (1 * 1 / 12) - 1.6875rem);
-          flex: 0 0 calc(100% * (1 * 1 / 12) - 1.6875rem);
+      -ms-flex: 0 0 calc(100% * (1 * 1 / 12) - 1.5rem);
+          flex: 0 0 calc(100% * (1 * 1 / 12) - 1.5rem);
   width: 100%;
-  max-width: calc(100% * (1 * 1 / 12) - 1.6875rem);
+  max-width: calc(100% * (1 * 1 / 12) - 1.5rem);
   min-height: 1px;
-  margin-left: 0.84375rem;
-  margin-right: 0.84375rem;
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
 }
 
 @media only screen and (max-width: 48rem) {
@@ -709,13 +709,13 @@ select:focus {
 .column-2 {
   position: relative;
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 calc(100% * (1 * 2 / 12) - 1.6875rem);
-          flex: 0 0 calc(100% * (1 * 2 / 12) - 1.6875rem);
+      -ms-flex: 0 0 calc(100% * (1 * 2 / 12) - 1.5rem);
+          flex: 0 0 calc(100% * (1 * 2 / 12) - 1.5rem);
   width: 100%;
-  max-width: calc(100% * (1 * 2 / 12) - 1.6875rem);
+  max-width: calc(100% * (1 * 2 / 12) - 1.5rem);
   min-height: 1px;
-  margin-left: 0.84375rem;
-  margin-right: 0.84375rem;
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
 }
 
 @media only screen and (max-width: 48rem) {
@@ -735,13 +735,13 @@ select:focus {
 .column-3 {
   position: relative;
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 calc(100% * (1 * 3 / 12) - 1.6875rem);
-          flex: 0 0 calc(100% * (1 * 3 / 12) - 1.6875rem);
+      -ms-flex: 0 0 calc(100% * (1 * 3 / 12) - 1.5rem);
+          flex: 0 0 calc(100% * (1 * 3 / 12) - 1.5rem);
   width: 100%;
-  max-width: calc(100% * (1 * 3 / 12) - 1.6875rem);
+  max-width: calc(100% * (1 * 3 / 12) - 1.5rem);
   min-height: 1px;
-  margin-left: 0.84375rem;
-  margin-right: 0.84375rem;
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
 }
 
 @media only screen and (max-width: 48rem) {
@@ -761,13 +761,13 @@ select:focus {
 .column-4 {
   position: relative;
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 calc(100% * (1 * 4 / 12) - 1.6875rem);
-          flex: 0 0 calc(100% * (1 * 4 / 12) - 1.6875rem);
+      -ms-flex: 0 0 calc(100% * (1 * 4 / 12) - 1.5rem);
+          flex: 0 0 calc(100% * (1 * 4 / 12) - 1.5rem);
   width: 100%;
-  max-width: calc(100% * (1 * 4 / 12) - 1.6875rem);
+  max-width: calc(100% * (1 * 4 / 12) - 1.5rem);
   min-height: 1px;
-  margin-left: 0.84375rem;
-  margin-right: 0.84375rem;
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
 }
 
 @media only screen and (max-width: 48rem) {
@@ -787,13 +787,13 @@ select:focus {
 .column-5 {
   position: relative;
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 calc(100% * (1 * 5 / 12) - 1.6875rem);
-          flex: 0 0 calc(100% * (1 * 5 / 12) - 1.6875rem);
+      -ms-flex: 0 0 calc(100% * (1 * 5 / 12) - 1.5rem);
+          flex: 0 0 calc(100% * (1 * 5 / 12) - 1.5rem);
   width: 100%;
-  max-width: calc(100% * (1 * 5 / 12) - 1.6875rem);
+  max-width: calc(100% * (1 * 5 / 12) - 1.5rem);
   min-height: 1px;
-  margin-left: 0.84375rem;
-  margin-right: 0.84375rem;
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
 }
 
 @media only screen and (max-width: 48rem) {
@@ -813,13 +813,13 @@ select:focus {
 .column-6 {
   position: relative;
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 calc(100% * (1 * 6 / 12) - 1.6875rem);
-          flex: 0 0 calc(100% * (1 * 6 / 12) - 1.6875rem);
+      -ms-flex: 0 0 calc(100% * (1 * 6 / 12) - 1.5rem);
+          flex: 0 0 calc(100% * (1 * 6 / 12) - 1.5rem);
   width: 100%;
-  max-width: calc(100% * (1 * 6 / 12) - 1.6875rem);
+  max-width: calc(100% * (1 * 6 / 12) - 1.5rem);
   min-height: 1px;
-  margin-left: 0.84375rem;
-  margin-right: 0.84375rem;
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
 }
 
 @media only screen and (max-width: 48rem) {
@@ -839,13 +839,13 @@ select:focus {
 .column-7 {
   position: relative;
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 calc(100% * (1 * 7 / 12) - 1.6875rem);
-          flex: 0 0 calc(100% * (1 * 7 / 12) - 1.6875rem);
+      -ms-flex: 0 0 calc(100% * (1 * 7 / 12) - 1.5rem);
+          flex: 0 0 calc(100% * (1 * 7 / 12) - 1.5rem);
   width: 100%;
-  max-width: calc(100% * (1 * 7 / 12) - 1.6875rem);
+  max-width: calc(100% * (1 * 7 / 12) - 1.5rem);
   min-height: 1px;
-  margin-left: 0.84375rem;
-  margin-right: 0.84375rem;
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
 }
 
 @media only screen and (max-width: 48rem) {
@@ -865,13 +865,13 @@ select:focus {
 .column-8 {
   position: relative;
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 calc(100% * (1 * 8 / 12) - 1.6875rem);
-          flex: 0 0 calc(100% * (1 * 8 / 12) - 1.6875rem);
+      -ms-flex: 0 0 calc(100% * (1 * 8 / 12) - 1.5rem);
+          flex: 0 0 calc(100% * (1 * 8 / 12) - 1.5rem);
   width: 100%;
-  max-width: calc(100% * (1 * 8 / 12) - 1.6875rem);
+  max-width: calc(100% * (1 * 8 / 12) - 1.5rem);
   min-height: 1px;
-  margin-left: 0.84375rem;
-  margin-right: 0.84375rem;
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
 }
 
 @media only screen and (max-width: 48rem) {
@@ -891,13 +891,13 @@ select:focus {
 .column-9 {
   position: relative;
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 calc(100% * (1 * 9 / 12) - 1.6875rem);
-          flex: 0 0 calc(100% * (1 * 9 / 12) - 1.6875rem);
+      -ms-flex: 0 0 calc(100% * (1 * 9 / 12) - 1.5rem);
+          flex: 0 0 calc(100% * (1 * 9 / 12) - 1.5rem);
   width: 100%;
-  max-width: calc(100% * (1 * 9 / 12) - 1.6875rem);
+  max-width: calc(100% * (1 * 9 / 12) - 1.5rem);
   min-height: 1px;
-  margin-left: 0.84375rem;
-  margin-right: 0.84375rem;
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
 }
 
 @media only screen and (max-width: 48rem) {
@@ -917,13 +917,13 @@ select:focus {
 .column-10 {
   position: relative;
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 calc(100% * (1 * 10 / 12) - 1.6875rem);
-          flex: 0 0 calc(100% * (1 * 10 / 12) - 1.6875rem);
+      -ms-flex: 0 0 calc(100% * (1 * 10 / 12) - 1.5rem);
+          flex: 0 0 calc(100% * (1 * 10 / 12) - 1.5rem);
   width: 100%;
-  max-width: calc(100% * (1 * 10 / 12) - 1.6875rem);
+  max-width: calc(100% * (1 * 10 / 12) - 1.5rem);
   min-height: 1px;
-  margin-left: 0.84375rem;
-  margin-right: 0.84375rem;
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
 }
 
 @media only screen and (max-width: 48rem) {
@@ -943,13 +943,13 @@ select:focus {
 .column-11 {
   position: relative;
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 calc(100% * (1 * 11 / 12) - 1.6875rem);
-          flex: 0 0 calc(100% * (1 * 11 / 12) - 1.6875rem);
+      -ms-flex: 0 0 calc(100% * (1 * 11 / 12) - 1.5rem);
+          flex: 0 0 calc(100% * (1 * 11 / 12) - 1.5rem);
   width: 100%;
-  max-width: calc(100% * (1 * 11 / 12) - 1.6875rem);
+  max-width: calc(100% * (1 * 11 / 12) - 1.5rem);
   min-height: 1px;
-  margin-left: 0.84375rem;
-  margin-right: 0.84375rem;
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
 }
 
 @media only screen and (max-width: 48rem) {
@@ -969,13 +969,13 @@ select:focus {
 .column-12 {
   position: relative;
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 calc(100% * (1 * 12 / 12) - 1.6875rem);
-          flex: 0 0 calc(100% * (1 * 12 / 12) - 1.6875rem);
+      -ms-flex: 0 0 calc(100% * (1 * 12 / 12) - 1.5rem);
+          flex: 0 0 calc(100% * (1 * 12 / 12) - 1.5rem);
   width: 100%;
-  max-width: calc(100% * (1 * 12 / 12) - 1.6875rem);
+  max-width: calc(100% * (1 * 12 / 12) - 1.5rem);
   min-height: 1px;
-  margin-left: 0.84375rem;
-  margin-right: 0.84375rem;
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
 }
 
 @media only screen and (max-width: 48rem) {
@@ -992,7 +992,7 @@ select:focus {
 }
 
 .offset-1 {
-  margin-left: calc((100% * (1 * 1 / 12) - 1.6875rem) + (1.6875rem * 1.5));
+  margin-left: calc((100% * (1 * 1 / 12) - 1.5rem) + (1.5rem * 1.5));
 }
 
 @media only screen and (max-width: 48rem) {
@@ -1002,7 +1002,7 @@ select:focus {
 }
 
 .offset-2 {
-  margin-left: calc((100% * (1 * 2 / 12) - 1.6875rem) + (1.6875rem * 1.5));
+  margin-left: calc((100% * (1 * 2 / 12) - 1.5rem) + (1.5rem * 1.5));
 }
 
 @media only screen and (max-width: 48rem) {
@@ -1012,7 +1012,7 @@ select:focus {
 }
 
 .offset-3 {
-  margin-left: calc((100% * (1 * 3 / 12) - 1.6875rem) + (1.6875rem * 1.5));
+  margin-left: calc((100% * (1 * 3 / 12) - 1.5rem) + (1.5rem * 1.5));
 }
 
 @media only screen and (max-width: 48rem) {
@@ -1022,7 +1022,7 @@ select:focus {
 }
 
 .offset-4 {
-  margin-left: calc((100% * (1 * 4 / 12) - 1.6875rem) + (1.6875rem * 1.5));
+  margin-left: calc((100% * (1 * 4 / 12) - 1.5rem) + (1.5rem * 1.5));
 }
 
 @media only screen and (max-width: 48rem) {
@@ -1032,7 +1032,7 @@ select:focus {
 }
 
 .offset-5 {
-  margin-left: calc((100% * (1 * 5 / 12) - 1.6875rem) + (1.6875rem * 1.5));
+  margin-left: calc((100% * (1 * 5 / 12) - 1.5rem) + (1.5rem * 1.5));
 }
 
 @media only screen and (max-width: 48rem) {
@@ -1042,7 +1042,7 @@ select:focus {
 }
 
 .offset-6 {
-  margin-left: calc((100% * (1 * 6 / 12) - 1.6875rem) + (1.6875rem * 1.5));
+  margin-left: calc((100% * (1 * 6 / 12) - 1.5rem) + (1.5rem * 1.5));
 }
 
 @media only screen and (max-width: 48rem) {
@@ -1052,7 +1052,7 @@ select:focus {
 }
 
 .offset-7 {
-  margin-left: calc((100% * (1 * 7 / 12) - 1.6875rem) + (1.6875rem * 1.5));
+  margin-left: calc((100% * (1 * 7 / 12) - 1.5rem) + (1.5rem * 1.5));
 }
 
 @media only screen and (max-width: 48rem) {
@@ -1062,7 +1062,7 @@ select:focus {
 }
 
 .offset-8 {
-  margin-left: calc((100% * (1 * 8 / 12) - 1.6875rem) + (1.6875rem * 1.5));
+  margin-left: calc((100% * (1 * 8 / 12) - 1.5rem) + (1.5rem * 1.5));
 }
 
 @media only screen and (max-width: 48rem) {
@@ -1072,7 +1072,7 @@ select:focus {
 }
 
 .offset-9 {
-  margin-left: calc((100% * (1 * 9 / 12) - 1.6875rem) + (1.6875rem * 1.5));
+  margin-left: calc((100% * (1 * 9 / 12) - 1.5rem) + (1.5rem * 1.5));
 }
 
 @media only screen and (max-width: 48rem) {
@@ -1082,7 +1082,7 @@ select:focus {
 }
 
 .offset-10 {
-  margin-left: calc((100% * (1 * 10 / 12) - 1.6875rem) + (1.6875rem * 1.5));
+  margin-left: calc((100% * (1 * 10 / 12) - 1.5rem) + (1.5rem * 1.5));
 }
 
 @media only screen and (max-width: 48rem) {
@@ -1092,7 +1092,7 @@ select:focus {
 }
 
 .offset-11 {
-  margin-left: calc((100% * (1 * 11 / 12) - 1.6875rem) + (1.6875rem * 1.5));
+  margin-left: calc((100% * (1 * 11 / 12) - 1.5rem) + (1.5rem * 1.5));
 }
 
 @media only screen and (max-width: 48rem) {
@@ -1102,7 +1102,7 @@ select:focus {
 }
 
 .offset-12 {
-  margin-left: calc((100% * (1 * 12 / 12) - 1.6875rem) + (1.6875rem * 1.5));
+  margin-left: calc((100% * (1 * 12 / 12) - 1.5rem) + (1.5rem * 1.5));
 }
 
 @media only screen and (max-width: 48rem) {
@@ -1126,8 +1126,8 @@ select:focus {
   .container {
     display: block;
     max-width: 100%;
-    padding-left: 1.6875rem;
-    padding-right: 1.6875rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 }
 
@@ -1459,119 +1459,119 @@ h1 {
   font-family: "Karla", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: 600;
   line-height: 1.5;
-  margin-bottom: 0.84375rem;
+  margin-bottom: 0.75rem;
   color: #212529;
 }
 
 h1 {
-  font-size: 2.02728653rem;
-}
-
-@media screen and (min-width: 30rem) {
-  h1 {
-    font-size: calc(2.02728653rem + 0.25341082 * (100vw - 30rem) / 60);
-  }
-}
-
-@media screen and (min-width: 90rem) {
-  h1 {
-    font-size: 2.28069735rem;
-  }
-}
-
-h2 {
-  font-family: "Karla", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-weight: 600;
-  line-height: 1.5;
-  margin-bottom: 0.84375rem;
-  color: #212529;
-}
-
-h2 {
   font-size: 1.80203247rem;
 }
 
 @media screen and (min-width: 30rem) {
-  h2 {
+  h1 {
     font-size: calc(1.80203247rem + 0.22525406 * (100vw - 30rem) / 60);
   }
 }
 
 @media screen and (min-width: 90rem) {
-  h2 {
+  h1 {
     font-size: 2.02728653rem;
   }
 }
 
-h3 {
+h2 {
   font-family: "Karla", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: 600;
   line-height: 1.5;
-  margin-bottom: 0.84375rem;
+  margin-bottom: 0.75rem;
   color: #212529;
 }
 
-h3 {
+h2 {
   font-size: 1.60180664rem;
 }
 
 @media screen and (min-width: 30rem) {
-  h3 {
+  h2 {
     font-size: calc(1.60180664rem + 0.20022583 * (100vw - 30rem) / 60);
   }
 }
 
 @media screen and (min-width: 90rem) {
-  h3 {
+  h2 {
     font-size: 1.80203247rem;
   }
 }
 
-h4 {
+h3 {
   font-family: "Karla", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: 600;
   line-height: 1.5;
-  margin-bottom: 0.84375rem;
+  margin-bottom: 0.75rem;
   color: #212529;
 }
 
-h4 {
+h3 {
   font-size: 1.42382812rem;
 }
 
 @media screen and (min-width: 30rem) {
-  h4 {
+  h3 {
     font-size: calc(1.42382812rem + 0.17797852 * (100vw - 30rem) / 60);
   }
 }
 
 @media screen and (min-width: 90rem) {
-  h4 {
+  h3 {
     font-size: 1.60180664rem;
   }
 }
 
-h5 {
+h4 {
   font-family: "Karla", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: 600;
   line-height: 1.5;
-  margin-bottom: 0.84375rem;
+  margin-bottom: 0.75rem;
   color: #212529;
 }
 
-h5 {
+h4 {
   font-size: 1.265625rem;
 }
 
 @media screen and (min-width: 30rem) {
-  h5 {
+  h4 {
     font-size: calc(1.265625rem + 0.15820312 * (100vw - 30rem) / 60);
   }
 }
 
 @media screen and (min-width: 90rem) {
-  h5 {
+  h4 {
     font-size: 1.42382812rem;
+  }
+}
+
+h5 {
+  font-family: "Karla", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+  color: #212529;
+}
+
+h5 {
+  font-size: 1.125rem;
+}
+
+@media screen and (min-width: 30rem) {
+  h5 {
+    font-size: calc(1.125rem + 0.140625 * (100vw - 30rem) / 60);
+  }
+}
+
+@media screen and (min-width: 90rem) {
+  h5 {
+    font-size: 1.265625rem;
   }
 }
 
@@ -1579,29 +1579,29 @@ h6 {
   font-family: "Karla", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: 600;
   line-height: 1.5;
-  margin-bottom: 0.84375rem;
+  margin-bottom: 0.75rem;
   color: #212529;
 }
 
 h6 {
-  font-size: 1.125rem;
+  font-size: 1rem;
 }
 
 @media screen and (min-width: 30rem) {
   h6 {
-    font-size: calc(1.125rem + 0.140625 * (100vw - 30rem) / 60);
+    font-size: calc(1rem + 0.125 * (100vw - 30rem) / 60);
   }
 }
 
 @media screen and (min-width: 90rem) {
   h6 {
-    font-size: 1.265625rem;
+    font-size: 1.125rem;
   }
 }
 
 p {
   line-height: 1.5;
-  margin-bottom: 0.84375rem;
+  margin-bottom: 0.75rem;
 }
 
 p {
@@ -1610,18 +1610,18 @@ p {
 
 @media screen and (min-width: 30rem) {
   p {
-    font-size: calc(0.9rem + 0.225 * (100vw - 30rem) / 60);
+    font-size: calc(0.9rem + 0.1 * (100vw - 30rem) / 60);
   }
 }
 
 @media screen and (min-width: 90rem) {
   p {
-    font-size: 1.125rem;
+    font-size: 1rem;
   }
 }
 
 li {
-  font-size: 1.125rem;
+  font-size: 1rem;
   line-height: 1.5;
 }
 
@@ -1634,7 +1634,7 @@ ul ul,
 ul ol,
 ol ul,
 ol ol {
-  padding-left: 1.125rem;
+  padding-left: 1rem;
 }
 
 ul ul,
@@ -1649,13 +1649,13 @@ ol ol {
 
 dt {
   font-weight: 600;
-  font-size: 1.125rem;
+  font-size: 1rem;
   line-height: 1.5;
 }
 
 dd {
   line-height: 1.5;
-  margin-bottom: 0.84375rem;
+  margin-bottom: 0.75rem;
 }
 
 dd {
@@ -1664,30 +1664,30 @@ dd {
 
 @media screen and (min-width: 30rem) {
   dd {
-    font-size: calc(0.9rem + 0.225 * (100vw - 30rem) / 60);
+    font-size: calc(0.9rem + 0.1 * (100vw - 30rem) / 60);
   }
 }
 
 @media screen and (min-width: 90rem) {
   dd {
-    font-size: 1.125rem;
+    font-size: 1rem;
   }
 }
 
 blockquote {
   border-left: solid 2px #0F7A72;
-  margin: 1.6875rem;
-  padding: 1.6875rem;
+  margin: 1.5rem;
+  padding: 1.5rem;
 }
 
 hr {
-  margin: 1.6875rem 0;
+  margin: 1.5rem 0;
   height: 1px;
 }
 
 label {
   line-height: 1.5;
-  margin-bottom: 0.84375rem;
+  margin-bottom: 0.75rem;
 }
 
 label {
@@ -1696,13 +1696,13 @@ label {
 
 @media screen and (min-width: 30rem) {
   label {
-    font-size: calc(0.9rem + 0.225 * (100vw - 30rem) / 60);
+    font-size: calc(0.9rem + 0.1 * (100vw - 30rem) / 60);
   }
 }
 
 @media screen and (min-width: 90rem) {
   label {
-    font-size: 1.125rem;
+    font-size: 1rem;
   }
 }
 
@@ -1710,7 +1710,7 @@ input,
 select,
 textarea {
   line-height: 1.5;
-  margin-bottom: 0.84375rem;
+  margin-bottom: 0.75rem;
 }
 
 input,
@@ -1723,7 +1723,7 @@ textarea {
   input,
   select,
   textarea {
-    font-size: calc(0.9rem + 0.225 * (100vw - 30rem) / 60);
+    font-size: calc(0.9rem + 0.1 * (100vw - 30rem) / 60);
   }
 }
 
@@ -1731,7 +1731,7 @@ textarea {
   input,
   select,
   textarea {
-    font-size: 1.125rem;
+    font-size: 1rem;
   }
 }
 
@@ -1806,23 +1806,23 @@ mark {
 |--------------------------------------------------------------------------
 */
 .\--has-padding {
-  padding: 1.6875rem;
+  padding: 1.5rem;
 }
 
 .\--has-padding-top {
-  padding-top: 1.6875rem;
+  padding-top: 1.5rem;
 }
 
 .\--has-padding-right {
-  padding-right: 1.6875rem;
+  padding-right: 1.5rem;
 }
 
 .\--has-padding-bottom {
-  padding-bottom: 1.6875rem;
+  padding-bottom: 1.5rem;
 }
 
 .\--has-padding-left {
-  padding-left: 1.6875rem;
+  padding-left: 1.5rem;
 }
 
 /*
@@ -1883,23 +1883,23 @@ mark {
 |--------------------------------------------------------------------------
 */
 .\--has-margin {
-  margin: 1.6875rem;
+  margin: 1.5rem;
 }
 
 .\--has-margin-top {
-  margin-top: 1.6875rem;
+  margin-top: 1.5rem;
 }
 
 .\--has-margin-right {
-  margin-right: 1.6875rem;
+  margin-right: 1.5rem;
 }
 
 .\--has-margin-bottom {
-  margin-bottom: 1.6875rem;
+  margin-bottom: 1.5rem;
 }
 
 .\--has-margin-left {
-  margin-left: 1.6875rem;
+  margin-left: 1.5rem;
 }
 
 /*
@@ -2194,10 +2194,10 @@ mark {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 1.265625rem;
-  width: 1.265625rem;
+  height: 1.125rem;
+  width: 1.125rem;
   color: #ffffff;
-  font-size: 0.79012346rem;
+  font-size: 0.70233196rem;
   background: #ced4da;
   border-radius: 1000000px;
   -webkit-box-shadow: 0 0 0 2px #ffffff;
@@ -2229,7 +2229,7 @@ mark {
   position: relative;
   display: block;
   width: 100%;
-  padding: 1.6875rem;
+  padding: 1.5rem;
   background: #ffffff;
   -webkit-box-shadow: 0 1px 2px 0 rgba(33, 37, 41, 0.35);
           box-shadow: 0 1px 2px 0 rgba(33, 37, 41, 0.35);
@@ -2253,7 +2253,7 @@ button,
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 0.421875rem 1.6875rem;
+  padding: 0.375rem 1.5rem;
   color: #ffffff;
   line-height: 1.5;
   text-decoration: none;
@@ -2282,13 +2282,13 @@ button:active, button:focus,
 
 button.button-large,
 .button.button-large {
-  padding: 0.759375rem 1.940625rem;
-  font-size: 1.265625rem;
+  padding: 0.675rem 1.725rem;
+  font-size: 1.125rem;
 }
 
 button.button-small,
 .button.button-small {
-  font-size: 0.79012346rem;
+  font-size: 0.70233196rem;
 }
 
 button-wide,
@@ -2663,8 +2663,8 @@ button.button-clear,
 
 button.has-icon,
 .button.has-icon {
-  padding-left: 0.421875rem;
-  padding-right: 0.421875rem;
+  padding-left: 0.375rem;
+  padding-right: 0.375rem;
 }
 
 button.has-icon i,
@@ -2672,7 +2672,7 @@ button.has-icon svg,
 .button.has-icon i,
 .button.has-icon svg {
   height: 1rem;
-  margin-left: 1.6875rem;
+  margin-left: 1.5rem;
 }
 
 button.has-icon i svg,
@@ -2766,14 +2766,14 @@ button[disabled],
           align-items: center;
   height: 1px;
   width: 100%;
-  margin: 0.84375rem 0;
+  margin: 0.75rem 0;
   background: #e9ecef;
 }
 
 .divider[data-text]:before {
   content: attr(data-text);
   display: block;
-  padding: 0 0.84375rem;
+  padding: 0 0.75rem;
   color: #ced4da;
   background: #ffffff;
 }
@@ -2788,7 +2788,7 @@ select,
 textarea {
   display: block;
   width: 100%;
-  padding: 0.421875rem;
+  padding: 0.375rem;
   background: transparent;
   border: solid 1px #e9ecef;
   color: rgba(33, 37, 41, 0.6);
@@ -3247,7 +3247,7 @@ input[type="range"]:active::-moz-range-thumb {
   display: block;
   height: 1rem;
   width: 1rem;
-  margin-right: 0.421875rem;
+  margin-right: 0.375rem;
   background: #ffffff;
   border: 0.05rem solid #e9ecef;
   border-radius: 50%;
@@ -3402,7 +3402,7 @@ input[type="range"]:active::-moz-range-thumb {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-right: 0.421875rem;
+  margin-right: 0.375rem;
 }
 
 .checkbox-button {
@@ -3692,7 +3692,7 @@ input[type="range"]:active::-moz-range-thumb {
 */
 .label {
   display: inline-block;
-  padding: 0.16875rem 0.84375rem;
+  padding: 0.15rem 0.75rem;
   color: #ffffff;
   background: #495057;
   border-radius: 1000000px;
@@ -3772,7 +3772,7 @@ input[type="range"]:active::-moz-range-thumb {
 .menu {
   display: block;
   min-width: 200px;
-  padding: 0.84375rem;
+  padding: 0.75rem;
   background: #ffffff;
   list-style-type: none;
   border-radius: 2px;
@@ -3788,7 +3788,7 @@ input[type="range"]:active::-moz-range-thumb {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 0.253125rem 0.84375rem;
+  padding: 0.225rem 0.75rem;
   color: rgba(33, 37, 41, 0.6);
   text-decoration: none;
   border-radiius: 2px;
@@ -3849,7 +3849,7 @@ input[type="range"]:active::-moz-range-thumb {
 .panel {
   position: relative;
   width: 100%;
-  margin-bottom: 0.84375rem;
+  margin-bottom: 0.75rem;
   margin: 0 auto;
   background: #ffffff;
   border-radius: 2px;
@@ -3858,7 +3858,7 @@ input[type="range"]:active::-moz-range-thumb {
 }
 
 .panel-title {
-  padding: 0.421875rem 0.84375rem;
+  padding: 0.375rem 0.75rem;
   border-bottom: solid 1px #e9ecef;
 }
 
@@ -3867,11 +3867,11 @@ input[type="range"]:active::-moz-range-thumb {
 }
 
 .panel-body {
-  padding: 1.6875rem;
+  padding: 1.5rem;
 }
 
 .panel-footer {
-  padding: 0.84375rem;
+  padding: 0.75rem;
   border-top: solid 1px #e9ecef;
 }
 
@@ -3928,11 +3928,11 @@ progress[value]::-webkit-progress-value {
 
 .overlay-close {
   position: absolute;
-  top: 1.6875rem;
-  left: 1.6875rem;
+  top: 1.5rem;
+  left: 1.5rem;
   display: block;
   color: #ffffff;
-  font-size: 2.28069735rem;
+  font-size: 2.02728653rem;
   cursor: pointer;
 }
 
@@ -3954,12 +3954,12 @@ progress[value]::-webkit-progress-value {
   position: absolute;
   z-index: 20;
   display: none;
-  top: calc(-100% - (1.6875rem * .25));
+  top: calc(-100% - (1.5rem * .25));
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   background: #495057;
-  padding: 0.253125rem 0.84375rem;
+  padding: 0.225rem 0.75rem;
   border-radius: 2px;
 }
 
@@ -3968,7 +3968,7 @@ progress[value]::-webkit-progress-value {
   position: absolute;
   z-index: 20;
   display: none;
-  top: calc(-100% + (1.6875rem * .75));
+  top: calc(-100% + (1.5rem * .75));
   left: 50%;
   -webkit-transform: translateX(-50%) rotate(45deg);
           transform: translateX(-50%) rotate(45deg);
@@ -3980,26 +3980,26 @@ progress[value]::-webkit-progress-value {
 
 [data-tooltip].tooltip-bottom:before {
   top: auto;
-  bottom: calc(-100% - (1.6875rem * .25));
+  bottom: calc(-100% - (1.5rem * .25));
   left: 50%;
 }
 
 [data-tooltip].tooltip-bottom:after {
   top: auto;
-  bottom: calc(-100% + (1.6875rem * .8));
+  bottom: calc(-100% + (1.5rem * .8));
   left: 50%;
 }
 
 [data-tooltip].tooltip-left:before {
   top: 50%;
-  left: calc(100% + (1.6875rem * .5));
+  left: calc(100% + (1.5rem * .5));
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
 }
 
 [data-tooltip].tooltip-left:after {
   top: 50%;
-  left: calc(100% + (1.6875rem * .35));
+  left: calc(100% + (1.5rem * .35));
   -webkit-transform: translateY(-50%) rotate(45deg);
           transform: translateY(-50%) rotate(45deg);
 }
@@ -4007,7 +4007,7 @@ progress[value]::-webkit-progress-value {
 [data-tooltip].tooltip-right:before {
   top: 50%;
   left: auto;
-  right: calc(100% + (1.6875rem * .5));
+  right: calc(100% + (1.5rem * .5));
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
 }
@@ -4015,7 +4015,7 @@ progress[value]::-webkit-progress-value {
 [data-tooltip].tooltip-right:after {
   top: 50%;
   left: auto;
-  right: calc(100% + (1.6875rem * .35));
+  right: calc(100% + (1.5rem * .35));
   -webkit-transform: translateY(-50%) rotate(45deg);
           transform: translateY(-50%) rotate(45deg);
 }
@@ -4026,7 +4026,7 @@ progress[value]::-webkit-progress-value {
 |--------------------------------------------------------------------------
 */
 .subtitle {
-  margin-top: -1.6875rem;
+  margin-top: -1.5rem;
 }
 
 /*
@@ -4055,7 +4055,7 @@ progress[value]::-webkit-progress-value {
 }
 
 .accordion-content {
-  padding: 0.84375rem;
+  padding: 0.75rem;
 }
 
 /*
@@ -4069,7 +4069,7 @@ progress[value]::-webkit-progress-value {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 0.84375rem 3.375rem;
+  padding: 0.75rem 3rem;
   background: #495057;
   color: #ffffff;
   text-align: center;
@@ -4093,7 +4093,7 @@ progress[value]::-webkit-progress-value {
 .alert-close {
   position: absolute;
   top: 50%;
-  right: 0.421875rem;
+  right: 0.375rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4103,8 +4103,8 @@ progress[value]::-webkit-progress-value {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 1.6875rem;
-  width: 1.6875rem;
+  height: 1.5rem;
+  width: 1.5rem;
   color: #ffffff;
   font-weight: bold;
   border-radius: 1000000px;
@@ -4240,7 +4240,7 @@ progress[value]::-webkit-progress-value {
 }
 
 .card-body {
-  padding: 1.6875rem;
+  padding: 1.5rem;
 }
 
 /*
@@ -4293,7 +4293,7 @@ label {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
-  margin-right: 0.84375rem;
+  margin-right: 0.75rem;
 }
 
 .form-row .field:last-of-type {
@@ -4301,7 +4301,7 @@ label {
 }
 
 .field {
-  margin-bottom: 0.84375rem;
+  margin-bottom: 0.75rem;
 }
 
 .field input {
@@ -4309,7 +4309,7 @@ label {
 }
 
 .field-helper {
-  font-size: 0.79012346rem;
+  font-size: 0.70233196rem;
   line-height: 1;
 }
 
@@ -4361,7 +4361,7 @@ label {
   width: 100%;
   background: #0F7A72;
   position: relative;
-  padding: 1.6875rem;
+  padding: 1.5rem;
 }
 
 .hero.hero-full {
@@ -4398,8 +4398,8 @@ label {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  padding: 0.84375rem;
-  margin-bottom: 1.6875rem;
+  padding: 0.75rem;
+  margin-bottom: 1.5rem;
   background: #ffffff;
   border-radius: 2px;
   -webkit-box-shadow: 0 1px 2px 0 rgba(33, 37, 41, 0.35);
@@ -4409,7 +4409,7 @@ label {
 .media-object-image {
   height: 75px;
   width: 75px;
-  margin-right: 1.6875rem;
+  margin-right: 1.5rem;
 }
 
 .media-object-image img {
@@ -4421,7 +4421,7 @@ label {
 }
 
 .media-object-content {
-  width: calc(100% - (100px + 1.6875rem));
+  width: calc(100% - (100px + 1.5rem));
 }
 
 /*
@@ -4473,10 +4473,10 @@ label {
 .notification {
   position: fixed;
   z-index: 100;
-  top: 1.6875rem;
-  right: 1.6875rem;
+  top: 1.5rem;
+  right: 1.5rem;
   max-width: 400px;
-  padding: 0.84375rem;
+  padding: 0.75rem;
   background: #ffffff;
   -webkit-box-shadow: 0 1px 2px 0 rgba(33, 37, 41, 0.35);
           box-shadow: 0 1px 2px 0 rgba(33, 37, 41, 0.35);
@@ -4490,8 +4490,8 @@ label {
 
 .notification-close {
   position: absolute;
-  top: 0.421875rem;
-  right: 0.421875rem;
+  top: 0.375rem;
+  right: 0.375rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4501,8 +4501,8 @@ label {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 1.6875rem;
-  width: 1.6875rem;
+  height: 1.5rem;
+  width: 1.5rem;
   color: rgba(33, 37, 41, 0.6);
   font-weight: bold;
   border-radius: 1000000px;
@@ -4614,7 +4614,7 @@ label {
 .nav a svg {
   height: 1rem;
   width: 1rem;
-  margin-right: 0.421875rem;
+  margin-right: 0.375rem;
 }
 
 .nav a .icon {
@@ -4671,7 +4671,7 @@ label {
   position: fixed;
   top: 0;
   right: 0;
-  padding: 1.6875rem;
+  padding: 1.5rem;
   z-index: 100;
   height: 100%;
   width: 300px;
@@ -4708,9 +4708,9 @@ label {
 
 .off-canvas-menu a {
   display: block;
-  padding: 0.253125rem 0.84375rem;
+  padding: 0.225rem 0.75rem;
   color: rgba(33, 37, 41, 0.6);
-  font-size: 1.42382812rem;
+  font-size: 1.265625rem;
   text-decoration: none;
 }
 
@@ -4730,9 +4730,9 @@ label {
 .select-input {
   display: block;
   width: 100%;
-  padding: 0.421875rem;
+  padding: 0.375rem;
   line-height: 1.5;
-  margin-bottom: 0.84375rem;
+  margin-bottom: 0.75rem;
   margin-bottom: 0;
   background: transparent;
   background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDE4IDE4Ij4KICAgIDxnIGNsYXNzPSJuYy1pY29uLXdyYXBwZXIiIGZpbGw9IiM0NDQ0NDQiPgogICAgICAgIDxwYXRoIGQ9Ik05IDQuMTJsMi4zOCAyLjM4IDEuMDYtMS4wNkw5IDIgNS41NiA1LjQ0IDYuNjIgNi41IDkgNC4xMnptMCA5Ljc2TDYuNjIgMTEuNWwtMS4wNiAxLjA2TDkgMTZsMy40NC0zLjQ0LTEuMDYtMS4wNkw5IDEzLjg4eiI+PC9wYXRoPgogICAgPC9nPgo8L3N2Zz4=");
@@ -4752,13 +4752,13 @@ label {
 
 @media screen and (min-width: 30rem) {
   .select-input {
-    font-size: calc(0.9rem + 0.225 * (100vw - 30rem) / 60);
+    font-size: calc(0.9rem + 0.1 * (100vw - 30rem) / 60);
   }
 }
 
 @media screen and (min-width: 90rem) {
   .select-input {
-    font-size: 1.125rem;
+    font-size: 1rem;
   }
 }
 
@@ -4776,7 +4776,7 @@ label {
   position: absolute;
   z-index: 20;
   width: 100%;
-  padding: 0.84375rem;
+  padding: 0.75rem;
   background: #ffffff;
   border-right: solid 1px #e9ecef;
   border-bottom: solid 1px #e9ecef;
@@ -4791,7 +4791,7 @@ label {
 }
 
 .select li {
-  padding: 0.253125rem 0.84375rem;
+  padding: 0.225rem 0.75rem;
   color: rgba(33, 37, 41, 0.6);
   cursor: pointer;
   border-radiius: 2px;
@@ -4819,7 +4819,7 @@ label {
 */
 table {
   line-height: 1.5;
-  margin-bottom: 0.84375rem;
+  margin-bottom: 0.75rem;
   width: 100%;
   border-collapse: collapse;
 }
@@ -4830,13 +4830,13 @@ table {
 
 @media screen and (min-width: 30rem) {
   table {
-    font-size: calc(0.9rem + 0.225 * (100vw - 30rem) / 60);
+    font-size: calc(0.9rem + 0.1 * (100vw - 30rem) / 60);
   }
 }
 
 @media screen and (min-width: 90rem) {
   table {
-    font-size: 1.125rem;
+    font-size: 1rem;
   }
 }
 
@@ -4879,7 +4879,7 @@ tr:last-of-type td {
 
 td,
 th {
-  padding: 0.84375rem;
+  padding: 0.75rem;
 }
 
 /*
@@ -4919,7 +4919,7 @@ th {
   min-width: 100px;
   cursor: pointer;
   position: relative;
-  padding: 0.421875rem;
+  padding: 0.375rem;
   text-align: center;
   margin-bottom: 0;
 }
@@ -5034,7 +5034,7 @@ th {
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
-  padding: 1.6875rem;
+  padding: 1.5rem;
 }
 
 .tabs-content-active {
@@ -5046,7 +5046,7 @@ th {
 
 .tabs-content-mobile {
   display: none;
-  padding: 1.6875rem;
+  padding: 1.5rem;
 }
 
 @media only screen and (max-width: 48rem) {

@@ -15,9 +15,9 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        $products = Product::paginate(10);
 
-        return view('panel.products.index');
+        return view('panel.products.index', compact('products'));
     }
 
     /**
@@ -60,7 +60,7 @@ class ProductsController extends Controller
      */
     public function edit(Product $product)
     {
-        return view('panel.products.edit', compoact('product'));
+        return view('panel.products.edit', compact('product'));
     }
 
     /**
