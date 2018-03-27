@@ -5,6 +5,7 @@ window.Vue = require('vue');
 Vue.config.productionTip = false
 
 Vue.component('image-upload', require('./components/ImageUpload.vue'));
+Vue.component('color-select', require('./components/ColorSelect.vue'));
 
 const app = new Vue({
     el: '#app'

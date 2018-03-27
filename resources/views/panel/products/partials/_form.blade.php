@@ -70,7 +70,7 @@
             <!-- /.block -->
 
             <div class="block --has-margin-bottom">
-                colours
+                <color-select></color-select>
             </div>
 
             <!-- /.block -->
