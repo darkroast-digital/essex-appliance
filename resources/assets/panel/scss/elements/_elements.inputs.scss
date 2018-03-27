@@ -30,7 +30,7 @@ textarea {
     &:hover {
 
         @if not $is-dark {
-            border-color: color(grey, 50);
+            border-color: color(grey, 40);
         } @else {
             border-color: color(grey, 60);
         }

@@ -28,7 +28,15 @@
 
         <div class="column-9">
             <div class="block --has-margin-bottom">
-                <h6>{{ $mode === 'create' ? 'Add' : 'Edit' }} Product</h6>
+                <div class="title-bar">
+                    <h6>{{ $mode === 'create' ? 'Add' : 'Edit' }} Product</h6>
+                    <div class="button-group">
+                        <button type="submit" class="button-secondary">{{ $mode === 'create' ? 'Save' : 'Update' }} Product</button>
+                    </div>
+                </div>
+
+                <!-- /.title-bar -->
+
                 <hr>
                 <div class="field">
                     <label for="name">Product Name</label>
@@ -69,6 +77,46 @@
             </div>
 
             <!-- /.block -->
+
+            <div class="block --has-margin-bottom">
+
+                <div class="tabs">
+                    <ul class="tabs-nav">
+                        <li class="tabs-nav-active" data-tab="features"><label>Product Features</label></li>
+                        <li data-tab="specifications"><label>Product Specifications</label></li>
+                    </ul>
+
+                    <!-- /.tabs-nav -->
+
+                    <div class="tabs-body">
+
+                        <div class="tabs-content tabs-content-active" data-tab="features">
+                            <textarea name="features" placeholder="Add product features...">{{ isset($product->features) ? $product->features : '' }}</textarea>
+                        </div>
+
+                        <!-- /.tabs-content -->
+
+                        <div class="tabs-content" data-tab="specifications">
+                                <textarea name="features" placeholder="Add product specifications...">{{ isset($product->specifications) ? $product->specifications : '' }}</textarea>
+                        </div>
+
+                        <!-- /.tabs-content -->
+
+                    </div>
+
+                    <!-- /.tabs-body -->
+
+                </div>
+
+                <!-- /.tabs -->
+
+            </div>
+
+            <!-- /.block -->
+            
+            <div class="--has-margin-bottom">
+                <button type="submit" class="button-secondary">{{ $mode === 'create' ? 'Save' : 'Update' }} Product</button>
+            </div>
 
         </div>
 

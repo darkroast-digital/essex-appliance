@@ -29,6 +29,10 @@ button,
         background: color(primary, light);
         border-color: color(primary, light);
     }
+
+    @if $button-has-shadow {
+        @include shadow(raised);
+    }
     
     &:active,
     &:focus {
