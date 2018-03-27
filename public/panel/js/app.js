@@ -47677,9 +47677,7 @@ var render = function() {
       "ul",
       { staticClass: "color-select" },
       _vm._l(_vm.colors, function(color, i) {
-        return _c("li", { key: i, style: { background: color } }, [
-          _vm._v(_vm._s(color))
-        ])
+        return _c("li", { key: i, style: { background: color } })
       })
     )
   ])

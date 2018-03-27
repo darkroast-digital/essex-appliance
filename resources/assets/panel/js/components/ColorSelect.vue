@@ -1,7 +1,7 @@
 <template>
     <div>
         <ul class="color-select">
-            <li v-for="(color, i) in colors" :key="i" :style="{ background: color}">{{ color }}</li>
+            <li v-for="(color, i) in colors" :key="i" :style="{ background: color}"></li>
         </ul>
     </div>
 </template>
