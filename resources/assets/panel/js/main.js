@@ -4,7 +4,7 @@ window.Vue = require('vue');
 
 Vue.config.productionTip = false
 
-Vue.component('title-field', require('./components/TitleField.vue'));
+Vue.component('image-upload', require('./components/ImageUpload.vue'));
 
 const app = new Vue({
     el: '#app'
@@ -26,8 +26,6 @@ if (tabsSection) {
         let navLinks = nav.querySelectorAll('[data-tab]')
         let body = tabs.querySelector('.tabs-body')
         let content = body.querySelectorAll('.tabs-content')
-
-        console.log(content)
 
         navLinks.forEach(link => {
 
@@ -54,5 +52,86 @@ if (tabsSection) {
         })
 
     })
+
+}
+
+
+
+
+// Select
+// =========================================================================
+
+var selectContainer = document.querySelectorAll('.select');
+
+console.log(selectContainer)
+
+if (selectContainer) {
+
+    selectContainer.forEach(function (select) {
+
+        var input = select.querySelector('select');
+        var selectMenu = select.querySelector('.select-menu');
+        var selectInput = select.querySelector('.select-input');
+
+        var options = input.options;
+
+        document.addEventListener('click', function (e) {
+            
+            if (!select.contains(e.target)) {
+                select.classList.remove('select-open');
+            }
+        });
+
+        selectInput.addEventListener('click', function () {
+            select.classList.add('select-open');
+        });
+
+        var template = ``;
+        var inputTitle = '';
+
+        for (let i = 0; i < options.length; i++) {
+            var option = options[i];
+            var optionValue = option.value;
+            var optionTitle = option.innerText;
+
+            if (option.hasAttribute('selected')) {
+                inputTitle = optionTitle;
+            }
+
+            if (option.hasAttribute('value')) {
+                template += `<li data-option="${optionValue}">${optionTitle}</li>`;
+            }
+            
+        }
+
+        selectInput.innerText = inputTitle;
+
+        selectMenu.innerHTML = template;
+
+        var selectMenuItems = select.querySelectorAll('[data-option]')
+        
+        selectMenuItems.forEach(function (item) {
+            item.addEventListener('click', function () {
+
+                var itemTitle = this.innerText;                
+                var itemOption = this.dataset.option;
+                var inputOption = select.querySelector(`option[value="${itemOption}"]`);
+
+                var inputOptions = select.querySelectorAll('option');
+
+                inputOptions.forEach(function (option) {
+                    option.removeAttribute('selected');
+                });
+                
+                inputOption.setAttribute('selected', 'selected');
+
+                selectInput.innerText = itemTitle;
+
+                select.classList.remove('select-open');
+
+            });
+        });
+
+    });
 
 }

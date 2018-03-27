@@ -1118,7 +1118,7 @@ select:focus {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   width: 100%;
-  max-width: 80%;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -2793,25 +2793,25 @@ textarea {
 input::-webkit-input-placeholder,
 select::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
-  color: rgba(33, 37, 41, 0.15);
+  color: rgba(33, 37, 41, 0.25);
 }
 
 input:-ms-input-placeholder,
 select:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
-  color: rgba(33, 37, 41, 0.15);
+  color: rgba(33, 37, 41, 0.25);
 }
 
 input::-ms-input-placeholder,
 select::-ms-input-placeholder,
 textarea::-ms-input-placeholder {
-  color: rgba(33, 37, 41, 0.15);
+  color: rgba(33, 37, 41, 0.25);
 }
 
 input::placeholder,
 select::placeholder,
 textarea::placeholder {
-  color: rgba(33, 37, 41, 0.15);
+  color: rgba(33, 37, 41, 0.25);
 }
 
 input:hover,
@@ -3551,15 +3551,15 @@ input[type="range"]:active::-moz-range-thumb {
 }
 
 .toggle {
-  cursor: pointer;
   display: inline-block;
+  cursor: pointer;
 }
 
 .toggle-button {
   position: relative;
   display: block;
-  height: 1rem;
-  width: 2rem;
+  height: 1.25rem;
+  width: 2.5rem;
   background: #e9ecef;
   border: 0.05rem solid #e9ecef;
   border-radius: 1000000px;
@@ -4310,6 +4310,18 @@ label {
 
 .field input {
   margin-bottom: 0;
+}
+
+.field-inline {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .field-helper {
@@ -5103,6 +5115,99 @@ th {
   .tabs-content-mobile-active {
     display: block;
   }
+}
+
+/*
+|--------------------------------------------------------------------------
+| #Image UPLOAD
+|--------------------------------------------------------------------------
+*/
+.image-upload {
+  position: relative;
+  display: block;
+  height: 12rem;
+  width: 100%;
+  margin: 0;
+  border-radius: 2px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.image-upload:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  -webkit-transition: all 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  transition: all 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.image-upload:hover:before {
+  opacity: .1;
+  visibility: visible;
+}
+
+.image-upload.loading {
+  pointer-events: none;
+}
+
+.image-upload.loading .image-button {
+  color: transparent !important;
+}
+
+.image-upload.loading:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 60;
+  margin: calc((2.25rem) * -.5);
+  height: 2.25rem;
+  width: 2.25rem;
+  border: 0.25rem solid #adb5bd;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  border-radius: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-animation: rotate .75s infinite linear;
+          animation: rotate .75s infinite linear;
+}
+
+.image-upload input {
+  display: none;
+}
+
+.image-upload img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.image-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  width: 100%;
+  color: #adb5bd;
+  font-size: 2.02728653rem;
+  font-weight: bold;
+  background: #f8f9fa;
+  border: dashed 0.15rem #dee2e6;
 }
 
 /*

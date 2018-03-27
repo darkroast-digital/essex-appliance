@@ -1,17 +1,70 @@
 <form action="{{ $endpoint }}" method="post">
+    @csrf
+
+    @if ($mode === 'edit') 
+        @method('patch')
+    @endif
 
     <div class="container">
 
         <div class="column-3">
             <div class="block --has-margin-bottom">
-                Image
+                <image-upload></image-upload>
             </div>
 
             <!-- /.block -->
 
             <div class="block --has-margin-bottom">
-                tags <br>
-                featured
+                <div class="field">
+
+                    <label for="type">Appliance Type</label>
+                    <div class="select">
+                        <select name="type">
+                            <option disabled selected>Choose Type</option>
+                            <option value="one">One</option>
+                            <option value="one">One</option>
+                            <option value="one">One</option>
+                        </select>
+
+                        <span class="select-input"></span>
+                        <ul class="select-menu"></ul>
+                    </div>
+
+                    <!-- /.select -->
+
+                </div>
+
+                <!-- /.field -->
+                
+                <div class="field">
+
+                        <label for="brand">Appliance Brand</label>
+                        <div class="select">
+                            <select name="brand">
+                                <option disabled selected>Choose Brand</option>
+                                <option value="one">One</option>
+                                <option value="one">One</option>
+                                <option value="one">One</option>
+                            </select>
+    
+                            <span class="select-input"></span>
+                            <ul class="select-menu"></ul>
+                        </div>
+    
+                        <!-- /.select -->
+    
+                    </div>
+    
+                    <!-- /.field -->
+
+                    <div class="field field-inline">
+                        <label>Available:</label>
+                        <label class="toggle">
+                            <input type="checkbox" name="featured" {{ isset($product->available) && $product->available ? 'checked' : '' }}>
+
+                            <span class="toggle-button"></span>
+                        </label>
+                    </div>
             </div>
 
             <!-- /.block -->

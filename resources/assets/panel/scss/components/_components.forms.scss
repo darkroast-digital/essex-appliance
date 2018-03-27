@@ -28,6 +28,12 @@ label {
     input {
         margin-bottom: 0;
     }
+
+    &-inline {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
     
     &-helper {
         font-size: ms(-1);

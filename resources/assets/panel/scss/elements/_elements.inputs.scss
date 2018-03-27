@@ -20,7 +20,7 @@ textarea {
     transition: all .1s ease(inOutSine);
 
     &::placeholder {
-        color: rgba(color(font), .15);
+        color: rgba(color(font), .25);
     }
 
     @if $has-radius {
@@ -437,14 +437,14 @@ input[type="range"] {
 // =========================================================================
 
 .toggle {
-    cursor: pointer;
     display: inline-block;
+    cursor: pointer;
 
     &-button {
         position: relative;
         display: block;
-        height: 1rem;
-        width: 2rem;
+        height: 1.25rem;
+        width: 2.5rem;
         
         @if not $is-dark {
             background: color(grey, 30);

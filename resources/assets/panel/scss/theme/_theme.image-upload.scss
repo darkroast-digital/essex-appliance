@@ -1,0 +1,90 @@
+/*
+|--------------------------------------------------------------------------
+| #Image UPLOAD
+|--------------------------------------------------------------------------
+*/
+
+
+
+
+.image-upload {
+    position: relative;
+    display: block;
+    height: $gutter * 8;
+    width: 100%;
+    margin: 0;
+    border-radius: radius(small);
+    overflow: hidden;
+    cursor: pointer;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: z(low);
+        height: 100%;
+        width: 100%;
+        background: color(grey, 100);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: all .2s ease(inOutSine);
+    }
+
+    &:hover {
+
+        &:before {
+            opacity: .1;
+            visibility: visible;
+        }
+    }
+
+    &.loading {
+        pointer-events: none;
+
+        .image-button {
+            color: transparent !important;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: z(high);
+            margin: calc((#{$gutter * 1.5}) * -.5);
+            height: $gutter * 1.5;
+            width: $gutter * 1.5;
+            border: .25rem solid color(grey, 60);
+            border-right-color: transparent;
+            border-top-color: transparent;
+            border-radius: radius(circle);
+            transform: translate(-50%, -50%);
+            animation: rotate .75s infinite linear;
+        }
+    }
+
+    input {
+        display: none;
+    }
+
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+.image-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    color: color(grey, 60);
+    font-size: ms(6);
+    font-weight: bold;
+    background: color(grey, 10);
+    border: dashed .15rem color(grey, 40);
+}
