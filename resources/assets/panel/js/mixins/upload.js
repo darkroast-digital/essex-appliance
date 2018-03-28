@@ -14,10 +14,14 @@ export default {
         }
     },
     methods: {
-        upload (e) {
+        upload (e, files = null) {
             this.uploading = true
 
-            return axios.post(this.endpoint, this.packageUploads(e)).then((response) => {
+            if (!files) {
+                files = e.target.files
+            }
+
+            return axios.post(this.endpoint, this.packageUploads(files)).then((response) => {
                 this.uploading = false
 
                 return Promise.resolve(response)
@@ -27,13 +31,11 @@ export default {
                 return Promise.reject(error)
             })
         },
-        packageUploads (e) {
+        packageUploads (files) {
             let fileData = new FormData()
 
-            // fileData.append(this.sendAs, e.target.files[0])
-
-            for (let i = 0; i < e.target.files.length; i++) {
-                fileData.append(this.sendAs, e.target.files[i])
+            for (let i = 0; i < files.length; i++) {
+                fileData.append(this.sendAs, files[i])
             }
 
             return fileData

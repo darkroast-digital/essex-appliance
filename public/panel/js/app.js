@@ -47413,12 +47413,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.isDraggedOver = false;
         },
         drop: function drop(e) {
-            this.leave();
-        },
-        fileChange: function fileChange(e) {
             var _this = this;
 
-            this.upload(e).then(function (response) {
+            this.leave();
+
+            this.upload(e, e.dataTransfer.files).then(function (response) {
 
                 _this.image.id = response.data.data.id;
                 _this.image.path = '/' + response.data.data.path;
@@ -47431,6 +47430,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 }
 
                 _this.errors = 'Something went wrong. Try again.';
+            });
+        },
+        fileChange: function fileChange(e) {
+            var _this2 = this;
+
+            this.upload(e).then(function (response) {
+
+                _this2.image.id = response.data.data.id;
+                _this2.image.path = '/' + response.data.data.path;
+            }).catch(function (error) {
+
+                if (error.response.status == 422) {
+                    _this2.errors = error.response.data.errors;
+
+                    return;
+                }
+
+                _this2.errors = 'Something went wrong. Try again.';
             });
         }
     }
@@ -47461,9 +47478,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         upload: function upload(e) {
             var _this = this;
 
+            var files = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+
             this.uploading = true;
 
-            return axios.post(this.endpoint, this.packageUploads(e)).then(function (response) {
+            if (!files) {
+                files = e.target.files;
+            }
+
+            return axios.post(this.endpoint, this.packageUploads(files)).then(function (response) {
                 _this.uploading = false;
 
                 return Promise.resolve(response);
@@ -47473,13 +47496,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 return Promise.reject(error);
             });
         },
-        packageUploads: function packageUploads(e) {
+        packageUploads: function packageUploads(files) {
             var fileData = new FormData();
 
-            // fileData.append(this.sendAs, e.target.files[0])
-
-            for (var i = 0; i < e.target.files.length; i++) {
-                fileData.append(this.sendAs, e.target.files[i]);
+            for (var i = 0; i < files.length; i++) {
+                fileData.append(this.sendAs, files[i]);
             }
 
             return fileData;

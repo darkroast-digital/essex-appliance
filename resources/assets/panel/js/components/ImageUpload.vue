@@ -56,6 +56,22 @@
             },
             drop (e) {
                 this.leave()
+
+                this.upload(e, e.dataTransfer.files).then((response) => {
+
+                    this.image.id = response.data.data.id
+                    this.image.path = '/' + response.data.data.path
+                    
+                }).catch((error) => {
+
+                    if (error.response.status == 422) {
+                        this.errors = error.response.data.errors
+
+                        return
+                    }
+
+                    this.errors = 'Something went wrong. Try again.'
+                })
             },
             fileChange (e) {
                 this.upload(e).then((response) => {
