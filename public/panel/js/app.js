@@ -47388,6 +47388,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -47499,6 +47500,7 @@ var render = function() {
       "label",
       {
         staticClass: "image-upload",
+        class: { loading: _vm.uploading },
         on: {
           dragover: function($event) {
             $event.preventDefault()

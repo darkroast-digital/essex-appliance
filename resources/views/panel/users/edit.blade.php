@@ -2,6 +2,6 @@
 
 @section('content')
 
-    @include('panel.products.partials._form', [ 'mode' => 'edit', 'endpoint' => route('panel.products.update', $product->id) ])        
+    @include('panel.users.partials._form', [ 'mode' => 'edit', 'endpoint' => route('panel.users.update', $user->id) ])        
 
 @endsection

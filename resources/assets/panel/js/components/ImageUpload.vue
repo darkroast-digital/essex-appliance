@@ -2,6 +2,7 @@
     <div :class="{ 'field-error': errors[this.sendAs] }">
         <label 
             class="image-upload"
+            :class="{ loading: uploading }"
             @dragover.prevent="enter"
             @dragenter.prevent="enter"
             @dragleave.prevent="leave"
