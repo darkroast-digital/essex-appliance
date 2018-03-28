@@ -1,3 +1,23 @@
+@if ($mode === 'edit')
+
+    <div class="modal">
+        <div class="block column-6">
+            <h6>Delete Product: <span class="--has-color-font">{{ $product->name }}</span></h6>
+            <hr>
+            <form action="{{ route('panel.products.destroy', $product->id) }}" method="post">
+                @csrf
+                @method('delete')
+                <p>Hey, looks like you want to delete this product, just make sure this is what you want to do before you follow through.</p>
+                <div class="button-group">
+                    <button type="submit" class="button-error">Delete Product</button>
+                    <a href="#0" class="modal-trigger --has-color-font">Cancel, and go back</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+@endif
+
 <form action="{{ $endpoint }}" method="post">
     @csrf
 
@@ -85,6 +105,9 @@
                 <div class="title-bar">
                     <h6>{{ $mode === 'create' ? 'Add' : 'Edit' }} Product</h6>
                     <div class="button-group">
+                        @if ($mode === 'edit')
+                            <a href="#0" class="modal-trigger --has-color-error">Delete Product</a>
+                        @endif
                         <button type="submit" class="button-secondary">{{ $mode === 'create' ? 'Save' : 'Update' }} Product</button>
                     </div>
                 </div>

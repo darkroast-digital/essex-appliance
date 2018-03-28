@@ -4,7 +4,7 @@
         <div class="block column-6">
             <h6>Delete User: <span class="--has-color-font">{{ $user->name }}</span></h6>
             <hr>
-            <form action="{{ route('panel.users.destroy', $user->id) }}">
+            <form action="{{ route('panel.users.destroy', $user->id) }}" method="post">
                 @csrf
                 @method('delete')
                 <p>Hey, looks like you want to delete this user, just make sure this is what you want to do before you follow through.</p>
