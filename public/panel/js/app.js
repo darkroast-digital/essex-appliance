@@ -14097,6 +14097,55 @@ if (selectContainer) {
     });
 }
 
+// #MODAL
+// =========================================================================
+
+var modalTrigger = document.querySelectorAll('.modal-trigger');
+var modal = document.querySelector('.modal');
+
+var overlay = document.querySelector('.overlay');
+
+if (modalTrigger) {
+    modalTrigger.forEach(function (trigger) {
+        trigger.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            modal.classList.toggle('modal-open');
+            overlay.classList.toggle('overlay-active');
+        });
+    });
+}
+
+if (overlay) {
+    overlay.addEventListener('click', function () {
+        this.classList.remove('overlay-active');
+    });
+}
+
+if (overlay && modal) {
+    overlay.addEventListener('click', function () {
+        modal.classList.remove('modal-open');
+    });
+}
+
+if (modal) {
+
+    $(document).keyup(function (e) {
+        if (e.keyCode === 27) {
+            modal.classList.remove('modal-open');
+        }
+    });
+}
+
+if (overlay) {
+
+    $(document).keyup(function (e) {
+        if (e.keyCode === 27) {
+            overlay.classList.remove('overlay-active');
+        }
+    });
+}
+
 /***/ }),
 /* 14 */
 /***/ (function(module, exports, __webpack_require__) {

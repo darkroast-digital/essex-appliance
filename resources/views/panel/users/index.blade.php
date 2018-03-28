@@ -4,10 +4,10 @@
 
     <div class="container block">
         <div class="column-12 title-bar">
-            <h6>Products</h6>
+            <h6>Users</h6>
             <div class="button-group">
                 <a href="#0" class="--has-color-font">View Deleted</a>
-                <a href="{{ route('panel.products.create') }}" class="button button-secondary">Add New</a>
+                <a href="{{ route('panel.users.create') }}" class="button button-secondary">Add New</a>
             </div>
         </div>
         <hr>
@@ -18,9 +18,7 @@
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
-                    <th>SKU</th>
-                    <th>UPC</th>
-                    <th>Availability</th>
+                    <th>Email</th>
                     <th></th>
                 </tr>
             </thead>
@@ -29,24 +27,33 @@
             
             <tbody>
 
-                @foreach ($products as $product)
+                @foreach ($users as $user)
                 
                     <tr>
-                        <td>{{ $product->id }}</td>
+                        <td>{{ $user->id }}</td>
                         <td>
-                            <a href="{{ route('panel.products.edit', $product->id) }}" class="tooltip-top table-name" data-tooltip="{{ $product->name }}">
-                                {{ \Illuminate\Support\Str::words($product->name, 8) }}
-                            </a>
+                            <div class="table-object">
+                                <div class="avatar avatar-small">
+                                    <img src="{{ $user->avatarPath() }}" alt="{{ $user->name }}">
+                                </div>
+
+                                <!-- /.avatar -->
+
+                                <a href="{{ route('panel.users.edit', $user->id) }}" class="table-name">{{ $user->name }}</a>
+                            </div>
+
+                            <!-- /.table-object -->
+
                         </td>
-                        <td>{{ $product->sku }}</td>
-                        <td>{{ $product->upc }}</td>
+
+                        <!-- /td -->
+
+                        <td>{{ $user->email }}</td>
+
+                        <!-- /td -->
+                        
                         <td>
-                            <span class="label {{ $product->available ? 'label-success' : 'label-error' }}">
-                                {{ $product->available ? 'Available' : 'Unavailable' }}
-                            </span>
-                        </td>
-                        <td>
-                            <a href="{{ route('panel.products.edit', $product->id) }}">
+                            <a href="{{ route('panel.users.edit', $user->id) }}">
                                 <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 20 20" width="20" height="20" class="icon table-icon edit">
                                     <g>
                                         <path d="M12.3 3.7l4 4L4 20H0v-4L12.3 3.7zm1.4-1.4L16 0l4 4-2.3 2.3-4-4z"></path>
@@ -67,7 +74,12 @@
                             <!-- /.trash -->
 
                         </td>
+
+                        <!-- /td -->
+
                     </tr>
+
+                    <!-- /tr -->
 
                 @endforeach
 
@@ -83,7 +95,7 @@
 
     <div class="container --has-margin-bottom">
         <div class="column">
-            {{ $products->links() }}
+            {{ $users->links() }}
         </div>
     </div>
 

@@ -1,3 +1,23 @@
+@if ($mode === 'edit')
+
+    <div class="modal">
+        <div class="block column-6">
+            <h6>Delete User: <span class="--has-color-font">{{ $user->name }}</span></h6>
+            <hr>
+            <form action="{{ route('panel.users.destroy', $user->id) }}">
+                @csrf
+                @method('delete')
+                <p>Hey, looks like you want to delete this user, just make sure this is what you want to do before you follow through.</p>
+                <div class="button-group">
+                    <button type="submit" class="button-error">Delete User</button>
+                    <a href="#0" class="modal-trigger --has-color-font">Cancel, and go back</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+@endif
+
 <form action="{{ $endpoint }}" method="post">
     @csrf
 
@@ -9,7 +29,7 @@
 
         <div class="column-3">
             <div class="block --has-margin-bottom">
-                <image-upload endpoint="{{ route('avatar.store') }}" send-as="image"></image-upload>
+                <image-upload endpoint="{{ route('avatar.store') }}" send-as="image" current-image="{{ $mode === 'create' ? '' : $user->avatarPath() }}"></image-upload>
             </div>
 
             <!-- /.block -->
@@ -23,6 +43,9 @@
                 <div class="title-bar">
                     <h6>{{ $mode === 'create' ? 'Add' : 'Edit' }} User</h6>
                     <div class="button-group">
+                        @if ($mode === 'edit')
+                            <a href="#0" class="modal-trigger --has-color-error">Delete User</a>
+                        @endif
                         <button type="submit" class="button-secondary">{{ $mode === 'create' ? 'Save' : 'Update' }} User</button>
                     </div>
                 </div>

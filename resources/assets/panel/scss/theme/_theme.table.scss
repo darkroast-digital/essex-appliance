@@ -19,4 +19,13 @@
             font-weight: normal;
         }
     }
+
+    &-object {
+        display: flex;
+        align-items: center;
+        
+        .avatar {
+            margin-right: $gutter * .25;
+        }
+    }
 }

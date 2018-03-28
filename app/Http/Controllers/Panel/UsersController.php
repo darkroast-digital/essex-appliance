@@ -38,7 +38,17 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'avatar_id' => $request->image_id,
+            'password' => bcrypt($request->password)
+        ]);
+
+        $request->session()->flash('alert:sucess', 'User was added!');
+
+        return redirect()->route('panel.users.index');
     }
 
     /**
@@ -60,7 +70,7 @@ class UsersController extends Controller
      */
     public function edit(User $user)
     {
-        return view('panel.users.edit', compact('product'));
+        return view('panel.users.edit', compact('user'));
     }
 
     /**
@@ -72,7 +82,23 @@ class UsersController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->phone = $request->phone;
+
+        if ($request->image_id) {
+            $user->avatar_id = $request->image_id;
+        }
+
+        if ($request->password) {
+            $user->password = bcrypt($request->password);
+        }
+
+        $user->save();
+
+        $request->session()->flash('alert:sucess', 'User was updated!');
+
+        return redirect()->route('panel.users.index');
     }
 
     /**

@@ -15,7 +15,11 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name',
+        'email',
+        'phone',
+        'avatar_id',
+        'password',
     ];
 
     /**
@@ -26,4 +30,18 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function avatar()
+    {
+        return $this->hasOne(Image::class, 'id', 'avatar_id');
+    }
+
+    public function avatarPath()
+    {
+        if (!$this->avatar_id) {
+            return 'https://www.gravatar.com/avatar/' . md5($this->email) . '/?d=mm';
+        }
+
+        return secure_url($this->avatar->path());
+    }
 }
