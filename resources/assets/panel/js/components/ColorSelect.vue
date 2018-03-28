@@ -36,7 +36,7 @@
                 console.log(this.selected)
 
                 if (true) {
-                    
+     
                     e.target.classList.remove('selected')
 
                     return
@@ -46,7 +46,6 @@
                 this.selected.push(color)
 
                 e.target.classList.add('selected')
-
 
             }
 
