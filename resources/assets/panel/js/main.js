@@ -1,11 +1,15 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+import InstantSearch from 'vue-instantsearch'
 
 Vue.config.productionTip = false
 
+Vue.use(InstantSearch)
+
 Vue.component('image-upload', require('./components/ImageUpload.vue'));
 Vue.component('color-select', require('./components/ColorSelect.vue'));
+Vue.component('search-bar', require('./components/SearchBar.vue'));
 
 const app = new Vue({
     el: '#app'

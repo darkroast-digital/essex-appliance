@@ -4,10 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Parttimenobody\Tags\Taggable;
+use Laravel\Scout\Searchable;
 
 class Product extends Model
 {
-    use Taggable;
+    use Taggable, Searchable;
 
     protected $fillable = [
         'name',

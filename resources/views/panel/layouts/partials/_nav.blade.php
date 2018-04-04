@@ -38,7 +38,15 @@
                 </ul>
             </li>
         </ul>
+
+        <search-bar 
+            id="{{ config('scout.algolia.id') }}"
+            app-key="{{ env('ALGOLIA_SEARCH') }}"
+            name="products">
+        </search-bar>
+
         <!-- /.nav-menu -->
+
         <div class="nav-user">
             <a href="#0">
                     {{ auth()->user()->name }}
