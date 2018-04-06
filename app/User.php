@@ -39,7 +39,7 @@ class User extends Authenticatable
     public function avatarPath()
     {
         if (!$this->avatar_id) {
-            return 'https://www.gravatar.com/avatar/' . md5($this->email) . '/?d=mm';
+            return 'https://www.gravatar.com/avatar/' . md5($this->email) . '/?d=retro';
         }
 
         return secure_url($this->avatar->path());

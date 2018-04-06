@@ -3,7 +3,9 @@
         <a href="{{ route('home') }}" class="nav-brand">
                 <img src="{{ secure_url('panel/img/logo.svg') }}" alt="{{ env('APP_NAME') }}" draggable="false">
             </a>
+
         <!-- /.nav-brand -->
+
         <ul class="nav-menu">
             <li>
                 <a href="{{ route('panel.dashboard') }}" class="{{ strpos(app('request')->url(), 'dashboard') ? 'active' : '' }}">
@@ -25,6 +27,24 @@
                     <li><a href="{{ route('panel.products.create') }}">Add Product</a></li>
                 </ul>
             </li>
+
+            <!-- /.dropdown -->
+
+            <li class="dropdown">
+                    <a href="{{ route('panel.posts.index') }}" class="{{ strpos(app('request')->url(), 'post') ? 'active' : '' }}">
+                            <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"  viewBox="0 0 20 20">
+                                    <path d="M2 2c0-1.1.9-2 2-2h12a2 2 0 0 1 2 2v18l-8-4-8 4V2z" class="icon"></path>
+                            </svg>
+                            Posts
+                        </a>
+                    <ul class="menu">
+                        <li><a href="{{ route('panel.posts.index') }}">All Posts</a></li>
+                        <li><a href="{{ route('panel.posts.create') }}">Add Post</a></li>
+                    </ul>
+                </li>
+    
+                <!-- /.dropdown -->
+
             <li class="dropdown">
                 <a href="{{ route('panel.users.index') }}" class="{{ strpos(app('request')->url(), 'user') ? 'active' : '' }}">
                         <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 20 20">
@@ -37,15 +57,20 @@
                     <li><a href="{{ route('panel.users.create') }}">Add User</a></li>
                 </ul>
             </li>
+
+            <!-- /.dropdown -->
+
         </ul>
 
-        <search-bar 
+        <!-- /.nav-menu -->
+
+        {{-- <search-bar 
             id="{{ config('scout.algolia.id') }}"
             app-key="{{ env('ALGOLIA_SEARCH') }}"
             name="products">
-        </search-bar>
+        </search-bar> --}}
 
-        <!-- /.nav-menu -->
+        <!-- /search-bar -->
 
         <div class="nav-user">
             <a href="#0">
@@ -55,6 +80,9 @@
                 <img src="{{ auth()->user()->avatarPath() }}" draggable="false">
             </div>
         </div>
+
+        <!-- /.nav-user -->
+
         <div class="hamburger off-canvas-trigger">
             <span></span>
             <span></span>

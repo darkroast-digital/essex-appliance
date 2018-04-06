@@ -5,11 +5,11 @@
     index-name="products"
     >
         <ais-input placeholder="Search products..."></ais-input>
-        <ais-results>
+        <ais-results class="menu">
             <template slot-scope="{ result }">
-            <h2>
+            <p>
                 <ais-highlight :result="result" attribute-name="name"></ais-highlight>
-            </h2>
+            </p>
             </template>
         </ais-results>
     </ais-index>

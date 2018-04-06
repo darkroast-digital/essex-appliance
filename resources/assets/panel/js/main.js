@@ -18,6 +18,25 @@ const app = new Vue({
 
 
 
+// #SIMPLE MDE
+// =========================================================================
+
+var mde = document.getElementById('mde')
+
+if (mde) {
+    var simplemde = new SimpleMDE({ 
+        element: mde,
+        hideIcons: [
+            'fullscreen',
+            'side-by-side',
+            'image'
+        ]
+    });
+}
+
+
+
+
 // #Tabs
 // =========================================================================
 

@@ -87,3 +87,81 @@ body {
         }
     }
 }
+
+
+
+
+// Search
+// =========================================================================
+
+.ais-index {
+    position: relative;
+
+    input {
+        width: 300px;
+        margin-top: $gutter * .5;
+    }
+}
+
+.ais-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    max-height: 500px;
+    width: 600px;
+    padding: $gutter;
+    background: color(white);
+    overflow-y: scroll;
+
+    p {
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    em {
+        background: rgba(color(success), .5);
+        font-weight: bold;
+        font-style: normal;
+    }
+}
+
+
+
+
+// EDITOR
+// =========================================================================
+
+.editor-toolbar {
+    border: none;
+
+    a {
+        font-size: .75rem;
+    }
+}
+
+.cm-s-paper {
+    background: color(grey, 10);
+    border: solid 1px transparent;
+    color: color(font);
+    font-family: $font-body;
+    transition: all .1s ease(inOutSine);
+
+    @if $has-radius {
+        border-radius: radius(small);
+    }
+
+    &:hover {
+
+        @if not $is-dark {
+            border-color: color(grey, 40);
+        } @else {
+            border-color: color(grey, 60);
+        }
+    }
+}
+
+.CodeMirror-placeholder {
+    color: rgba(color(font), .35) !important;
+}
