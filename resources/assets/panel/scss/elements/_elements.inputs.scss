@@ -13,13 +13,8 @@ textarea {
     display: block;
     width: 100%;
     padding: $gutter * .25;
-    background: transparent;
-
-    @if not $is-dark {
-        border: solid 1px color(grey, 30);
-    } @else {
-        border: solid 1px color(grey, 80);
-    }
+    background: color(grey, 10);
+    border: solid 1px transparent;
 
     color: color(font);
     transition: all .1s ease(inOutSine);
@@ -35,7 +30,7 @@ textarea {
     &:hover {
 
         @if not $is-dark {
-            border-color: color(grey, 50);
+            border-color: color(grey, 40);
         } @else {
             border-color: color(grey, 60);
         }
@@ -442,14 +437,14 @@ input[type="range"] {
 // =========================================================================
 
 .toggle {
-    cursor: pointer;
     display: inline-block;
+    cursor: pointer;
 
     &-button {
         position: relative;
         display: block;
-        height: 1rem;
-        width: 2rem;
+        height: 1.25rem;
+        width: 2.5rem;
         
         @if not $is-dark {
             background: color(grey, 30);

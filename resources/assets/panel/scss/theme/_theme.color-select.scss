@@ -1,0 +1,26 @@
+/*
+|--------------------------------------------------------------------------
+| #COLOR SELECT
+|--------------------------------------------------------------------------
+*/
+
+$localGutter: $gutter * .5;
+
+.color-select {
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+        height: 30px;
+        width: calc(20% - #{$localGutter});
+        margin-right: $localGutter;
+        border: solid 1px color(grey, 40);
+        border-radius: radius(small);
+        cursor: pointer;
+        transition: all .05s ease(inOutSine);
+
+        &.selected {
+            @include focus(color(info));
+        }
+    }
+}

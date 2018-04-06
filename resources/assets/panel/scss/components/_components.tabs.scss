@@ -37,11 +37,12 @@
 
         li {
             min-width: 100px;
-            cursor: pointer;
             position: relative;
-            padding: $gutter * .25;
+            padding: $gutter * .25 $gutter * .5;
             text-align: center;
             margin-bottom: 0;
+            margin-right: $gutter * .5;
+            cursor: pointer;
 
             &:after {
                 content: '';
@@ -51,6 +52,10 @@
                 z-index: z(low);
                 width: 100%;
                 transition: all .15s ease(inOutQuad);
+            }
+
+            label {
+                pointer-events: none;
             }
 
             &.tabs-nav-active {
@@ -159,7 +164,7 @@
         opacity: 0;
         pointer-events: none;
         visibility: hidden;
-        padding: $gutter;
+        padding: $gutter 0 0;
 
         &-active {
             position: relative;

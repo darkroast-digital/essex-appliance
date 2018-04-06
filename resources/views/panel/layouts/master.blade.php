@@ -32,13 +32,13 @@
 </head>
 <body>
 
-    @include('theme.layouts.partials.flash._alerts')
+    @include('panel.layouts.partials.flash._alerts')
 
     {{--  /alerts  --}}
     
     <div id="app">
 
-        @include('theme.layouts.partials._offCanvas')
+        @include('panel.layouts.partials._offCanvas')
 
         <!-- /.off-canvas -->
 
@@ -46,13 +46,15 @@
 
         <!-- /.overlay -->
 
+        @include('panel.layouts.partials._nav')
+
         <main class="content">
             @yield('content')
         </main>
 
         <!--  /.content -->
 
-        @include('theme.layouts.partials._footer')
+        @include('panel.layouts.partials._footer')
 
         <!-- /.footer -->
 
