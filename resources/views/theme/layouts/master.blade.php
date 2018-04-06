@@ -49,9 +49,9 @@
     
     <div id="app">
 
-        @include('theme.layouts.partials._nav')
+        @include('theme.layouts.partials._header')
 
-        <!-- /.nav -->
+        <!-- /.header -->
 
         @include('theme.layouts.partials._offCanvas')
 

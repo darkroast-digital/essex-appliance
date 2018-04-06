@@ -5008,3 +5008,43 @@ th {
 | #THEME
 |--------------------------------------------------------------------------
 */
+.header .top-bar {
+  background: #191919;
+}
+
+.header .top-bar__container {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: .5rem 0;
+}
+
+.header .top-bar__container h5, .header .top-bar__container p {
+  color: #ffffff;
+  margin-bottom: 0;
+}
+
+.header .top-bar__container h5 {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.header .top-bar__container p {
+  font-size: .9rem;
+}
+
+.header .brand {
+  padding: 1rem 0;
+}
+
+.header .brand__container {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
