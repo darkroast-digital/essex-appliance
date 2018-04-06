@@ -25,7 +25,11 @@
         "vue": "^2.5.7"
     },
     "dependencies": {
+<<<<<<< HEAD
         "slick-carousel": "^1.8.1",
+=======
+        "simplemde": "^1.11.2",
+>>>>>>> acfb9927e2327de2c72d2bb5e4e8b467946054df
         "vue-instantsearch": "^1.5.2"
     }
 }

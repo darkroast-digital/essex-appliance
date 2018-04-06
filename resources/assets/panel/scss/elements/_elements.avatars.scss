@@ -8,7 +8,7 @@
 
 
 .avatar {
-    --avatarSize: $gutter * 1.5;
+    --avatarSize: 1.5rem;
     
     position: relative;
     height: var(--avatarSize);
@@ -22,11 +22,11 @@
     }
 
     &-medium {
-        --avatarSize: $gutter * 3;   
+        --avatarSize: $gutter * 1.5;   
     }
 
     &-large {
-        --avatarSize: $gutter * 4.5;   
+        --avatarSize: $gutter * 2;   
     }
 
     &[data-indicator] {

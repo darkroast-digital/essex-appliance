@@ -135,10 +135,17 @@
 @import 'components/components.notifications';
 @import 'components/components.navs';
 @import 'components/components.off-canvas';
+@import 'components/components.pagination';
 @import 'components/components.selects';
 @import 'components/components.tables';
 @import 'components/components.tabs';
 
+
+
+// #VENDOR
+// =========================================================================
+
+@import '~simplemde/dist/simplemde.min';
 
 
 
@@ -146,4 +153,7 @@
 // #THEME
 // =========================================================================
 
+@import 'theme/theme.color-select';
+@import 'theme/theme.image-upload';
+@import 'theme/theme.table';
 @import 'theme/theme.style';

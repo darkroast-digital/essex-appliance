@@ -31,9 +31,9 @@ $has-radius: true;
 // #SHADOWS
 // =========================================================================
 
-$has-shadow: false;
+$has-shadow: true;
 
-$button-has-shadow: false;
+$button-has-shadow: true;
 
 
 
@@ -41,8 +41,8 @@ $button-has-shadow: false;
 // #NAV
 // =========================================================================
 
-$nav-fixed: false;
+$nav-fixed: true;
 
 $menu-right: false;
 
-$nav-underlined: true;
+$nav-underlined: false;

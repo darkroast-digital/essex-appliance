@@ -78,7 +78,7 @@ $gutter: $global-font-size * $global-line-height;
 // #GRID
 // =========================================================================
 
-@mixin grid($display: flex, $maw: 80%, $direction: row, $mobile: false) {
+@mixin grid($display: flex, $maw: 1200px, $direction: row, $mobile: false) {
     display: $display;
     flex-wrap: wrap;
     width: 100%;

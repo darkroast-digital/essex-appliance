@@ -14,7 +14,7 @@ label {
 
     .field {
         flex: 1 1 auto;
-        margin-right: $gutter * .5;
+        margin-right: $gutter;
 
         &:last-of-type {
             margin-right: 0;
@@ -23,10 +23,16 @@ label {
 }
 
 .field {
-    margin-bottom: $gutter * .5;
+    margin-bottom: $gutter;
 
     input {
         margin-bottom: 0;
+    }
+
+    &-inline {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
     
     &-helper {
