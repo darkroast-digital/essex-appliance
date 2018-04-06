@@ -1,12 +1,16 @@
 @extends('theme.layouts.master')
 
+@section('pageClass', 'home')
+
 @section('content')
 
 <section class="hero">
-    <div class="hero__container container">
-        <h1>Come in & see the</h1>
-        <h1><span>DIFFERENCE</span></h1>
-        <p>30 years of quality service consectetur adipiscing elit, sed do eiusmod tempor dolor sit consectetur adipiscing elit, sed</p>
+    <div class="hero__container container container-block">
+        <div class="grid-container">
+            <h1>Come in & see the</h1>
+            <h2>DIFFERENCE</h2>
+            <p>30 years of quality service consectetur adipiscing elit, sed do eiusmod tempor dolor sit consectetur adipiscing elit, sed do eiusmod tempor dolor</p>
+        </div>
         <a href="" class="button">Learn More</a>
     </div>
 </section>
@@ -17,11 +21,13 @@
     <div class="main__container container">
 
         <div class="cta">
-            <h3>Worth the drive to</h3>
-            <h3><span>Beautiful Downtown Essex</span></h3>
-            <p>Essex Appliance Center is the premier place for all of your appliance needs in Southwest Ontario.</p>
-            <p>With over 12,000 square feet of showroom space, and 15,000 square feet of warehouse, we have a wide selection of appliances for you to research and compare.</p>
-            <a href="" class="button">Learn more about us</a>
+            <div class="cta-wrapper">
+                <h3>Worth the drive to</h3>
+                <h3><span>Beautiful Downtown Essex</span></h3>
+                <p>Essex Appliance Center is the premier place for all of your appliance needs in Southwest Ontario.</p>
+                <p>With over 12,000 square feet of showroom space, and 15,000 square feet of warehouse, we have a wide selection of appliances for you to research and compare.</p>
+                <a href="" class="button">Learn more about us</a>
+            </div>
         </div>
 
         {{-- End CTA --}}
@@ -130,9 +136,7 @@
                     </a>
                 </div>
 
-                <div class="column-12">
-                    <a href="" class="button">Find More Products</a>
-                </div>
+                <a href="" class="button">Find More Products</a>
             </div>
         </div>
 
@@ -169,7 +173,7 @@
 
 <section class="hot-buys">
     <div class="hot-buys__container container">
-        <div class="column-7 card">
+        <div class="column-7 sales">
             <h3><span>Hot Buys</span> & In-Store Sales</h3>
 
             <div class="hot-buys-slider container--full">
@@ -182,19 +186,50 @@
                         <h4><a href="">Samsung A500 Washer-Dryer Combo</a></h4>
                         <p>4.9cf Traditional Top Load Washer with Precise Fill Option</p>
                         <p>8.0cf Traditional Dryer With Timed or Sensor Dry Options</p>
-                        <h4>Original <span>$1049</span></h4>
-                        <h3>Now Only <span>$849</span></h3>
+                        <h4 class="original">Original <span>$1049</span></h4>
+                        <h4 class="sale-price">Now Only <span>$849</span></h4>
                     </div>
                 </div>
 
                 {{-- End Hot-Buys Slide 1 --}}
+
+                <div class="hot-buys-slide container--full">
+                    <div class="column-7 image-wrapper">
+                        <img src="/theme/img/top-buy-slide.jpg" draggable="false">
+                    </div>
+
+                    <div class="column-5 content-wrapper">
+                        <h4><a href="">Samsung A500 Washer-Dryer Combo</a></h4>
+                        <p>4.9cf Traditional Top Load Washer with Precise Fill Option</p>
+                        <p>8.0cf Traditional Dryer With Timed or Sensor Dry Options</p>
+                        <h4 class="original">Original <span>$1049</span></h4>
+                        <h4 class="sale-price">Now Only <span>$849</span></h4>
+                    </div>
+                </div>
+
+                {{-- End Hot-Buys Slide 2 --}}
+
+                <div class="hot-buys-slide container--full">
+                    <div class="column-7 image-wrapper">
+                        <img src="/theme/img/top-buy-slide.jpg" draggable="false">
+                    </div>
+
+                    <div class="column-5 content-wrapper">
+                        <h4><a href="">Samsung A500 Washer-Dryer Combo</a></h4>
+                        <p>4.9cf Traditional Top Load Washer with Precise Fill Option</p>
+                        <p>8.0cf Traditional Dryer With Timed or Sensor Dry Options</p>
+                        <h4 class="original">Original <span>$1049</span></h4>
+                        <h4 class="sale-price">Now Only <span>$849</span></h4>
+                    </div>
+                </div>
+
+                {{-- End Hot-Buys Slide 3 --}}
             </div>
 
             {{-- End Hot-Buys Slider --}}
 
-            <div class="ribbon">
-                <a href=""><span>Click Here To Find More</span> Hot Buys & In-Store Sales <i class="fas fa-caret-right"></i></a>
-            </div>
+            <div class="ribbon"></div>
+            <a href="" class="ribbon-link"><span>Click Here To Find More</span> Hot Buys & In-Store Sales <i class="fas fa-caret-right"></i></a>
         </div>
     </div>
 </section>
@@ -203,7 +238,9 @@
 
 <section class="new">
     <div class="new__container container">
-        <h2>What's New</h2>
+        <div class="column-12">
+            <h2>What's New</h2>
+        </div>
 
         <div class="new-slider container--full">
             <div class="new-slide">
@@ -271,6 +308,75 @@
 
             {{-- End New Slide 5 --}}
 
+            <div class="new-slide">
+                <a href="">
+                    <div class="image-wrapper">
+                        <img src="/theme/img/product-1.jpg" draggable="false">
+                    </div>
+
+                    <p>KitchenAid&reg; 30-Inch 5 Burner Dual Fuel Double Oven Convection Range</p>
+                    <p><strong>$989.00</strong></p>
+                </a>
+            </div>
+
+            {{-- End New Slide 1 --}}
+
+            <div class="new-slide">
+                <a href="">
+                    <div class="image-wrapper">
+                        <img src="/theme/img/product-2.jpg" draggable="false">
+                    </div>
+
+                    <p>Amana&reg; 29-inch Wide Bottom-Freezer Refrigerator with Garden Fresh&trade;</p>
+                    <p><strong>$789.00</strong></p>
+                </a>
+            </div>
+
+            {{-- End New Slide 2 --}}
+
+            <div class="new-slide">
+                <a href="">
+                    <div class="image-wrapper">
+                        <img src="/theme/img/product-3.jpg" draggable="false">
+                    </div>
+
+                    <p>Maytag&reg; Top Load Dryer with the PowerDry System and Extra Moisture Sensor</p>
+                    <p><strong>$599.00</strong></p>
+                </a>
+            </div>
+
+            {{-- End New Slide 3 --}}
+
+            <div class="new-slide">
+                <a href="">
+                    <div class="image-wrapper">
+                        <img src="/theme/img/product-4.jpg" draggable="false">
+                    </div>
+
+                    <p>Jenn-Air&reg; 72" Counter Depth French Door Refrigeratore</p>
+                    <p><strong>$1259.00</strong></p>
+                </a>
+            </div>
+
+            {{-- End New Slide 4 --}}
+
+            <div class="new-slide">
+                <a href="">
+                    <div class="image-wrapper">
+                        <img src="/theme/img/product-5.jpg" draggable="false">
+                    </div>
+
+                    <p>Maytag&reg; 7.0 cu. ft. Dryer with Steam Enhanced Cycles</p>
+                    <p><strong>$699.00</strong></p>
+                </a>
+            </div>
+
+            {{-- End New Slide 5 --}}
+
+
+
+
+
         </div>
     </div>
 </section>
@@ -297,10 +403,10 @@
                     <img src="/theme/img/post-1.jpg" draggable="false">
                 </div>
 
-                <div class="content-wrapper">
+                <div class="content-wrapper container--full">
                     <div class="date">
-                        <p><span>08</span></p>
-                        <p>JAN</p>
+                        <p><span>08</span><br/>
+                        JAN</p>
                     </div>
 
                     <div class="details">
@@ -318,10 +424,10 @@
                     <img src="/theme/img/post-2.jpg" draggable="false">
                 </div>
 
-                <div class="content-wrapper">
+                <div class="content-wrapper container--full">
                     <div class="date">
-                        <p><span>06</span></p>
-                        <p>JAN</p>
+                        <p><span>06</span><br/>
+                        JAN</p>
                     </div>
 
                     <div class="details">
@@ -339,10 +445,10 @@
                     <img src="/theme/img/post-3.jpg" draggable="false">
                 </div>
 
-                <div class="content-wrapper">
+                <div class="content-wrapper container--full">
                     <div class="date">
-                        <p><span>05</span></p>
-                        <p>JAN</p>
+                        <p><span>05</span><br/>
+                        JAN</p>
                     </div>
 
                     <div class="details">
@@ -360,56 +466,5 @@
 </section>
 
 {{-- End Posts --}}
-
-<section class="brands">
-    <div class="brands__container container">
-        <div class="brands-slider">
-            <div class="brand-slide">
-                <a href="">
-                    <img src="/theme/img/whirlpool.jpg" alt="Whirlpool" draggable="false">
-                </a>
-            </div>
-
-            {{-- End Brands Slide 1 --}}
-
-            <div class="brand-slide">
-                <a href="">
-                    <img src="/theme/img/maytag.jpg" alt="Maytag" draggable="false">
-                </a>
-            </div>
-
-            {{-- End Brands Slide 2 --}}
-
-            <div class="brand-slide">
-                <a href="">
-                    <img src="/theme/img/kitchenaid.jpg" alt="KitchenAid" draggable="false">
-                </a>
-            </div>
-
-            {{-- End Brands Slide 3 --}}
-
-            <div class="brand-slide">
-                <a href="">
-                    <img src="/theme/img/jenn-air.jpg" alt="Jenn-Air" draggable="false">
-                </a>
-            </div>
-
-            {{-- End Brands Slide 4 --}}
-
-            <div class="brand-slide">
-                <a href="">
-                    <img src="/theme/img/amana.jpg" alt="Amana" draggable="false">
-                </a>
-            </div>
-
-            {{-- End Brands Slide 5 --}}
-
-        </div>
-
-        {{-- End Brands Slider --}}
-    </div>
-</section>
-
-{{-- End Brands --}}
 
 @endsection

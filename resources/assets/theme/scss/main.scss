@@ -139,11 +139,12 @@
 @import 'components/components.tables';
 @import 'components/components.tabs';
 
-
+@import '~slick-carousel/slick/slick';
 
 
 
 // #THEME
 // =========================================================================
 
+@import 'theme/theme.home';
 @import 'theme/theme.style';

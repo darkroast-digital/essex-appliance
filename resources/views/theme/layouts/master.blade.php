@@ -47,7 +47,7 @@
 
     {{--  /alerts  --}}
     
-    <div id="app">
+    <div id="app" class="@yield('pageClass')">
 
         @include('theme.layouts.partials._header')
 

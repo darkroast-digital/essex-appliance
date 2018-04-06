@@ -1,7 +1,7 @@
 <div class="off-canvas">
     <ul class="off-canvas-menu">
         <li><a href="{{ route('home') }}">Home</a></li>
-        <li><a href="">Products</a></li>
+        <li><a href="{{ route('products') }}">Products</a></li>
         <li><a href="">Promotions</a></li>
         <li><a href="">In-Store Sales</a></li>
         <li><a href="">Services</a></li>

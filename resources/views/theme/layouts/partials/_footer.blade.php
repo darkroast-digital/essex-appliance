@@ -1,11 +1,102 @@
+<section class="brands">
+    <div class="brands__container container">
+        <div class="brands-slider">
+            <div class="brand-slide">
+                <a href="">
+                    <img src="/theme/img/whirlpool.jpg" alt="Whirlpool" draggable="false">
+                </a>
+            </div>
+
+            {{-- End Brands Slide 1 --}}
+
+            <div class="brand-slide">
+                <a href="">
+                    <img src="/theme/img/maytag.jpg" alt="Maytag" draggable="false">
+                </a>
+            </div>
+
+            {{-- End Brands Slide 2 --}}
+
+            <div class="brand-slide">
+                <a href="">
+                    <img src="/theme/img/kitchenaid.jpg" alt="KitchenAid" draggable="false">
+                </a>
+            </div>
+
+            {{-- End Brands Slide 3 --}}
+
+            <div class="brand-slide">
+                <a href="">
+                    <img src="/theme/img/jenn-air.jpg" alt="Jenn-Air" draggable="false">
+                </a>
+            </div>
+
+            {{-- End Brands Slide 4 --}}
+
+            <div class="brand-slide">
+                <a href="">
+                    <img src="/theme/img/amana.jpg" alt="Amana" draggable="false">
+                </a>
+            </div>
+
+            {{-- End Brands Slide 5 --}}
+
+            <div class="brand-slide">
+                <a href="">
+                    <img src="/theme/img/whirlpool.jpg" alt="Whirlpool" draggable="false">
+                </a>
+            </div>
+
+            {{-- End Brands Slide 1 --}}
+
+            <div class="brand-slide">
+                <a href="">
+                    <img src="/theme/img/maytag.jpg" alt="Maytag" draggable="false">
+                </a>
+            </div>
+
+            {{-- End Brands Slide 2 --}}
+
+            <div class="brand-slide">
+                <a href="">
+                    <img src="/theme/img/kitchenaid.jpg" alt="KitchenAid" draggable="false">
+                </a>
+            </div>
+
+            {{-- End Brands Slide 3 --}}
+
+            <div class="brand-slide">
+                <a href="">
+                    <img src="/theme/img/jenn-air.jpg" alt="Jenn-Air" draggable="false">
+                </a>
+            </div>
+
+            {{-- End Brands Slide 4 --}}
+
+            <div class="brand-slide">
+                <a href="">
+                    <img src="/theme/img/amana.jpg" alt="Amana" draggable="false">
+                </a>
+            </div>
+
+            {{-- End Brands Slide 5 --}}
+
+        </div>
+
+        {{-- End Brands Slider --}}
+    </div>
+</section>
+
+{{-- End Brands --}}
+
 <footer class="footer">
     <div class="banner">
         <div class="banner__container container">
-            <div class="image-wrapper">
+            <div class="image-wrapper column-2">
                 <img src="/theme/img/30th-ribbon.png" alt="30th anniversary" draggable="false">
             </div>
 
-            <div class="content-wrapper">
+            <div class="content-wrapper column-10">
                 <h2>Locally Owned & Operated for Over 30 Years</h2>
                 <p>Essex Appliance Center is proud to be celebrating its 30th Anniversary in July of 2016 offering the widest selection of home appliances in the area. Locally owned and operated by Gord and Cathy Stevens, Essex Appliance is "flexible in everyone's pocket book," offering both low priced, high volume value brands and competitively priced premium brands.</p>
             </div>
@@ -67,8 +158,8 @@
 
             <div class="column nav-links">
                 <h3>Navigation</h3>
-                <a href="">Home</a>
-                <a href="">Products</a>
+                <a href="{{ route('home') }}">Home</a>
+                <a href="{{ route('products') }}">Products</a>
                 <a href="">Promotions</a>
                 <a href="">In-Store Sales</a>
                 <a href="">Services</a>
