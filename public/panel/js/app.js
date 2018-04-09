@@ -34037,6 +34037,8 @@ Vue.component('ad-upload', __webpack_require__(390));
 Vue.component('image-upload', __webpack_require__(393));
 Vue.component('color-select', __webpack_require__(396));
 Vue.component('search-bar', __webpack_require__(399));
+Vue.component('variations-list', __webpack_require__(411));
+Vue.component('variation-item', __webpack_require__(408));
 
 var app = new Vue({
     el: '#app'
@@ -89483,6 +89485,447 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 404 */,
+/* 405 */,
+/* 406 */,
+/* 407 */,
+/* 408 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(59)
+/* script */
+var __vue_script__ = __webpack_require__(409)
+/* template */
+var __vue_template__ = __webpack_require__(410)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/panel/js/components/variations/VariationItem.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-296ec819", Component.options)
+  } else {
+    hotAPI.reload("data-v-296ec819", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 409 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ImageUpload__ = __webpack_require__(393);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ImageUpload___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__ImageUpload__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ColorSelect__ = __webpack_require__(396);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ColorSelect___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__ColorSelect__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+
+    components: {
+        ImageUpload: __WEBPACK_IMPORTED_MODULE_0__ImageUpload___default.a,
+        ColorSelect: __WEBPACK_IMPORTED_MODULE_1__ColorSelect___default.a
+    },
+
+    props: {
+        sku: {
+            default: ''
+        }
+    },
+
+    data: function data() {
+        return {
+            isActive: false,
+            isSaving: false
+        };
+    },
+
+
+    methods: {
+        toggleVisible: function toggleVisible(e) {
+            this.isActive = !this.isActive;
+        },
+        saveVariation: function saveVariation(e) {
+            this.isSaving = !this.isSaving;
+        }
+    }
+
+});
+
+/***/ }),
+/* 410 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("li", [
+    _c(
+      "div",
+      { staticClass: "variation-modal", class: { "modal-open": _vm.isActive } },
+      [
+        _c("div", { staticClass: "block column-6" }, [
+          _c("h6", [_vm._v("Add Product Variation: ")]),
+          _vm._v(" "),
+          _c("hr"),
+          _vm._v(" "),
+          _c("form", { attrs: { action: "#0" } }, [
+            _c("div", { staticClass: "field" }, [
+              _c("label", { attrs: { for: "variation-sku" } }, [
+                _vm._v("Variation SKU")
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                attrs: { type: "text", name: "variation-sku" },
+                domProps: { value: _vm.sku }
+              })
+            ]),
+            _vm._v(" "),
+            _vm._m(0),
+            _vm._v(" "),
+            _c("hr"),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "field" },
+              [
+                _c("label", [_vm._v("Variation Color")]),
+                _vm._v(" "),
+                _c("color-select")
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "field" },
+              [
+                _c("label", [_vm._v("Variation Images")]),
+                _vm._v(" "),
+                _c("image-upload")
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "button-group" }, [
+              _c(
+                "button",
+                {
+                  class: { "is-loading": _vm.isSaving },
+                  attrs: { type: "submit" },
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      return _vm.saveVariation($event)
+                    }
+                  }
+                },
+                [_vm._v("Save Variation")]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "--has-color-font",
+                  attrs: { href: "#0" },
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      return _vm.toggleVisible($event)
+                    }
+                  }
+                },
+                [_vm._v("Cancel, and go back")]
+              )
+            ])
+          ])
+        ])
+      ]
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        staticClass: "variation-overlay",
+        class: { "overlay-active": _vm.isActive },
+        on: {
+          click: function($event) {
+            $event.preventDefault()
+            return _vm.toggleVisible($event)
+          }
+        }
+      },
+      [_c("span", { staticClass: "overlay-close" }, [_vm._v("×")])]
+    ),
+    _vm._v(" "),
+    _c(
+      "a",
+      {
+        attrs: { href: "#0" },
+        on: {
+          click: function($event) {
+            $event.preventDefault()
+            return _vm.toggleVisible($event)
+          }
+        }
+      },
+      [_vm._v(_vm._s(_vm.sku))]
+    )
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-row" }, [
+      _c("div", { staticClass: "field field-inline --has-no-margin-bottom" }, [
+        _c("label", [_vm._v("Available:")]),
+        _vm._v(" "),
+        _c("label", { staticClass: "toggle" }, [
+          _c("input", { attrs: { type: "checkbox", name: "available" } }),
+          _vm._v(" "),
+          _c("span", { staticClass: "toggle-button" })
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "field field-inline --has-no-margin-bottom" }, [
+        _c("label", [_vm._v("Featured:")]),
+        _vm._v(" "),
+        _c("label", { staticClass: "toggle" }, [
+          _c("input", { attrs: { type: "checkbox", name: "featured" } }),
+          _vm._v(" "),
+          _c("span", { staticClass: "toggle-button" })
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-296ec819", module.exports)
+  }
+}
+
+/***/ }),
+/* 411 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(59)
+/* script */
+var __vue_script__ = __webpack_require__(412)
+/* template */
+var __vue_template__ = __webpack_require__(413)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/panel/js/components/variations/VariationsList.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-03f5b08a", Component.options)
+  } else {
+    hotAPI.reload("data-v-03f5b08a", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 412 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__VariationItem__ = __webpack_require__(408);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__VariationItem___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__VariationItem__);
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+
+    components: {
+        VariationItem: __WEBPACK_IMPORTED_MODULE_0__VariationItem___default.a
+    }
+
+});
+
+/***/ }),
+/* 413 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "ul",
+    { staticClass: "variation-list" },
+    [_c("variation-item", { attrs: { sku: "a98dfj30sdf" } })],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-03f5b08a", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

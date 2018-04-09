@@ -28,8 +28,16 @@
     <div class="container">
 
         <div class="column-3">
+
             <div class="block --has-margin-bottom">
-                <image-upload></image-upload>
+                <label>Product Variations</label>
+                <div class="divider"></div>
+                <variations-list></variations-list>
+
+                <!-- /.variation-list -->
+
+                <div class="divider"></div>
+                <button>Add Variation</button>
             </div>
 
             <!-- /.block -->
@@ -83,20 +91,33 @@
     
                     <!-- /.field -->
 
-                    <div class="field field-inline">
+                    <div class="field field-inline --has-no-margin-bottom">
                         <label>Available:</label>
                         <label class="toggle">
-                            <input type="checkbox" name="featured" {{ isset($product->available) && $product->available ? 'checked' : '' }}>
+                            <input type="checkbox" name="available" {{ isset($product->available) && $product->available ? 'checked' : '' }}>
 
                             <span class="toggle-button"></span>
                         </label>
                     </div>
+
+                    <!-- /.field -->
+
+                    <div class="field field-inline --has-no-margin-bottom">
+                        <label>Featured:</label>
+                        <label class="toggle">
+                            <input type="checkbox" name="available" {{ isset($product->available) && $product->available ? 'checked' : '' }}>
+
+                            <span class="toggle-button"></span>
+                        </label>
+                    </div>
+
+                    <!-- /.featured -->
             </div>
 
             <!-- /.block -->
 
             <div class="block --has-margin-bottom">
-                <label>Choose Appliance Colours</label>
+                <label>Choose Appliance Colour</label>
                 <color-select></color-select>
             </div>
 
@@ -129,14 +150,14 @@
                 <!-- /.field -->
 
                 <div class="form-row">
-                    <div class="field">
+                    <div class="field --has-no-margin-bottom">
                         <label for="sku">Product SKU</label>
                         <input type="text" name="sku" placeholder="Add product SKU..." value="{{ isset($product->sku) ? $product->sku : '' }}">
                     </div>
 
                     <!-- /.field -->
 
-                    <div class="field">
+                    <div class="field --has-no-margin-bottom">
                         <label for="upc">Product UPC</label>
                         <input type="text" name="upc" placeholder="Add product UPC..." value="{{ isset($product->upc) ? $product->upc : '' }}">
                     </div>
@@ -152,7 +173,7 @@
 
             <div class="block --has-margin-bottom">
 
-                <div class="field">
+                <div class="field --has-no-margin-bottom">
                     <label for="description">Product Description</label>
                     <textarea name="description" placeholder="Add product description...">{{ isset($product->description) ? $product->description : '' }}</textarea>
                 </div>
@@ -193,6 +214,12 @@
 
                 <!-- /.tabs -->
 
+            </div>
+
+            <!-- /.block -->
+
+            <div class="block --has-margin-bottom">
+                <image-upload></image-upload>
             </div>
 
             <!-- /.block -->
