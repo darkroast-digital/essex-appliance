@@ -37,13 +37,16 @@
             <div class="block --has-margin-bottom">
                 <div class="field">
 
-                    <label for="type">Appliance Type</label>
+                    <label for="category">Appliance Type</label>
                     <div class="select">
-                        <select name="type">
-                            <option disabled selected>Choose Type</option>
-                            <option value="one">One</option>
-                            <option value="one">One</option>
-                            <option value="one">One</option>
+                        <select name="category">
+                            @if ($mode === 'create' || isset($product) && !$product->category()) 
+                                <option disabled selected>Choose Category</option>
+                            @endif
+
+                            @foreach ($categories as $category)
+                                <option value="{{ $category->name }}" {{ isset($product) && $product->category() === $category->name ? 'selected' : '' }}>{{ $category->name }}</option>
+                            @endforeach
                         </select>
 
                         <span class="select-input"></span>
@@ -61,10 +64,13 @@
                         <label for="brand">Appliance Brand</label>
                         <div class="select">
                             <select name="brand">
-                                <option disabled selected>Choose Brand</option>
-                                <option value="one">One</option>
-                                <option value="one">One</option>
-                                <option value="one">One</option>
+                                @if ($mode === 'create' || isset($product) && !$product->brand()) 
+                                    <option disabled selected>Choose Brand</option>
+                                @endif
+    
+                                @foreach ($brands as $brand)
+                                    <option value="{{ $brand->name }}" {{ isset($product) && $product->brand() === $brand->name ? 'selected' : '' }}>{{ $brand->name }}</option>
+                                @endforeach
                             </select>
     
                             <span class="select-input"></span>

@@ -17,6 +17,8 @@ Route::group(['prefix' => 'panel', 'middleware' => 'auth', 'namespace' => 'Panel
     Route::delete('/{type}/categories/delete', 'CategoriesController@delete')->name('categories.delete');
 });
 
+Route::get('/logout', 'Auth\LoginController@logout')->name('auth.logout');
+
 Route::post('/media/ad', 'Media\\AdImageController@store')->name('adImage.store');
 Route::post('/media/avatar', 'Media\\AvatarController@store')->name('avatar.store');
 Route::post('/media/post', 'Media\\PostImageController@store')->name('postImage.store');

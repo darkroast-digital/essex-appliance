@@ -84,13 +84,18 @@
 
         <!-- /search-bar -->
 
-        <div class="nav-user">
+        <div class="nav-user dropdown">
             <a href="#0">
                     {{ auth()->user()->name }}
                 </a>
             <div class="avatar avatar-small">
                 <img src="{{ auth()->user()->avatarPath() }}" draggable="false">
             </div>
+
+            <ul class="menu">
+                <li><a href="{{ route('panel.users.edit', auth()->user()->id ) }}">Account</a></li>
+                <li><a href="{{ route('auth.logout') }}">Logout</a></li>
+            </ul>
         </div>
 
         <!-- /.nav-user -->
