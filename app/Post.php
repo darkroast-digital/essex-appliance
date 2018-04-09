@@ -44,11 +44,6 @@ class Post extends Model
         return secure_url($this->image->path());
     }
 
-    public function setSlugAttribute($value)
-    {
-        $this->attributes['slug'] = str_slug($this->title);
-    }
-
     public function firstTag()
     {
         if (!$this->isTagged()) {
