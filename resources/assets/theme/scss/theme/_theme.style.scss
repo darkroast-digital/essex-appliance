@@ -124,6 +124,15 @@
                 display:flex;
                 align-items:center;
                 justify-content:flex-end;
+
+                a {
+                    color:black;
+                    transition:color .2s ease;
+
+                    &:hover {
+                        color:$primary;
+                    }
+                }
             }
         }
     }
@@ -142,6 +151,7 @@
     &__container {
 
         .brands-slider {
+            width:100%;
             max-width:100%;
             position:relative;
 
@@ -319,6 +329,49 @@
             p {
                 margin-top:.75rem;
                 font-size:.9rem;
+            }
+        }
+    }
+}
+
+
+
+
+// #BREADCRUMBS
+// =========================================================================
+
+.breadcrumbs {
+    display:flex;
+    margin-bottom:1rem;
+
+    li {
+        padding-right:.5rem;
+        padding-left:.5rem;
+        position:relative;
+
+        &:after {
+            content:'/';
+            position:absolute;
+            right:-.25rem;
+        }
+
+        &:last-of-type {
+
+            &:after {
+                content:none;
+            }
+        }
+
+        a {
+            text-decoration:none;
+            text-transform:capitalize;
+            color:$font-color;
+            transition:color .2s ease;
+            font-size:1rem;
+            font-weight:600;
+
+            &:hover {
+                color:$primary;
             }
         }
     }

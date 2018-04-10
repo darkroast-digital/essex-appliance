@@ -1330,7 +1330,7 @@
                 }
             ],
             "description": "A laravel tagging package.",
-            "time": "2018-02-12 14:21:33"
+            "time": "2018-02-12T14:21:33+00:00"
         },
         {
             "name": "psr/container",
@@ -3012,7 +3012,7 @@
                 "generators",
                 "laravel"
             ],
-            "time": "2018-02-10 22:36:34"
+            "time": "2018-02-10T22:36:34+00:00"
         },
         {
             "name": "mockery/mockery",

@@ -2,7 +2,7 @@
     <div class="brands__container container">
         <div class="brands-slider">
             <div class="brand-slide">
-                <a href="">
+                <a href="https://www.whirlpool.ca/en_ca.html" target="_blank">
                     <img src="/theme/img/whirlpool.jpg" alt="Whirlpool" draggable="false">
                 </a>
             </div>
@@ -10,7 +10,7 @@
             {{-- End Brands Slide 1 --}}
 
             <div class="brand-slide">
-                <a href="">
+                <a href="https://www.maytag.ca/en_ca.html" target="_blank">
                     <img src="/theme/img/maytag.jpg" alt="Maytag" draggable="false">
                 </a>
             </div>
@@ -18,7 +18,7 @@
             {{-- End Brands Slide 2 --}}
 
             <div class="brand-slide">
-                <a href="">
+                <a href="http://www.kitchenaid.ca/en_CA/" target="_blank">
                     <img src="/theme/img/kitchenaid.jpg" alt="KitchenAid" draggable="false">
                 </a>
             </div>
@@ -26,7 +26,7 @@
             {{-- End Brands Slide 3 --}}
 
             <div class="brand-slide">
-                <a href="">
+                <a href="https://www.jennair.ca" target="_blank">
                     <img src="/theme/img/jenn-air.jpg" alt="Jenn-Air" draggable="false">
                 </a>
             </div>
@@ -34,47 +34,7 @@
             {{-- End Brands Slide 4 --}}
 
             <div class="brand-slide">
-                <a href="">
-                    <img src="/theme/img/amana.jpg" alt="Amana" draggable="false">
-                </a>
-            </div>
-
-            {{-- End Brands Slide 5 --}}
-
-            <div class="brand-slide">
-                <a href="">
-                    <img src="/theme/img/whirlpool.jpg" alt="Whirlpool" draggable="false">
-                </a>
-            </div>
-
-            {{-- End Brands Slide 1 --}}
-
-            <div class="brand-slide">
-                <a href="">
-                    <img src="/theme/img/maytag.jpg" alt="Maytag" draggable="false">
-                </a>
-            </div>
-
-            {{-- End Brands Slide 2 --}}
-
-            <div class="brand-slide">
-                <a href="">
-                    <img src="/theme/img/kitchenaid.jpg" alt="KitchenAid" draggable="false">
-                </a>
-            </div>
-
-            {{-- End Brands Slide 3 --}}
-
-            <div class="brand-slide">
-                <a href="">
-                    <img src="/theme/img/jenn-air.jpg" alt="Jenn-Air" draggable="false">
-                </a>
-            </div>
-
-            {{-- End Brands Slide 4 --}}
-
-            <div class="brand-slide">
-                <a href="">
+                <a href="http://amanacanada.ca/" target="_blank">
                     <img src="/theme/img/amana.jpg" alt="Amana" draggable="false">
                 </a>
             </div>
@@ -160,7 +120,6 @@
                 <h3>Navigation</h3>
                 <a href="{{ route('home') }}">Home</a>
                 <a href="{{ route('products') }}">Products</a>
-                <a href="">Promotions</a>
                 <a href="">In-Store Sales</a>
                 <a href="">Services</a>
                 <a href="">Discover</a>
@@ -179,11 +138,11 @@
                 </form>
 
                 <div class="socials">
-                    <a href="" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a href="" target="_blank"><i class="fab fa-google-plus"></i></a>
-                    <a href="" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="" target="_blank"><i class="fab fa-pinterest"></i></a>
+                    <a href="https://www.facebook.com/pages/Essex-Appliance-Centre/233352167017805" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/essex_appliance?lang=en" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-google-plus"></i></a>
+                    <a href="https://www.instagram.com/essexappliancecentre/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-pinterest"></i></a>
                 </div>
             </div>
 

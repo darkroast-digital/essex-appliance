@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Theme;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Product;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -15,5 +16,11 @@ class HomeController extends Controller
     public function products()
     {
         return view('theme.products');
+    }
+
+    public function show($args)
+    {
+        $product = Product::where('name', $args)->first();
+        return view('theme.product', compact('product'));
     }
 }

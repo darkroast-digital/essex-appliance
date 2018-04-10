@@ -11,7 +11,7 @@
             <h2>DIFFERENCE</h2>
             <p>30 years of quality service consectetur adipiscing elit, sed do eiusmod tempor dolor sit consectetur adipiscing elit, sed do eiusmod tempor dolor</p>
         </div>
-        <a href="" class="button">Learn More</a>
+        <a href="#" class="button">Learn More</a>
     </div>
 </section>
 
@@ -26,7 +26,7 @@
                 <h3><span>Beautiful Downtown Essex</span></h3>
                 <p>Essex Appliance Center is the premier place for all of your appliance needs in Southwest Ontario.</p>
                 <p>With over 12,000 square feet of showroom space, and 15,000 square feet of warehouse, we have a wide selection of appliances for you to research and compare.</p>
-                <a href="" class="button">Learn more about us</a>
+                <a href="#" class="button">Learn more about us</a>
             </div>
         </div>
 
@@ -65,7 +65,7 @@
                 </div>
 
                 <div class="column-3 product">
-                    <a href="">
+                    <a href="{{ route('products') }}">
                         <div class="product-wrapper">
                             <img src="/theme/img/stoves.jpg" draggable="false">
                             <p>Stoves</p>
@@ -74,7 +74,7 @@
                 </div>
 
                 <div class="column-3 product">
-                    <a href="">
+                    <a href="{{ route('products') }}">
                         <div class="product-wrapper">
                             <img src="/theme/img/refrigerators.jpg" draggable="false">
                             <p>Refrigerators</p>
@@ -83,7 +83,7 @@
                 </div>
 
                 <div class="column-3 product">
-                    <a href="">
+                    <a href="{{ route('products') }}">
                         <div class="product-wrapper">
                             <img src="/theme/img/washers.jpg" draggable="false">
                             <p>Washers</p>
@@ -92,7 +92,7 @@
                 </div>
 
                 <div class="column-3 product">
-                    <a href="">
+                    <a href="{{ route('products') }}">
                         <div class="product-wrapper">
                             <img src="/theme/img/dryers.jpg" draggable="false">
                             <p>Dryers</p>
@@ -101,7 +101,7 @@
                 </div>
 
                 <div class="column-3 product">
-                    <a href="">
+                    <a href="{{ route('products') }}">
                         <div class="product-wrapper">
                             <img src="/theme/img/dish-washer.jpg" draggable="false">
                             <p>Dish Washers</p>
@@ -110,7 +110,7 @@
                 </div>
 
                 <div class="column-3 product">
-                    <a href="">
+                    <a href="{{ route('products') }}">
                         <div class="product-wrapper">
                             <img src="/theme/img/freezers.jpg" draggable="false">
                             <p>Freezers</p>
@@ -119,7 +119,7 @@
                 </div>
 
                 <div class="column-3 product">
-                    <a href="">
+                    <a href="{{ route('products') }}">
                         <div class="product-wrapper">
                             <img src="/theme/img/microwaves.jpg" draggable="false">
                             <p>Microwaves</p>
@@ -128,7 +128,7 @@
                 </div>
 
                 <div class="column-3 product">
-                    <a href="">
+                    <a href="{{ route('products') }}">
                         <div class="product-wrapper">
                             <img src="/theme/img/appliances.jpg" draggable="false">
                             <p>Appliances</p>
@@ -136,7 +136,7 @@
                     </a>
                 </div>
 
-                <a href="" class="button">Find More Products</a>
+                <a href="{{ route('products') }}" class="button">Find More Products</a>
             </div>
         </div>
 
@@ -145,19 +145,19 @@
         <div class="ads">
             <div class="ads__container container--full">
                 <div class="column-4 ad">
-                    <a href="" target="_blank">
+                    <a href="#" target="_blank">
                         <img src="/theme/img/ad1.jpg" alt="Built to work hard for the long haul. Shop now." draggable="false">
                     </a>
                 </div>
 
                 <div class="column-4 ad">
-                    <a href="" target="_blank">
+                    <a href="#" target="_blank">
                         <img src="/theme/img/ad2.jpg" alt="The largest selection of black stainless steel appliances. KitchenAid. Learn more." draggable="false">
                     </a>
                 </div>
 
                 <div class="column-4 ad">
-                    <a href="" target="_blank">
+                    <a href="#" target="_blank">
                         <img src="/theme/img/ad3.jpg" alt="Amana. Just Right. Priced right. Easy to use. Quality products. Amana brand delivers on value. Shop now. " draggable="false">
                     </a>
                 </div>
@@ -229,7 +229,7 @@
             {{-- End Hot-Buys Slider --}}
 
             <div class="ribbon"></div>
-            <a href="" class="ribbon-link"><span>Click Here To Find More</span> Hot Buys & In-Store Sales <i class="fas fa-caret-right"></i></a>
+            <a href="#" class="ribbon-link"><span>Click Here To Find More</span> Hot Buys & In-Store Sales <i class="fas fa-caret-right"></i></a>
         </div>
     </div>
 </section>
@@ -244,7 +244,7 @@
 
         <div class="new-slider container--full">
             <div class="new-slide">
-                <a href="">
+                <a href="#">
                     <div class="image-wrapper">
                         <img src="/theme/img/product-1.jpg" draggable="false">
                     </div>
@@ -257,7 +257,7 @@
             {{-- End New Slide 1 --}}
 
             <div class="new-slide">
-                <a href="">
+                <a href="#">
                     <div class="image-wrapper">
                         <img src="/theme/img/product-2.jpg" draggable="false">
                     </div>
@@ -270,7 +270,7 @@
             {{-- End New Slide 2 --}}
 
             <div class="new-slide">
-                <a href="">
+                <a href="#">
                     <div class="image-wrapper">
                         <img src="/theme/img/product-3.jpg" draggable="false">
                     </div>
@@ -283,7 +283,7 @@
             {{-- End New Slide 3 --}}
 
             <div class="new-slide">
-                <a href="">
+                <a href="#">
                     <div class="image-wrapper">
                         <img src="/theme/img/product-4.jpg" draggable="false">
                     </div>
@@ -296,7 +296,7 @@
             {{-- End New Slide 4 --}}
 
             <div class="new-slide">
-                <a href="">
+                <a href="#">
                     <div class="image-wrapper">
                         <img src="/theme/img/product-5.jpg" draggable="false">
                     </div>
@@ -309,7 +309,7 @@
             {{-- End New Slide 5 --}}
 
             <div class="new-slide">
-                <a href="">
+                <a href="#">
                     <div class="image-wrapper">
                         <img src="/theme/img/product-1.jpg" draggable="false">
                     </div>
@@ -322,7 +322,7 @@
             {{-- End New Slide 1 --}}
 
             <div class="new-slide">
-                <a href="">
+                <a href="#">
                     <div class="image-wrapper">
                         <img src="/theme/img/product-2.jpg" draggable="false">
                     </div>
@@ -335,7 +335,7 @@
             {{-- End New Slide 2 --}}
 
             <div class="new-slide">
-                <a href="">
+                <a href="#">
                     <div class="image-wrapper">
                         <img src="/theme/img/product-3.jpg" draggable="false">
                     </div>
@@ -348,7 +348,7 @@
             {{-- End New Slide 3 --}}
 
             <div class="new-slide">
-                <a href="">
+                <a href="#">
                     <div class="image-wrapper">
                         <img src="/theme/img/product-4.jpg" draggable="false">
                     </div>
@@ -361,7 +361,7 @@
             {{-- End New Slide 4 --}}
 
             <div class="new-slide">
-                <a href="">
+                <a href="#">
                     <div class="image-wrapper">
                         <img src="/theme/img/product-5.jpg" draggable="false">
                     </div>
@@ -372,10 +372,6 @@
             </div>
 
             {{-- End New Slide 5 --}}
-
-
-
-
 
         </div>
     </div>
@@ -385,7 +381,7 @@
 
 <section class="ad-banner">
     <div class="ad-banner__container container">
-        <a href="" target="_blank">
+        <a href="#" target="_blank">
             <img src="/theme/img/ad-banner.jpg" alt="The largest selection of black stainless steel appliances. KitchenAid. Learn More" draggable="false">
         </a>
     </div>
@@ -411,7 +407,7 @@
 
                     <div class="details">
                         <p class="category">Lifestyle</p>
-                        <h5><a href="">2018 Kitchen Style Guide</a></h5>
+                        <h5><a href="#">2018 Kitchen Style Guide</a></h5>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text...</p>
                     </div>
                 </div>
@@ -432,7 +428,7 @@
 
                     <div class="details">
                         <p class="category">Tips</p>
-                        <h5><a href="">Keep your washer running like new</a></h5>
+                        <h5><a href="#">Keep your washer running like new</a></h5>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text...</p>
                     </div>
                 </div>
@@ -453,7 +449,7 @@
 
                     <div class="details">
                         <p class="category">Products</p>
-                        <h5><a href="">REVIEW - Amana&reg; 30-inch Gas Range</a></h5>
+                        <h5><a href="#">REVIEW - Amana&reg; 30-inch Gas Range</a></h5>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text...</p>
                     </div>
                 </div>

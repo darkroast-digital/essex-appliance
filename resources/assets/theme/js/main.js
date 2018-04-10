@@ -6,6 +6,10 @@ window.Vue = require('vue');
 
 Vue.config.productionTip = false
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('product', require('./components/ProductItem.vue'));
+Vue.component('product-list', require('./components/ProductList.vue'));
+Vue.component('breadcrumbs', require('./components/BreadcrumbsList.vue'));
+Vue.component('pagination-list', require('./components/PaginationList.vue'));
 
 const app = new Vue({
     el: '#app'
@@ -61,3 +65,22 @@ $('.brands-slider').slick({
 
 $('.brands-slider .slick-next').html('<i class="fas fa-long-arrow-alt-right"></i>');
 $('.brands-slider .slick-prev').html('<i class="fas fa-long-arrow-alt-left"></i>');
+
+
+
+
+// #PRODUCTS TABS
+// =========================================================================
+
+$('li[data-tab], .tabs__content').first().addClass('is--active');
+$('.tabs__content').first().addClass('is--active');
+
+$('li[data-tab]').click(function() {
+    var thisTab = $(this).attr('data-tab');
+    var tab = $('.tabs__content' + '[data-tab="' + thisTab + '"]');
+
+    $('li[data-tab]').removeClass('is--active');
+    $(this).addClass('is--active');
+    $('.tabs__content').removeClass('is--active');
+    tab.addClass('is--active');
+});

@@ -7,4 +7,5 @@ require_once __DIR__ . '/admin.php';
 Route::group(['namespace' => 'Theme'], function () {
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('/products', 'HomeController@products')->name('products');
+    Route::get('/products/{name}', 'HomeController@show')->name('products.show');
 });

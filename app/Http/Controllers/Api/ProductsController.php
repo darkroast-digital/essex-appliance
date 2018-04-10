@@ -18,7 +18,7 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        $paginator = Product::paginate(10);
+        $paginator = Product::paginate(9);
         $products = $paginator->getCollection();
 
         $data = Fractal::create()
