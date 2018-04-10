@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Panel;
 
 use App\Product;
 use Illuminate\Http\Request;
+use Parttimenobody\Tags\Models\Tag;
 use App\Http\Controllers\Controller;
 
 class ProductsController extends Controller
@@ -27,7 +28,10 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        return view('panel.products.create');
+        $categories = Tag::all()->where('tag_type', 'category');
+        $brands = Tag::all()->where('tag_type', 'brand');
+
+        return view('panel.products.create', compact('categories', 'brands'));
     }
 
     /**
@@ -60,7 +64,10 @@ class ProductsController extends Controller
      */
     public function edit(Product $product)
     {
-        return view('panel.products.edit', compact('product'));
+        $categories = Tag::all()->where('tag_type', 'category');
+        $brands = Tag::all()->where('tag_type', 'brand');
+
+        return view('panel.products.edit', compact('product', 'categories', 'brands'));
     }
 
     /**

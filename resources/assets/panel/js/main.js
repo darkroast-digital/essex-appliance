@@ -7,9 +7,12 @@ Vue.config.productionTip = false
 
 Vue.use(InstantSearch)
 
+Vue.component('ad-upload', require('./components/AdUpload.vue'));
 Vue.component('image-upload', require('./components/ImageUpload.vue'));
 Vue.component('color-select', require('./components/ColorSelect.vue'));
 Vue.component('search-bar', require('./components/SearchBar.vue'));
+Vue.component('variations-list', require('./components/variations/VariationsList.vue'));
+Vue.component('variation-item', require('./components/variations/VariationItem.vue'));
 
 const app = new Vue({
     el: '#app'

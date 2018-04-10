@@ -9,8 +9,16 @@ Route::group(['prefix' => 'panel', 'middleware' => 'auth', 'namespace' => 'Panel
 
     route::resource('/users', 'UsersController', ['except' => ['show']]);
 
-    Route::get('/{type}/categories', 'Controller@');
+    Route::get('/ads', 'AdsController@index')->name('ads.index');
+    Route::patch('/ads', 'AdsController@update')->name('ads.update');
+
+    Route::get('/{type}/categories', 'CategoriesController@index')->name('categories');
+    Route::post('/{type}/categories', 'CategoriesController@store');
+    Route::delete('/{type}/categories/delete', 'CategoriesController@delete')->name('categories.delete');
 });
 
+Route::get('/logout', 'Auth\LoginController@logout')->name('auth.logout');
+
+Route::post('/media/ad', 'Media\\AdImageController@store')->name('adImage.store');
 Route::post('/media/avatar', 'Media\\AvatarController@store')->name('avatar.store');
-Route::post('/media/avatar', 'Media\\PostImageController@store')->name('postImage.store');
+Route::post('/media/post', 'Media\\PostImageController@store')->name('postImage.store');

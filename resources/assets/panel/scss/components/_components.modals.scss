@@ -7,7 +7,8 @@
 
 
 
-.modal {
+.modal,
+.variation-modal {
     position: fixed;
     top: 0;
     left: 0;
@@ -21,7 +22,7 @@
     visibility: hidden;
     opacity: 0;
     transform: translateY(100px);
-    transition: all .2s ease(bouncy);
+    transition: all .15s ease(inOutQuad);
 
     &.modal-open {
         visibility: visible;
@@ -31,6 +32,10 @@
         > * {
             pointer-events: all;
         }
+    }
+
+    .block {
+        border-top: solid .2rem color(primary);
     }
 }
 

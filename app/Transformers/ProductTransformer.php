@@ -14,10 +14,13 @@ class ProductTransformer extends TransformerAbstract
             'available' => $product->available,
             'sku' => $product->sku,
             'upc' => $product->upc,
+            'brand' => $product->brand(),
+            'category' => $product->category(),
             'description' => $product->description,
             'features' => $product->features,
             'specifications' => $product->specifications,
-            'price' => $product->price
+            'price' => $product->price,
+            'colors' => $product->colors(),
         ];
     }
 }
