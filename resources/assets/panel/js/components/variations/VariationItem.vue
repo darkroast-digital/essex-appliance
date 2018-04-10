@@ -3,7 +3,7 @@
         <div class="variation-modal" :class="{ 'modal-open' : isActive }">
             <div class="block column-6">
 
-                <h6>Add Product Variation: </h6>
+                <h6>{{ mode }} Product Variation: </h6>
 
                 <hr>
 
@@ -106,8 +106,25 @@
         data () {
             return {
                 isActive: false,
-                isSaving: false
+                isSaving: false,
+                mode: 'Edit'
             }
+        },
+
+        mounted () {
+
+            window.addEventListener('keyup', e => {
+                
+                if (e.keyCode === 27) {
+                    this.isActive = false
+                }
+
+            })
+
+            if (this.sku === '') {
+                this.mode = 'Add'
+            }
+
         },
         
         methods: {

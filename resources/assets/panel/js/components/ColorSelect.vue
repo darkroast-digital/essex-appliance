@@ -33,8 +33,6 @@
             toggleSelection (e) {
                 let color = e.target.dataset.color
 
-                console.log(this.selected)
-
                 if (true) {
      
                     e.target.classList.remove('selected')
@@ -51,7 +49,7 @@
 
         },
         mounted() {
-            //
+            
         }
     }
 </script>
