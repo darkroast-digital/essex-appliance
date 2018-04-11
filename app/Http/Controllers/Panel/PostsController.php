@@ -4,8 +4,9 @@ namespace App\Http\Controllers\Panel;
 
 use App\Post;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Parttimenobody\Tags\Models\Tag;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
 
 class PostsController extends Controller
 {
@@ -46,7 +47,7 @@ class PostsController extends Controller
             'slug' => str_slug($request->title),
             'content' => $request->content,
             'image_id' => $request->image_id,
-            'user_id' => auth()->user()->id,
+            'user_id' => auth()->user()->id
         ]);
 
         $post->tag($request->tag);

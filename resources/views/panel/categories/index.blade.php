@@ -5,7 +5,7 @@
     <div class="block column-6">
         <h6 class="--has-color-error">Are You Sure You Want To Do This?</h6>
         <p>You are going to delete a category, this is a permanent action.</p>
-        <form action="{{ route('panel.categories.delete') }}" method="post" class="delete-form">
+        <form action="{{ route('panel.categories.delete', $type) }}" method="post" class="delete-form">
             @csrf @method('delete')
 
             <input type="hidden" name="delete" value="">

@@ -5906,8 +5906,9 @@ span.CodeMirror-selectedtext {
 
 .color-select li {
   height: 30px;
-  width: calc(25% - 0.75rem);
+  width: calc(16.666666% - 0.75rem);
   margin-right: 0.75rem;
+  margin-bottom: 0.75rem;
   border: solid 1px #dee2e6;
   border-radius: 2px;
   cursor: pointer;
@@ -5915,10 +5916,46 @@ span.CodeMirror-selectedtext {
   transition: all 0.05s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 
+.color-select li .checked {
+  position: relative;
+  top: -0.075rem;
+  left: -0.075rem;
+  z-index: 60;
+  display: block;
+  height: 0.75rem;
+  width: 0.75rem;
+  background: #40C285;
+  border-radius: 50%;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: all 0.1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  transition: all 0.1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.color-select li .checked:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 90%;
+  width: 90%;
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDE4IDE4Ij4KICAgIDxnIGNsYXNzPSJuYy1pY29uLXdyYXBwZXIiIGZpbGw9IiNmZmZmZmYiPgogICAgICAgIDxwYXRoIGQ9Ik02LjYxIDExLjg5TDMuNSA4Ljc4IDIuNDQgOS44NCA2LjYxIDE0bDguOTUtOC45NUwxNC41IDR6Ij48L3BhdGg+CiAgICA8L2c+Cjwvc3ZnPg==");
+  background-position: center center;
+  background-size: 90%;
+  background-repeat: no-repeat;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
 .color-select li.selected {
-  border-color: rgba(71, 193, 191, 0.75);
-  -webkit-box-shadow: 0 0 0 2px rgba(71, 193, 191, 0.35);
-          box-shadow: 0 0 0 2px rgba(71, 193, 191, 0.35);
+  border-color: rgba(64, 194, 133, 0.75);
+  -webkit-box-shadow: 0 0 0 2px rgba(64, 194, 133, 0.35);
+          box-shadow: 0 0 0 2px rgba(64, 194, 133, 0.35);
+}
+
+.color-select li.selected .checked {
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
 }
 
 /*
@@ -6013,6 +6050,40 @@ span.CodeMirror-selectedtext {
   font-weight: bold;
   background: #f8f9fa;
   border: dashed 0.15rem #dee2e6;
+}
+
+/*
+|--------------------------------------------------------------------------
+| #MULTI IMAGE UPLOAD
+|--------------------------------------------------------------------------
+*/
+.image-uploader.has-images {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.image-uploader.has-images .image-upload {
+  width: 35%;
+}
+
+.gallery {
+  position: relative;
+  max-width: 65%;
+  max-height: 200px;
+  margin-left: 0.75rem;
+  overflow-y: scroll;
+}
+
+.gallery .gallery-image {
+  height: 100px;
+  width: calc(25% - 0.75rem);
+  margin-right: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.gallery .gallery-image img {
+  border-radius: 2px;
 }
 
 /*

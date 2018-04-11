@@ -15,7 +15,7 @@ class AddDataToVariationsTable extends Migration
     {
         Schema::table('variations', function (Blueprint $table) {
             $table->string('product_id');
-            $table->boolean('available')->deafult(1);
+            $table->boolean('available')->default(1);
             $table->string('sku');
         });
     }

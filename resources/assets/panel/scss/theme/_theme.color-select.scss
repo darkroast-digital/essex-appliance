@@ -14,15 +14,48 @@ $localGutter: $gutter * .5;
 
     li {
         height: 30px;
-        width: calc(25% - #{$localGutter});
+        width: calc(16.666666% - #{$localGutter});
         margin-right: $localGutter;
+        margin-bottom: $localGutter;
         border: solid 1px color(grey, 40);
         border-radius: radius(small);
         cursor: pointer;
         transition: all .05s ease(inOutSine);
 
+        .checked {
+            position: relative;
+            top: -$gutter * .05;
+            left: -$gutter * .05;
+            z-index: z(high);
+            display: block;
+            height: $gutter * .5;
+            width: $gutter * .5;
+            background: color(success);
+            border-radius: radius(circle);
+            transform: scale(0);
+            transition: all .1s ease(inOutSine);
+
+            &:after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                height: 90%;
+                width: 90%;
+                background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDE4IDE4Ij4KICAgIDxnIGNsYXNzPSJuYy1pY29uLXdyYXBwZXIiIGZpbGw9IiNmZmZmZmYiPgogICAgICAgIDxwYXRoIGQ9Ik02LjYxIDExLjg5TDMuNSA4Ljc4IDIuNDQgOS44NCA2LjYxIDE0bDguOTUtOC45NUwxNC41IDR6Ij48L3BhdGg+CiAgICA8L2c+Cjwvc3ZnPg==');
+                background-position: center center;
+                background-size: 90%;
+                background-repeat: no-repeat;
+                transform: translate(-50%, -50%);
+            }
+        }
+
         &.selected {
-            @include focus(color(info));
+            @include focus(color(success));
+
+            .checked {
+                transform: translate(-50%, -50%) scale(1);
+            }
         }
     }
 }
