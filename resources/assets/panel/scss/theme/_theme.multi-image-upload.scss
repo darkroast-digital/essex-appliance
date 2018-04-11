@@ -1,0 +1,38 @@
+/*
+|--------------------------------------------------------------------------
+| #MULTI IMAGE UPLOAD
+|--------------------------------------------------------------------------
+*/
+
+$localGutter: $gutter * .5;
+
+.image-uploader {
+
+    &.has-images {
+        display: flex;
+
+        .image-upload {
+            width: 35%;
+        }
+    }
+}
+
+.gallery {
+    position: relative;
+    max-width: 65%;
+    max-height: 200px;
+    margin-left: $localGutter;
+    overflow-y: scroll;
+
+    .gallery-image {
+        height: 100px;
+        width: calc(25% - #{$localGutter});
+        margin-right: $localGutter;
+        margin-bottom: $localGutter;
+        
+        img {
+            border-radius: radius(small);
+        }
+    }
+
+}

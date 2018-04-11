@@ -25,6 +25,8 @@
         @method('patch')
     @endif
 
+    <input type="hidden" name="_hash" value="{{ isset($hash) ? $hash : $product->hash }}">
+
     <div class="container">
 
         <div class="column-3">
@@ -115,10 +117,10 @@
             </div>
 
             <!-- /.block -->
-
+            
             <div class="block --has-margin-bottom">
                 <label>Choose Appliance Colour</label>
-                <color-select></color-select>
+                <color-select initial-colors="{{ $colors }}"></color-select>
             </div>
 
             <!-- /.block -->
@@ -219,7 +221,7 @@
             <!-- /.block -->
 
             <div class="block --has-margin-bottom">
-                <image-upload></image-upload>
+                <multi-image-upload></multi-image-upload>
             </div>
 
             <!-- /.block -->

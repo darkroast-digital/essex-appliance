@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Panel;
 
+use App\Color;
 use App\Product;
 use Illuminate\Http\Request;
 use Parttimenobody\Tags\Models\Tag;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
 
 class ProductsController extends Controller
 {
@@ -30,8 +32,9 @@ class ProductsController extends Controller
     {
         $categories = Tag::all()->where('tag_type', 'category');
         $brands = Tag::all()->where('tag_type', 'brand');
+        $hash = Hash::make(str_random(60));
 
-        return view('panel.products.create', compact('categories', 'brands'));
+        return view('panel.products.create', compact('categories', 'brands', 'hash'));
     }
 
     /**
@@ -42,7 +45,28 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $colors = explode(',', $request->colors);
+        $product = Product::create([
+            'hash' => $request->_hash,
+            'name' => $request->name,
+            'sku' => $request->sku,
+            'upc' => $request->upc,
+            'description' => $request->description,
+            'features' => $request->features,
+            'available' => $request->available === 'on' ? 1 : 0,
+            'featured' => $request->featured === 'on' ? 1 : 0
+        ]);
+
+        foreach ($colors as $color) {
+            $product->tag($color);
+        }
+
+        $product->tag($request->category);
+        $product->tag($request->brand);
+
+        $request->session()->flash('alert:sucess', 'Product was created!');
+
+        return redirect()->route('panel.products.index');
     }
 
     /**
@@ -64,10 +88,19 @@ class ProductsController extends Controller
      */
     public function edit(Product $product)
     {
+        $productColors = $product->tags()->where('tag_type', 'color')->get();
+        $colors = [];
+
+        foreach ($productColors as $c) {
+            $color = flatten(Color::where('tag_id', $c->id)->get()->toArray());
+
+            array_push($colors, $color);
+        }
+
         $categories = Tag::all()->where('tag_type', 'category');
         $brands = Tag::all()->where('tag_type', 'brand');
 
-        return view('panel.products.edit', compact('product', 'categories', 'brands'));
+        return view('panel.products.edit', compact('product', 'categories', 'brands', 'colors'));
     }
 
     /**
