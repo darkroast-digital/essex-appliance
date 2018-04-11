@@ -33,6 +33,9 @@
                 <div class="block">
                     <label>Banner</label>
                     <hr>
+                    <label>Link</label>
+                    <input type="text" name="banner_link" value="{{ $banner->link ? $banner->link : '' }}" placeholder="https://example.com">
+                    <label>Image</label>
                     <ad-upload endpoint="{{ route('adImage.store') }}" ad-name="banner" send-as="image" current-image="{{ $banner->image_id ? $banner->imagePath() : '' }}"></image-upload>
                 </div>
 
@@ -45,6 +48,9 @@
                 <div class="block">
                     <label>CTA One</label>
                     <hr>
+                    <label>Link</label>
+                    <input type="text" name="cta_one_link" value="{{ $banner->link ? $cta_one->link : '' }}" placeholder="https://example.com">
+                    <label>Image</label>
                     <ad-upload endpoint="{{ route('adImage.store') }}" ad-name="cta_one" send-as="image" current-image="{{ $cta_one->image_id ? $cta_one->imagePath() : '' }}"></image-upload>
                 </div>
 
@@ -57,6 +63,9 @@
                 <div class="block">
                     <label>CTA Two</label>
                     <hr>
+                    <label>Link</label>
+                    <input type="text" name="cta_two_link" value="{{ $banner->link ? $cta_two->link : '' }}" placeholder="https://example.com">
+                    <label>Image</label>
                     <ad-upload endpoint="{{ route('adImage.store') }}" ad-name="cta_two" send-as="image" current-image="{{ $cta_two->image_id ? $cta_two->imagePath() : '' }}"></image-upload>
                 </div>
 
@@ -69,6 +78,9 @@
                 <div class="block">
                     <label>CTA Three</label>
                     <hr>
+                    <label>Link</label>
+                    <input type="text" name="cta_three_link" value="{{ $banner->link ? $cta_three->link : '' }}" placeholder="https://example.com">
+                    <label>Image</label>
                     <ad-upload endpoint="{{ route('adImage.store') }}" ad-name="cta_three" send-as="image" current-image="{{ $cta_three->image_id ? $cta_three->imagePath() : '' }}"></image-upload>
                 </div>
 
