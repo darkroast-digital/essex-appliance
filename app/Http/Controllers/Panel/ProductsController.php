@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Parttimenobody\Tags\Models\Tag;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use App\ProductImage;
 
 class ProductsController extends Controller
 {
@@ -45,7 +46,9 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
+        $images = explode(',', $request->_images);
         $colors = explode(',', $request->colors);
+
         $product = Product::create([
             'hash' => $request->_hash,
             'name' => $request->name,
@@ -59,6 +62,15 @@ class ProductsController extends Controller
 
         foreach ($colors as $color) {
             $product->tag($color);
+        }
+
+        foreach ($images as $id) {
+            $image = ProductImage::find($id);
+
+            $image->imageable_id = $product->id;
+            $image->imageable_type = 'App\Product';
+
+            $image->save();
         }
 
         $product->tag($request->category);
@@ -88,19 +100,10 @@ class ProductsController extends Controller
      */
     public function edit(Product $product)
     {
-        $productColors = $product->tags()->where('tag_type', 'color')->get();
-        $colors = [];
-
-        foreach ($productColors as $c) {
-            $color = flatten(Color::where('tag_id', $c->id)->get()->toArray());
-
-            array_push($colors, $color);
-        }
-
         $categories = Tag::all()->where('tag_type', 'category');
         $brands = Tag::all()->where('tag_type', 'brand');
 
-        return view('panel.products.edit', compact('product', 'categories', 'brands', 'colors'));
+        return view('panel.products.edit', compact('product', 'categories', 'brands'));
     }
 
     /**

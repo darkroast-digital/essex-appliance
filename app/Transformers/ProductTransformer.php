@@ -21,6 +21,7 @@ class ProductTransformer extends TransformerAbstract
             'specifications' => $product->specifications,
             'price' => $product->price,
             'colors' => $product->colors(),
+            'images' => $product->imagePaths()
         ];
     }
 }

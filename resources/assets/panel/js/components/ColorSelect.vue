@@ -8,6 +8,7 @@
                 :data-color="color.slug" 
                 @click="toggleSelection"
                 :data-tooltip="color.name"
+                :class="{ 'selected' : selected.includes(color.slug) }"
             >
             <span class="checked"></span>
             </li>
@@ -18,18 +19,31 @@
 
 <script>
     export default {
-        props: {
-            initialColors: {
-                type: Array,
-                default: () => []
-            }
-        },
+        props: [
+            'productId'
+        ],
+
         data () {
             return {
                 colors: [],
-                selected: this.initialColors
+                selected: []
             }
         },
+
+        created() {
+            axios.get('/api/colors')
+                .then(response => {
+                    this.colors = response.data.data.colors
+                })
+
+            if (this.productId !== '') {
+                axios.get(`/api/products/${this.productId}`)
+                    .then(response => {
+                        this.selected = response.data.data.colors
+                    })
+            }
+        },
+
         methods: {
 
             toggleSelection (e) {
@@ -51,17 +65,6 @@
 
             }
 
-        },
-
-        created() {
-            axios.get('/api/colors')
-                .then(response => {
-                    this.colors = response.data.data.colors
-                })
-        },
-
-        mounted() {
-          //
         }
     }
 </script>

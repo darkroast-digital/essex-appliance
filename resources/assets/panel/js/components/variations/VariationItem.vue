@@ -48,7 +48,7 @@
 
                     <div class="field">
                         <label>Variation Color</label>
-                        <color-select></color-select>
+                        <!-- <color-select></color-select> -->
                     </div>
 
                     <!-- /.field -->

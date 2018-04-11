@@ -120,7 +120,7 @@
             
             <div class="block --has-margin-bottom">
                 <label>Choose Appliance Colour</label>
-                <color-select initial-colors="{{ $colors }}"></color-select>
+                <color-select product-id="{{ isset($product->id) ? $product->id : '' }}"></color-select>
             </div>
 
             <!-- /.block -->
@@ -221,7 +221,7 @@
             <!-- /.block -->
 
             <div class="block --has-margin-bottom">
-                <multi-image-upload></multi-image-upload>
+                <multi-image-upload endpoint="{{ route('productImage.store') }}" product-id="{{ isset($product->id) ? $product->id : '' }}"></multi-image-upload>
             </div>
 
             <!-- /.block -->
