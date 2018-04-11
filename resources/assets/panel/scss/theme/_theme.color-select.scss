@@ -26,7 +26,7 @@ $localGutter: $gutter * .5;
             position: relative;
             top: -$gutter * .05;
             left: -$gutter * .05;
-            z-index: z(high);
+            z-index: z(low);
             display: block;
             height: $gutter * .5;
             width: $gutter * .5;

@@ -58,10 +58,11 @@ $select-border-dark: solid 1px color(grey, 80);
 
     &-menu {
         position: absolute;
-        z-index: z(low);
+        z-index: z(middle);
+        max-height: 200px;
         width: 100%;
         padding: $gutter * .5;
-        background: color(white);
+        background: color(white); 
 
         @if not $is-dark {
             border-right: $select-border-light;
@@ -81,6 +82,7 @@ $select-border-dark: solid 1px color(grey, 80);
         }
 
         opacity: 0;
+        overflow-y: scroll;
         visibility: hidden;
         pointer-events: none;
     }

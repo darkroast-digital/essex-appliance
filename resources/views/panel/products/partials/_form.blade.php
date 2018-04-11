@@ -177,7 +177,7 @@
 
                 <div class="field --has-no-margin-bottom">
                     <label for="description">Product Description</label>
-                    <textarea name="description" placeholder="Add product description...">{{ isset($product->description) ? $product->description : '' }}</textarea>
+                    <textarea class="mde" name="description" placeholder="Add product description...">{{ isset($product->description) ? $product->description : '' }}</textarea>
                 </div>
 
             </div>
@@ -197,13 +197,13 @@
                     <div class="tabs-body">
 
                         <div class="tabs-content tabs-content-active" data-tab="features">
-                            <textarea name="features" placeholder="Add product features...">{{ isset($product->features) ? $product->features : '' }}</textarea>
+                            <textarea class="mde" name="features" placeholder="Add product features...">{{ isset($product->features) ? $product->features : '' }}</textarea>
                         </div>
 
                         <!-- /.tabs-content -->
 
                         <div class="tabs-content" data-tab="specifications">
-                                <textarea name="features" placeholder="Add product specifications...">{{ isset($product->specifications) ? $product->specifications : '' }}</textarea>
+                            <textarea class="mde" name="specifications" placeholder="Add product specifications...">{{ isset($product->specifications) ? $product->specifications : '' }}</textarea>
                         </div>
 
                         <!-- /.tabs-content -->

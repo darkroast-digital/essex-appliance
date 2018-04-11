@@ -25,17 +25,20 @@ const app = new Vue({
 // #SIMPLE MDE
 // =========================================================================
 
-var mde = document.getElementById('mde')
+var mde = document.querySelectorAll('.mde')
 
 if (mde) {
-    var simplemde = new SimpleMDE({ 
-        element: mde,
-        hideIcons: [
-            'fullscreen',
-            'side-by-side',
-            'image'
-        ]
-    });
+
+    mde.forEach(editor => {
+        let simplemde = new SimpleMDE({ 
+            element: editor,
+            hideIcons: [
+                'fullscreen',
+                'side-by-side',
+                'image'
+            ]
+        })
+    })
 }
 
 

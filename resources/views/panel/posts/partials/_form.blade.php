@@ -104,7 +104,7 @@
 
                 <div class="field --has-no-margin-bottom">
                     <label for="name">Post Content</label>
-                    <textarea name="content" id="mde" placeholder="Add post content...">{{ isset($post->content) ? $post->content : '' }}</textarea>
+                    <textarea name="content" class="mde" placeholder="Add post content...">{{ isset($post->content) ? $post->content : '' }}</textarea>
                 </div>
 
                 <!-- /.field -->

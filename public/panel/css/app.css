@@ -4580,7 +4580,7 @@ label {
   height: 75px;
   width: 100%;
   position: relative;
-  z-index: 40;
+  z-index: 60;
   background: #ffffff;
   border-top: 0.15rem solid #f03e3e;
   -webkit-box-shadow: 0 0 0 0.1rem rgba(33, 37, 41, 0.15);
@@ -4863,7 +4863,8 @@ label {
 
 .select-menu {
   position: absolute;
-  z-index: 20;
+  z-index: 40;
+  max-height: 200px;
   width: 100%;
   padding: 0.75rem;
   background: #ffffff;
@@ -4875,6 +4876,7 @@ label {
   border-bottom-right-radius: 2px;
   border-bottom-left-radius: 2px;
   opacity: 0;
+  overflow-y: scroll;
   visibility: hidden;
   pointer-events: none;
 }
@@ -5920,7 +5922,7 @@ span.CodeMirror-selectedtext {
   position: relative;
   top: -0.075rem;
   left: -0.075rem;
-  z-index: 60;
+  z-index: 20;
   display: block;
   height: 0.75rem;
   width: 0.75rem;
