@@ -221,6 +221,7 @@
             <!-- /.block -->
 
             <div class="block --has-margin-bottom">
+                <label>Product Images</label>
                 <multi-image-upload endpoint="{{ route('productImage.store') }}" product-id="{{ isset($product->id) ? $product->id : '' }}"></multi-image-upload>
             </div>
 

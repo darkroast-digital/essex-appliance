@@ -64,32 +64,23 @@ class ProductsController extends Controller
             $product->tag($color);
         }
 
-        foreach ($images as $id) {
-            $image = ProductImage::find($id);
-
-            $image->imageable_id = $product->id;
-            $image->imageable_type = 'App\Product';
-
-            $image->save();
-        }
-
         $product->tag($request->category);
         $product->tag($request->brand);
+
+        if ($request->_images) {
+            foreach ($images as $id) {
+                $image = ProductImage::find($id);
+
+                $image->imageable_id = $product->id;
+                $image->imageable_type = 'App\Product';
+
+                $image->save();
+            }
+        }
 
         $request->session()->flash('alert:sucess', 'Product was created!');
 
         return redirect()->route('panel.products.index');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Product  $product
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Product $product)
-    {
-        //
     }
 
     /**
@@ -115,7 +106,43 @@ class ProductsController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        $colors = explode(',', $request->colors);
+        $images = explode(',', $request->_images);
+
+        $product->hash = $request->hash;
+        $product->name = $request->name;
+        $product->sku = $request->sku;
+        $product->upc = $request->upc;
+        $product->description = $request->description;
+        $product->features = $request->features;
+        $product->available = $request->available === 'on' ? 1 : 0;
+        $product->featured = $request->featured === 'on' ? 1 : 0;
+
+        $product->untag();
+
+        foreach ($colors as $color) {
+            $product->tag($color);
+        }
+
+        $product->tag($request->category);
+        $product->tag($request->brand);
+
+        $product->save();
+
+        if ($request->_images) {
+            foreach ($images as $id) {
+                $image = ProductImage::find($id);
+
+                $image->imageable_id = $product->id;
+                $image->imageable_type = 'App\Product';
+
+                $image->save();
+            }
+        }
+
+        $request->session()->flash('alert:sucess', 'Product was updated!');
+
+        return redirect()->route('panel.products.index');
     }
 
     /**
