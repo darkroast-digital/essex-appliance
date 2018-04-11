@@ -16,13 +16,33 @@ $spacing: $gutter * 3;
         background-size:cover;
         min-height:730px;
 
+        @media screen and (max-width:64em) {
+            min-height:500px;
+        }
+
+        @media screen and (max-width:32em) {
+            min-height:0;
+            height:auto;
+        }
+
         &__container {
+
+            @media screen and (max-width:32em) {
+                padding:2rem 0;
+            }
 
             .grid-container {
                 display:grid;
                 grid-template-areas: "a a b b"
                                     "c c c c";
                 max-width:45%;
+
+                @media screen and (max-width:32em) {
+                    grid-template-areas: "a a a a"
+                                    "c c c c"
+                                    "b b b b";
+                    max-width:100%;
+                }
                 
                 h1 {
                     color:$primary;
@@ -32,6 +52,14 @@ $spacing: $gutter * 3;
                     padding-right:2.1rem;
                     position:relative;
 
+                    @media screen and (max-width:48em) {
+                        font-size:3rem
+                    }
+
+                    @media screen and (max-width:32em) {
+                        font-size:1.5rem;
+                    }
+
                     &:after {
                         content:'';
                         position:absolute;
@@ -40,6 +68,10 @@ $spacing: $gutter * 3;
                         top:0;
                         right:1rem;
                         background:#ffffff;
+
+                        @media screen and (max-width:32em) {
+                            content:none;
+                        }
                     }
                 }
 
@@ -52,12 +84,24 @@ $spacing: $gutter * 3;
                     font-size:6rem;
                     font-weight:700;
                     line-height:1;
+
+                    @media screen and (max-width:48em) {
+                        font-size:5.5rem
+                    }
+
+                    @media screen and (max-width:32em) {
+                        font-size:2.5rem;
+                    }
                 }
 
                 p {
                     grid-area:b;
                     padding-left:1rem;
                     margin-bottom:0;
+
+                    @media screen and (max-width:32em) {
+                        padding-left:0;
+                    }
                 }
             }
 
@@ -92,10 +136,33 @@ $spacing: $gutter * 3;
         padding-top:2.5rem;
         padding-bottom:1rem;
 
+        @media screen and (max-width:64em) {
+            background-size:cover;
+        }
+
+        @media screen and (max-width:48em) {
+            background-position:center;
+            margin:1rem auto 2rem;
+        }
+
         .cta-wrapper {
             max-width:50%;
             left:28%;
             position:relative;
+
+            @media screen and (max-width:64em) {
+                left:45%;
+            }
+
+            @media screen and (max-width:48em) {
+                left:0;
+                max-width:100%;
+                padding:0 1rem
+            }
+
+            @media screen and (max-width:32em) {
+                padding:1.5rem;
+            }
             
             h3, p {
                 color:white;
@@ -148,6 +215,10 @@ $spacing: $gutter * 3;
             .service {
                 padding:0 1.5rem;
                 text-align:center;
+
+                @media screen and (max-width:48em) {
+                    margin-bottom:2rem;
+                }
                 
                 p {
                     text-transform:uppercase;
@@ -196,6 +267,18 @@ $spacing: $gutter * 3;
                     background-color:white;
                     width:fit-content;
                     padding-right:2rem;
+                }
+            }
+
+            .column-3 {
+
+                @media screen and (max-width:48em) {
+                    max-width:calc(50% - 1rem);
+                    margin:0 .5rem;
+                }
+
+                @media screen and (max-width:32em) {
+                    max-width:100%;
                 }
             }
             
@@ -267,6 +350,10 @@ $spacing: $gutter * 3;
                 margin:$gutter*2 auto;
                 transition:all .2s ease;
 
+                @media screen and (max-width:48em) {
+                    margin:1rem auto;
+                }
+
                 &:hover {
                     background:$secondary;
                     border-color:$secondary;
@@ -290,6 +377,11 @@ $spacing: $gutter * 3;
             margin-top:$gutter;
 
             .ad {
+                text-align:center;
+
+                @media screen and (max-width:48em) {
+                    margin-bottom:1rem;
+                }
 
                 a {
                     width:100%;
@@ -320,6 +412,14 @@ $spacing: $gutter * 3;
                 background:white;
                 padding-bottom:50px;
 
+                @media screen and (max-width:64em) {
+                    max-width:80%;
+                }
+
+                @media screen and (max-width:48em) {
+                    max-width:100%;
+                }
+
                 h3 {
                     font-weight:300;
                     text-transform:uppercase;
@@ -349,24 +449,77 @@ $spacing: $gutter * 3;
                         border-color:rgba($font-color, .1);
                         transition:all .2s ease;
 
+                        @media screen and (max-width:48em) {
+                            left:53%;
+                        }
+
+                        @media screen and (max-width:32em) {
+                            bottom:10%;
+                        }
+
                         &:hover {
                             background:$primary;
                             color:white;
                             border-color:$primary;
                         }
 
+                        &.slick-prev {
+
+                            @media screen and (max-width:32em) {
+                                left:1rem;
+                            }
+                        }
+
                         &.slick-next {
                             left:calc(60% + 2.5rem);
+
+                            @media screen and (max-width:48em) {
+                                left:calc(53% + 2.5rem);
+                            }
+
+                            @media screen and (max-width:32em) {
+                                left:calc(100% - 3.5rem);
+                            }
+                        }
+                    }
+
+                    @media screen and (max-width:48em) {
+
+                        .column-7, .column-5 {
+                            max-width:50%;
+                            min-height:300px;
+
+                            @media screen and (max-width:32em) {
+                                max-width:100%;
+                                padding:1rem;
+                            }
+                        }
+
+                        .column-5 {
+                            padding:0 1rem;
                         }
                     }
 
                     .hot-buys-slide {
                         display:flex!important;
 
+                        @media screen and (max-width:32em) {
+                            display:block!important;
+                        }
+
                         .image-wrapper {
+                            width:100%;
+                            overflow:hidden;
+
+                            @media screen and (max-width:48em) {
+                                padding-left:.5rem;
+                            }
 
                             img {
                                 max-width:100%;
+                                width:100%;
+                                height:100%;
+                                object-fit:cover;
                             }
                         }
 
@@ -428,7 +581,13 @@ $spacing: $gutter * 3;
                 border-right:0 solid;
                 border-left:30px solid rgba(0,0,0,0);
                 text-overflow: clip;
-                z-index:10
+                z-index:10;
+
+                @media screen and (max-width:32em) {
+                    border:30px solid $primary;
+                    border-left:40px solid rgba(0,0,0,0);
+                    left:-40px;
+                }
             }
 
             .ribbon-link {
@@ -461,6 +620,10 @@ $spacing: $gutter * 3;
     .new {
         margin-top:$spacing;
         margin-bottom:$spacing;
+
+        @media screen and (max-width:32em) {
+            margin-bottom:2rem;
+        }
 
         &__container {
 
@@ -558,6 +721,10 @@ $spacing: $gutter * 3;
     .ad-banner {
         margin-bottom:$spacing;
 
+        @media screen and (max-width:32em) {
+            margin-bottom:2rem;
+        }
+
         &__container {
 
             a {
@@ -605,6 +772,10 @@ $spacing: $gutter * 3;
                 flex-wrap:wrap;
 
                 .post {
+
+                    @media screen and (max-width:48em) {
+                        margin-bottom:1rem;
+                    }
 
                     .image-wrapper {
                         max-width:100%;

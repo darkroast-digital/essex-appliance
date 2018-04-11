@@ -57,8 +57,20 @@
                     }
                 }
 
+                .ads {
+
+                    @media screen and (max-width:48em) and (min-width:513px) {
+                        display:flex;
+                    }
+                }
+
                 .ad {
                     margin-bottom:1rem;
+
+                    @media screen and (max-width:48em) and (min-width:513px) {
+                        max-width:calc(50% - 1rem);
+                        margin:0 .5rem 1rem;
+                    }
 
                     a {
                         width:100%;
@@ -129,6 +141,10 @@
                         width:100%;
                         position:relative;
 
+                        @media screen and (max-width:48em) {
+                            flex-direction:column;
+                        }
+
                         &:after {
                             content:'';
                             position:absolute;
@@ -150,6 +166,10 @@
                             text-transform:uppercase;
                             border-right:solid 1px rgba($font-color, .1);
                             width:50%;
+
+                            @media screen and (max-width:48em) {
+                                width:100%;
+                            }
 
                             &.is--active, &:hover {
                                 background:$primary;

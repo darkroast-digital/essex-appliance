@@ -1,6 +1,8 @@
 <nav class="nav">
     <div class="container">
-        @include('theme.layouts.partials._navLinks')
+        <ul class="nav-menu {{ app('request')->url() == route('home') ? 'full' : '' }}">
+            @include('theme.layouts.partials._navLinks')
+        </ul>
 
         {{-- End Nav --}}
 
@@ -10,7 +12,7 @@
 
         {{-- End Socials --}}
 
-        <div class="hamburger off-canvas-trigger">
+        <div class="hamburger off-canvas-trigger main-nav">
             <span></span>
             <span></span>
             <span></span>

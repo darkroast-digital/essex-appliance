@@ -1,6 +1,7 @@
 @extends('theme.layouts.master')
 
 @section('pageClass', 'home')
+@section('pageTitle', 'Home')
 
 @section('content')
 

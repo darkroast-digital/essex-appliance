@@ -95,8 +95,6 @@ $gutter: $global-font-size * $global-line-height;
         }
 
         max-width: 100%;
-        padding-left: $gutter;
-        padding-right: $gutter;
     }
 }
 
@@ -108,6 +106,10 @@ $gutter: $global-font-size * $global-line-height;
 
 .container {
     @include grid();
+
+    @media screen and (max-width:90em) {
+        max-width:80%;
+    }
 
     &-align-top {
         align-items: flex-start;

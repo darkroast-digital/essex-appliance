@@ -1,6 +1,7 @@
 @extends('theme.layouts.master')
 
 @section('pageClass', 'single-product')
+@section('pageTitle', $product->name)
 
 @section('content')
 
@@ -44,17 +45,19 @@
                     </div>
                 </div>
             </div>
+            
+            <div class="ads">
+                <div class="ad">
+                    <a href="" target="_blank">
+                        <img src="/theme/img/ad1.jpg" alt="Built to work hard for the long haul. Shop now." draggable="false">
+                    </a>
+                </div>
 
-            <div class="ad">
-                <a href="" target="_blank">
-                    <img src="/theme/img/ad1.jpg" alt="Built to work hard for the long haul. Shop now." draggable="false">
-                </a>
-            </div>
-
-            <div class="ad">
-                <a href="" target="_blank">
-                    <img src="/theme/img/ad2.jpg" alt="The largest selection of black stainless steel appliances. KitchenAid. Learn more." draggable="false">
-                </a>
+                <div class="ad">
+                    <a href="" target="_blank">
+                        <img src="/theme/img/ad2.jpg" alt="The largest selection of black stainless steel appliances. KitchenAid. Learn more." draggable="false">
+                    </a>
+                </div>
             </div>
 
         </div>

@@ -19,7 +19,7 @@
     pointer-events: none;
     transition: all .2s ease(inOutSine);
 
-    &-active {
+    &.is--active {
         opacity: .8;
         visibility: visible;
         pointer-events: all;

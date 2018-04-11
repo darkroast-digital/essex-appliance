@@ -72,21 +72,24 @@
                 <div class="image-wrapper">
                     <img src="/theme/img/logo.jpg" alt="Essex Appliance Centre LTD. Sales | Service | Delivery" draggable="false">
                 </div>
+                
+                <div class="contact-details">
+                    <div class="field address">
+                        <i class="fas fa-home"></i>
+                        <p>76 Talbot St S, Essex, ON, N8M 1A9</p>
+                    </div>
 
-                <div class="field address">
-                    <i class="fas fa-home"></i>
-                    <p>76 Talbot St S, Essex, ON, N8M 1A9</p>
-                </div>
+                    <div class="field phone">
+                        <i class="fas fa-phone"></i>
+                        <p>1.519.776.6316</p>
+                    </div>
 
-                <div class="field phone">
-                    <i class="fas fa-phone"></i>
-                    <p>1.519.776.6316</p>
+                    <div class="field email">
+                        <i class="fas fa-envelope"></i>
+                        <p>sales@essexappliance.com</p>
+                    </div>
                 </div>
-
-                <div class="field email">
-                    <i class="fas fa-envelope"></i>
-                    <p>sales@essexappliance.com</p>
-                </div>
+                
             </div>
 
             {{-- End Column Contact --}}
@@ -118,7 +121,9 @@
 
             <div class="column nav-links">
                 <h3>Navigation</h3>
-                @include('theme.layouts.partials._navLinks')
+                <ul class="nav-menu {{ app('request')->url() == route('home') ? 'full' : '' }}">
+                    @include('theme.layouts.partials._navLinks')
+                </ul>
             </div>
 
             {{-- End Column Nav-Links --}}
@@ -127,7 +132,8 @@
                 <h3>Newsletter</h3>
                 <p>Register your email for news</p>
 
-                <form action="" method="post">
+                <form action="{{ route('home') }}" method="post" class="form">
+                    @csrf
                     <input type="text" name="email" placeholder="Your email here" required>
                     <button class="button submit">Subscribe</button>
                 </form>

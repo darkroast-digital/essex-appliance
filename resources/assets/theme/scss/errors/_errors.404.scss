@@ -1,0 +1,25 @@
+/*
+|--------------------------------------------------------------------------
+| #404 PAGE ERRORS
+|--------------------------------------------------------------------------
+*/
+
+.error {
+
+    .not-found {
+
+        &__container {
+            flex-direction:column;
+            padding:5rem 0;
+
+            @media screen and (max-width:48em) {
+                padding:3rem 0;
+            }
+
+            h1 {
+                text-transform:uppercase;
+                font-weight:700;
+            }
+        }
+    }
+}

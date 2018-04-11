@@ -121,8 +121,17 @@
         align-items:center;
         margin:1rem auto;
 
+        @media screen and (max-width:32em) {
+            display:block;
+        }
+
         .next, .prev {
             max-width:calc(50% - 2rem);
+
+            @media screen and (max-width:32em) {
+                max-width:100%;
+                margin-bottom:1rem;
+            }
 
             a {
                 color:$font-color;

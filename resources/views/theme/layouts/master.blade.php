@@ -25,7 +25,7 @@
 
     <!-- Title and Description -->
 
-    <title></title>
+    <title>Essex Appliance Centre | @yield('pageTitle')</title>
     <meta type="keywords" content="">
     <meta type="description" content="">
 
@@ -53,7 +53,8 @@
 
         <!-- /.header -->
 
-        @include('theme.layouts.partials._offCanvas')
+        @include('theme.layouts.partials._navOffCanvas')
+        @include('theme.layouts.partials._productsOffCanvas')
 
         <!-- /.off-canvas -->
 
@@ -75,6 +76,8 @@
 
     <!-- /#app -->
 
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWBh3ArM_VNOOEPMcN28pj5QQUWhsm7k0"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <script src="{{ secure_asset('theme/js/app.js') }}"></script>
 
     <!-- See you space cowboy... -->

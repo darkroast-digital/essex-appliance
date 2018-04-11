@@ -16,6 +16,11 @@ class ProductsController extends Controller
     public function show($args)
     {
         $product = Product::where('name', $args)->first();
+
+        if (!$product) {
+            return view('errors.404');
+        }
+
         return view('theme.product', compact('product'));
     }
 }

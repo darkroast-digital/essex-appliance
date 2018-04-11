@@ -56,3 +56,4 @@ if (token) {
 // });
 
 window.slick = require('slick-carousel');
+window.GMaps = require('gmaps');

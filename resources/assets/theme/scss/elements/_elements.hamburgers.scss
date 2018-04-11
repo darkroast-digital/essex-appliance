@@ -8,11 +8,12 @@
 
 
 .hamburger {
-    z-index: z(highest);
+    z-index: 50;
     cursor: pointer;
     display: none;
+    padding:1rem 0;
 
-    @include breakpoint (md) {
+    @media screen and (max-width:1024px) {
         display: block;
     }
 

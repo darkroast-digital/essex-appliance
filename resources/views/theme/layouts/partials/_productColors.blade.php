@@ -1,0 +1,12 @@
+<div class="color"></div>
+<div class="color"></div>
+<div class="color"></div>
+<div class="color"></div>
+<div class="color"></div>
+<div class="color"></div>
+<div class="color"></div>
+<div class="color"></div>
+<div class="color"></div>
+<div class="color"></div>
+<div class="color"></div>
+<div class="color"></div>

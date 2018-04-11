@@ -28,6 +28,11 @@ class DiscoverController extends Controller
     public function show(Request $request, $slug)
     {
         $post = Post::where('slug', $slug)->first();
+
+        if (!$post) {
+            return view('errors.404');
+        }
+
         $post->view_count++;
         $post->save();
 

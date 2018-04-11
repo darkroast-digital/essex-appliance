@@ -146,9 +146,17 @@
 // #THEME
 // =========================================================================
 
+@import 'theme/theme.contact';
 @import 'theme/theme.discover';
 @import 'theme/theme.home';
 @import 'theme/theme.post';
 @import 'theme/theme.products';
 @import 'theme/theme.single-product';
 @import 'theme/theme.style';
+
+
+
+// #ERRORS
+// =========================================================================
+
+@import 'errors/errors.404'
