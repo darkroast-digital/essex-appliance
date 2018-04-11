@@ -65,7 +65,7 @@
                 </div>
 
                 <div class="column-3 product">
-                    <a href="{{ route('products') }}">
+                    <a href="{{ route('products') }}?category=Stoves">
                         <div class="product-wrapper">
                             <img src="/theme/img/stoves.jpg" draggable="false">
                             <p>Stoves</p>
@@ -74,7 +74,7 @@
                 </div>
 
                 <div class="column-3 product">
-                    <a href="{{ route('products') }}">
+                    <a href="{{ route('products') }}?category=Refrigerators">
                         <div class="product-wrapper">
                             <img src="/theme/img/refrigerators.jpg" draggable="false">
                             <p>Refrigerators</p>
@@ -83,7 +83,7 @@
                 </div>
 
                 <div class="column-3 product">
-                    <a href="{{ route('products') }}">
+                    <a href="{{ route('products') }}?category=Washers">
                         <div class="product-wrapper">
                             <img src="/theme/img/washers.jpg" draggable="false">
                             <p>Washers</p>
@@ -92,7 +92,7 @@
                 </div>
 
                 <div class="column-3 product">
-                    <a href="{{ route('products') }}">
+                    <a href="{{ route('products') }}?category=Dryers">
                         <div class="product-wrapper">
                             <img src="/theme/img/dryers.jpg" draggable="false">
                             <p>Dryers</p>
@@ -101,7 +101,7 @@
                 </div>
 
                 <div class="column-3 product">
-                    <a href="{{ route('products') }}">
+                    <a href="{{ route('products') }}?category=Dish Washers">
                         <div class="product-wrapper">
                             <img src="/theme/img/dish-washer.jpg" draggable="false">
                             <p>Dish Washers</p>
@@ -110,7 +110,7 @@
                 </div>
 
                 <div class="column-3 product">
-                    <a href="{{ route('products') }}">
+                    <a href="{{ route('products') }}?category=Freezers">
                         <div class="product-wrapper">
                             <img src="/theme/img/freezers.jpg" draggable="false">
                             <p>Freezers</p>
@@ -119,7 +119,7 @@
                 </div>
 
                 <div class="column-3 product">
-                    <a href="{{ route('products') }}">
+                    <a href="{{ route('products') }}?category=Microwaves">
                         <div class="product-wrapper">
                             <img src="/theme/img/microwaves.jpg" draggable="false">
                             <p>Microwaves</p>
@@ -128,7 +128,7 @@
                 </div>
 
                 <div class="column-3 product">
-                    <a href="{{ route('products') }}">
+                    <a href="{{ route('products') }}?category=Appliances">
                         <div class="product-wrapper">
                             <img src="/theme/img/appliances.jpg" draggable="false">
                             <p>Appliances</p>
@@ -394,68 +394,27 @@
         <h2>Latest Posts</h2>
 
         <div class="posts container--full">
-            <div class="column-4 post">
-                <div class="image-wrapper">
-                    <img src="/theme/img/post-1.jpg" draggable="false">
-                </div>
 
-                <div class="content-wrapper container--full">
-                    <div class="date">
-                        <p><span>08</span><br/>
-                        JAN</p>
+            @foreach ($posts as $post)
+                <div class="column-4 post">
+                    <div class="image-wrapper">
+                        <img src="{{ $post->imagePath() }}" alt="{{ $post->title }}" draggable="false">
                     </div>
 
-                    <div class="details">
-                        <p class="category">Lifestyle</p>
-                        <h5><a href="#">2018 Kitchen Style Guide</a></h5>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text...</p>
+                    <div class="content-wrapper container--full">
+                        <div class="date">
+                            <p><span>{{ $post->created_at->format('d') }}</span><br/>
+                            {{ $post->created_at->format('M') }}</p>
+                        </div>
+
+                        <div class="details">
+                            <p class="category">{{ $post->firstTag() }}</p>
+                            <h5><a href="{{ route('discover.show', $post->slug) }}">{{ $post->title }}</a></h5>
+                            <p>{{ str_limit($post->content, 150, '...') }}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            {{-- End Post 1 --}}
-
-            <div class="column-4 post">
-                <div class="image-wrapper">
-                    <img src="/theme/img/post-2.jpg" draggable="false">
-                </div>
-
-                <div class="content-wrapper container--full">
-                    <div class="date">
-                        <p><span>06</span><br/>
-                        JAN</p>
-                    </div>
-
-                    <div class="details">
-                        <p class="category">Tips</p>
-                        <h5><a href="#">Keep your washer running like new</a></h5>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text...</p>
-                    </div>
-                </div>
-            </div>
-
-            {{-- End Post 2 --}}
-
-            <div class="column-4 post">
-                <div class="image-wrapper">
-                    <img src="/theme/img/post-3.jpg" draggable="false">
-                </div>
-
-                <div class="content-wrapper container--full">
-                    <div class="date">
-                        <p><span>05</span><br/>
-                        JAN</p>
-                    </div>
-
-                    <div class="details">
-                        <p class="category">Products</p>
-                        <h5><a href="#">REVIEW - Amana&reg; 30-inch Gas Range</a></h5>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text...</p>
-                    </div>
-                </div>
-            </div>
-
-            {{-- End Post 3 --}}
+            @endforeach
 
         </div>
     </div>

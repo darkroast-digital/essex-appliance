@@ -146,7 +146,9 @@
 // #THEME
 // =========================================================================
 
+@import 'theme/theme.discover';
 @import 'theme/theme.home';
+@import 'theme/theme.post';
 @import 'theme/theme.products';
 @import 'theme/theme.single-product';
 @import 'theme/theme.style';

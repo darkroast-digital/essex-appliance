@@ -607,9 +607,19 @@ $spacing: $gutter * 3;
                 .post {
 
                     .image-wrapper {
+                        max-width:100%;
+                        overflow:hidden;
 
                         img {
-                            max-width:100%;
+                            width:100%;
+                            height:100%;
+                            object-fit:cover;
+                            transition:all .2s ease;
+                            max-height:200px;
+
+                            &:hover {
+                                transform:scale(1.1);
+                            }
                         }
                     }
 
@@ -622,6 +632,7 @@ $spacing: $gutter * 3;
                             margin:0;
                             width:18%;
                             margin-right:2%;
+                            text-transform:uppercase;
 
                             p {
                                 border:solid 1px rgba(33, 37, 41, .1);

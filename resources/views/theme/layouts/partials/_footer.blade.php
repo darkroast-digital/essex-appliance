@@ -93,37 +93,32 @@
 
             <div class="column products">
                 <h3>Products</h3>
-                <a href="">Stoves</a>
-                <a href="">Refrigerators</a>
-                <a href="">Washers</a>
-                <a href="">Dryers</a>
-                <a href="">Dish Washers</a>
-                <a href="">Freezers</a>
-                <a href="">Microwaves</a>
-                <a href="">Appliances</a>
+                <a href="{{ @route('products') }}?category=Stoves">Stoves</a>
+                <a href="{{ @route('products') }}?category=Refrigerators">Refrigerators</a>
+                <a href="{{ @route('products') }}?category=Washers">Washers</a>
+                <a href="{{ @route('products') }}?category=Dryers">Dryers</a>
+                <a href="{{ @route('products') }}?category=Dish Washers">Dish Washers</a>
+                <a href="{{ @route('products') }}?category=Freezers">Freezers</a>
+                <a href="{{ @route('products') }}?category=Microwaves">Microwaves</a>
+                <a href="{{ @route('products') }}?category=Appliances">Appliances</a>
             </div>
 
             {{-- End Column Products --}}
 
             <div class="column brands">
                 <h3>Brands</h3>
-                <a href="">Whirlpool</a>
-                <a href="">Maytag</a>
-                <a href="">KitchenAid</a>
-                <a href="">Jenn-Air</a>
-                <a href="">Amana</a>
+                <a href="{{ @route('products') }}?brand=Whirlpool">Whirlpool</a>
+                <a href="{{ @route('products') }}?brand=Maytag">Maytag</a>
+                <a href="{{ @route('products') }}?brand=KitchenAid">KitchenAid</a>
+                <a href="{{ @route('products') }}?brand=Jenn-Air">Jenn-Air</a>
+                <a href="{{ @route('products') }}?brand=Amana">Amana</a>
             </div>
 
             {{-- End Column Brands --}}
 
             <div class="column nav-links">
                 <h3>Navigation</h3>
-                <a href="{{ route('home') }}">Home</a>
-                <a href="{{ route('products') }}">Products</a>
-                <a href="">In-Store Sales</a>
-                <a href="">Services</a>
-                <a href="">Discover</a>
-                <a href="">Contact Us</a>
+                @include('theme.layouts.partials._navLinks')
             </div>
 
             {{-- End Column Nav-Links --}}
@@ -137,13 +132,7 @@
                     <button class="button submit">Subscribe</button>
                 </form>
 
-                <div class="socials">
-                    <a href="https://www.facebook.com/pages/Essex-Appliance-Centre/233352167017805" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://twitter.com/essex_appliance?lang=en" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-google-plus"></i></a>
-                    <a href="https://www.instagram.com/essexappliancecentre/" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-pinterest"></i></a>
-                </div>
+                @include('theme.layouts.partials._socialLinks')
             </div>
 
             {{-- End Column Newsletter --}}

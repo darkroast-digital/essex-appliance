@@ -4,7 +4,7 @@
             <li>
                 <a href="/"><i class="fas fa-home"></i></a>
             </li>
-            <li v-for="(path, key) in pathParts" :key="key"><a :href="path.fullPath">{{ path.name.replace(/%20/g, ' ').replace(/%C2%AE/g, '&reg;').replace(/%22/g, '"') }}</a></li>
+            <li v-for="(path, key) in pathParts" :key="key"><a :href="path.fullPath">{{ path.name.replace(/%20/g, ' ').replace(/%C2%AE/g, '&reg;').replace(/%22/g, '"').replace(/-/g, ' ') }}</a></li>
         </ul>
     </div>
 </template>

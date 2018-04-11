@@ -53,6 +53,11 @@ class Post extends Model
         return $this->tags()->first()->name;
     }
 
+    public function author()
+    {
+        return $this->user->name;
+    }
+
     public function scopeIsTagged()
     {
         if (!$this->tags()->count() > 0) {

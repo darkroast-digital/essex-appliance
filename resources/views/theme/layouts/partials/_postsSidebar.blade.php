@@ -5,6 +5,7 @@
         @foreach ($tags as $tag)
             <li>
                 <a href="{{ route('discover') }}?category={{ $tag->name }}">{{ $tag->name }}</a>
+                <p>({{ $tag->count }})</p>
             </li>
         @endforeach
     </ul>

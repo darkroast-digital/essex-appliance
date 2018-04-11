@@ -1,24 +1,11 @@
 <nav class="nav">
     <div class="container">
-        <ul class="nav-menu {{ app('request')->url() == route('home') ? 'full' : '' }}">
-            <li><a href="{{ route('home') }}" class="{{ app('request')->url() == route('home') ? 'active' : '' }}">Home</a></li>
-            <li><a href="{{ route('products') }}" class="{{ app('request')->url() == route('products') ? 'active' : '' }}">Products</a></li>
-            <li><a href="" {{-- class="{{ app('request')->url() == route('sales') ? 'active' : '' }}" --}}>In-Store Sales</a></li>
-            <li><a href="" {{-- class="{{ app('request')->url() == route('services') ? 'active' : '' }}" --}}>Services</a></li>
-            <li><a href="" {{-- class="{{ app('request')->url() == route('discover') ? 'active' : '' }}" --}}>Discover</a></li>
-            <li><a href="" {{-- class="{{ app('request')->url() == route('contact') ? 'active' : '' }}" --}}>Contact Us</a></li>
-        </ul>
+        @include('theme.layouts.partials._navLinks')
 
         {{-- End Nav --}}
 
         @if (app('request')->url() != route('home'))
-            <div class="socials">
-                <a href="https://www.facebook.com/pages/Essex-Appliance-Centre/233352167017805" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://twitter.com/essex_appliance?lang=en" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-google-plus"></i></a>
-                <a href="https://www.instagram.com/essexappliancecentre/" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-pinterest"></i></a>
-            </div>
+            @include('theme.layouts.partials._socialLinks')
         @endif
 
         {{-- End Socials --}}
