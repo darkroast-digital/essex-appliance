@@ -6134,6 +6134,10 @@ span.CodeMirror-selectedtext {
 | #THEME
 |--------------------------------------------------------------------------
 */
+.\--is-visible {
+  display: block !important;
+}
+
 body {
   background: #f8f9fa;
 }
@@ -6249,4 +6253,8 @@ body {
 
 .CodeMirror-placeholder {
   color: rgba(33, 37, 41, 0.35) !important;
+}
+
+.price-field {
+  display: none;
 }

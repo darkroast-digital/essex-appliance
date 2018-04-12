@@ -218,3 +218,24 @@ if (overlay) {
     });
 
 }
+
+
+
+
+// Price
+// =========================================================================
+
+let featuredCheck = document.querySelector('input[name="featured"]')
+
+if (featuredCheck) {
+    let price = document.querySelector('.price-field')
+
+    if (featuredCheck.checked) {
+        price.classList.add('--is-visible')
+    }
+
+    featuredCheck.addEventListener('click', e => {
+        price.classList.toggle('--is-visible')
+    })
+
+}

@@ -18,16 +18,18 @@
                 <img :src="image" draggable="false" class="--is-image-cover">
             </div>
         </div>
-        <input type="hidden" name="_images" :value="imageIds" v-if="imageIds.length > 0">
+        <input type="hidden" :name="model === 'product' ? '_images' : '_variation_images'" :value="imageIds" v-if="imageIds.length > 0">
     </div>
 </template>
 
 <script>
+    import eventHub from '../event'
 
     export default {
         props: [
             'endpoint',
             'productId',
+            'model'
         ],
 
         data () {
@@ -40,8 +42,9 @@
         },
 
         created() {
+
             if (this.productId !== '') {
-                axios.get(`/api/products/${this.productId}`)
+                axios.get(`/api/${this.model === 'product' ? 'products' : 'variations'}/${this.productId}`)
                     .then(response => {
                         this.images = response.data.data.images
                     })
@@ -79,6 +82,11 @@
                     this.upload(file)
                         .then(response => {
                             this.imageIds.push(response.data.data.id)
+
+                            if (this.model !== 'product') {
+                                eventHub.$emit('variation:imagesAdded', this.imageIds)
+                            }
+
                             reader.readAsDataURL(file)
                         }).catch((error) => {
 

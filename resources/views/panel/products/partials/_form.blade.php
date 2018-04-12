@@ -37,9 +37,6 @@
                 <variations-list></variations-list>
 
                 <!-- /.variation-list -->
-
-                <div class="divider"></div>
-                <button>Add Variation</button>
             </div>
 
             <!-- /.block -->
@@ -71,7 +68,7 @@
                 
                 <div class="field">
 
-                        <label for="brand">Appliance Brand</label>
+                    <label for="brand">Appliance Brand</label>
                         <div class="select">
                             <select name="brand">
                                 @if ($mode === 'create' || isset($product) && !$product->brand()) 
@@ -107,20 +104,30 @@
                     <div class="field field-inline --has-no-margin-bottom">
                         <label>Featured:</label>
                         <label class="toggle">
-                            <input type="checkbox" name="available" {{ isset($product->available) && $product->available ? 'checked' : '' }}>
+                            <input type="checkbox" name="featured" {{ isset($product->featured) && $product->featured ? 'checked' : '' }}>
 
                             <span class="toggle-button"></span>
                         </label>
                     </div>
 
                     <!-- /.featured -->
+
+                    <div class="field price-field --has-no-margin-bottom">
+                        <label for="price">Price:</label>
+                        <input type="text" name="price" value="{{ isset($product->price) ? $product->price : '' }}" placeholder="Add product price...">
+                    </div>
+
+                    <!-- /.field -->
             </div>
 
             <!-- /.block -->
             
             <div class="block --has-margin-bottom">
                 <label>Choose Appliance Colour</label>
-                <color-select product-id="{{ isset($product->id) ? $product->id : '' }}"></color-select>
+                <color-select 
+                    product-id="{{ isset($product->id) ? $product->id : '' }}" 
+                    model="product"
+                ></color-select>
             </div>
 
             <!-- /.block -->
@@ -222,7 +229,11 @@
 
             <div class="block --has-margin-bottom">
                 <label>Product Images</label>
-                <multi-image-upload endpoint="{{ route('productImage.store') }}" product-id="{{ isset($product->id) ? $product->id : '' }}"></multi-image-upload>
+                <multi-image-upload 
+                    endpoint="{{ route('productImage.store') }}"
+                    product-id="{{ isset($product->id) ? $product->id : '' }}" 
+                    model="product">
+                </multi-image-upload>
             </div>
 
             <!-- /.block -->

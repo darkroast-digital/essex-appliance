@@ -2,9 +2,9 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
-use Parttimenobody\Tags\Taggable;
 use Laravel\Scout\Searchable;
+use Parttimenobody\Tags\Taggable;
+use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
@@ -18,8 +18,14 @@ class Product extends Model
         'description',
         'features',
         'specifications',
-        'price'
+        'price',
+        'hash',
     ];
+
+    public function variations()
+    {
+        return $this->hasMany(Variation::class);
+    }
 
     public function brand()
     {

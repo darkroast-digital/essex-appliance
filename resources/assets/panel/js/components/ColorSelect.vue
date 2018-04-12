@@ -13,14 +13,17 @@
             <span class="checked"></span>
             </li>
         </ul>
-        <input v-if="selected" type="hidden" name="colors" :value="selected">
+        <input v-if="selected" type="hidden" name="model === 'product' ? 'colors' : 'variation_colors'" :value="selected">
     </div>
 </template>
 
 <script>
+    import eventHub from '../event'
+
     export default {
         props: [
-            'productId'
+            'productId',
+            'model'
         ],
 
         data () {
@@ -37,7 +40,7 @@
                 })
 
             if (this.productId !== '') {
-                axios.get(`/api/products/${this.productId}`)
+                axios.get(`/api/${this.model === 'product' ? 'products' : 'variations'}/${this.productId}`)
                     .then(response => {
                         this.selected = response.data.data.colors
                     })
@@ -60,6 +63,10 @@
                 }
 
                 this.selected.push(color)
+
+                if (this.model !== 'product') {
+                    eventHub.$emit('variation:colorsAdded', this.selected)
+                }
 
                 e.target.classList.add('selected')
 

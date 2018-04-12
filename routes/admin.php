@@ -5,6 +5,8 @@ Route::group(['prefix' => 'panel', 'middleware' => 'auth', 'namespace' => 'Panel
 
     route::resource('/products', 'ProductsController', ['except' => ['show']]);
 
+    Route::post('/variations/store', 'VariationsController@store')->name('variation.store');
+
     route::resource('/posts', 'PostsController', ['except' => ['show']]);
 
     route::resource('/users', 'UsersController', ['except' => ['show']]);

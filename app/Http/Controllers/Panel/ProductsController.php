@@ -4,11 +4,12 @@ namespace App\Http\Controllers\Panel;
 
 use App\Color;
 use App\Product;
+use App\Variation;
+use App\ProductImage;
 use Illuminate\Http\Request;
 use Parttimenobody\Tags\Models\Tag;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
-use App\ProductImage;
 
 class ProductsController extends Controller
 {
@@ -57,7 +58,8 @@ class ProductsController extends Controller
             'description' => $request->description,
             'features' => $request->features,
             'available' => $request->available === 'on' ? 1 : 0,
-            'featured' => $request->featured === 'on' ? 1 : 0
+            'featured' => $request->featured === 'on' ? 1 : 0,
+            'price' => $request->price
         ]);
 
         foreach ($colors as $color) {
@@ -108,8 +110,9 @@ class ProductsController extends Controller
     {
         $colors = explode(',', $request->colors);
         $images = explode(',', $request->_images);
+        $variations = explode(',', $request->_variations);
 
-        $product->hash = $request->hash;
+        $product->hash = $request->_hash;
         $product->name = $request->name;
         $product->sku = $request->sku;
         $product->upc = $request->upc;
@@ -117,6 +120,7 @@ class ProductsController extends Controller
         $product->features = $request->features;
         $product->available = $request->available === 'on' ? 1 : 0;
         $product->featured = $request->featured === 'on' ? 1 : 0;
+        $product->price = $request->price;
 
         $product->untag();
 
@@ -137,6 +141,16 @@ class ProductsController extends Controller
                 $image->imageable_type = 'App\Product';
 
                 $image->save();
+            }
+        }
+
+        if ($request->_variations) {
+            foreach ($variations as $id) {
+                $variation = Variation::find($id);
+
+                $variation->product_id = $product->id;
+
+                $variation->save();
             }
         }
 
