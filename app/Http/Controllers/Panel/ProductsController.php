@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Panel;
 
 use App\Color;
 use App\Product;
+use App\Variation;
+use App\ProductImage;
 use Illuminate\Http\Request;
 use Parttimenobody\Tags\Models\Tag;
 use App\Http\Controllers\Controller;
@@ -45,7 +47,9 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
+        $images = explode(',', $request->_images);
         $colors = explode(',', $request->colors);
+
         $product = Product::create([
             'hash' => $request->_hash,
             'name' => $request->name,
@@ -54,7 +58,8 @@ class ProductsController extends Controller
             'description' => $request->description,
             'features' => $request->features,
             'available' => $request->available === 'on' ? 1 : 0,
-            'featured' => $request->featured === 'on' ? 1 : 0
+            'featured' => $request->featured === 'on' ? 1 : 0,
+            'price' => $request->price
         ]);
 
         foreach ($colors as $color) {
@@ -64,20 +69,20 @@ class ProductsController extends Controller
         $product->tag($request->category);
         $product->tag($request->brand);
 
+        if ($request->_images) {
+            foreach ($images as $id) {
+                $image = ProductImage::find($id);
+
+                $image->imageable_id = $product->id;
+                $image->imageable_type = 'App\Product';
+
+                $image->save();
+            }
+        }
+
         $request->session()->flash('alert:sucess', 'Product was created!');
 
         return redirect()->route('panel.products.index');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Product  $product
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Product $product)
-    {
-        //
     }
 
     /**
@@ -88,19 +93,10 @@ class ProductsController extends Controller
      */
     public function edit(Product $product)
     {
-        $productColors = $product->tags()->where('tag_type', 'color')->get();
-        $colors = [];
-
-        foreach ($productColors as $c) {
-            $color = flatten(Color::where('tag_id', $c->id)->get()->toArray());
-
-            array_push($colors, $color);
-        }
-
         $categories = Tag::all()->where('tag_type', 'category');
         $brands = Tag::all()->where('tag_type', 'brand');
 
-        return view('panel.products.edit', compact('product', 'categories', 'brands', 'colors'));
+        return view('panel.products.edit', compact('product', 'categories', 'brands'));
     }
 
     /**
@@ -112,7 +108,55 @@ class ProductsController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        $colors = explode(',', $request->colors);
+        $images = explode(',', $request->_images);
+        $variations = explode(',', $request->_variations);
+
+        $product->hash = $request->_hash;
+        $product->name = $request->name;
+        $product->sku = $request->sku;
+        $product->upc = $request->upc;
+        $product->description = $request->description;
+        $product->features = $request->features;
+        $product->available = $request->available === 'on' ? 1 : 0;
+        $product->featured = $request->featured === 'on' ? 1 : 0;
+        $product->price = $request->price;
+
+        $product->untag();
+
+        foreach ($colors as $color) {
+            $product->tag($color);
+        }
+
+        $product->tag($request->category);
+        $product->tag($request->brand);
+
+        $product->save();
+
+        if ($request->_images) {
+            foreach ($images as $id) {
+                $image = ProductImage::find($id);
+
+                $image->imageable_id = $product->id;
+                $image->imageable_type = 'App\Product';
+
+                $image->save();
+            }
+        }
+
+        if ($request->_variations) {
+            foreach ($variations as $id) {
+                $variation = Variation::find($id);
+
+                $variation->product_id = $product->id;
+
+                $variation->save();
+            }
+        }
+
+        $request->session()->flash('alert:sucess', 'Product was updated!');
+
+        return redirect()->route('panel.products.index');
     }
 
     /**

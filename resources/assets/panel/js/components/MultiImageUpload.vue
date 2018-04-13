@@ -18,28 +18,36 @@
                 <img :src="image" draggable="false" class="--is-image-cover">
             </div>
         </div>
+        <input type="hidden" :name="model === 'product' ? '_images' : '_variation_images'" :value="imageIds" v-if="imageIds.length > 0">
     </div>
 </template>
 
 <script>
+    import eventHub from '../event'
 
     export default {
-        props: {
-            endpoint: {
-                type: String,
-                default: ''
-            },
-            currentImages: {
-                type: Array,
-                default: () => []
-            }
-        },
+        props: [
+            'endpoint',
+            'productId',
+            'model'
+        ],
 
         data () {
             return {
                 errors: [],
-                images: this.currentImages,
-                uploading: false
+                images: [],
+                uploading: false,
+                imageIds: []
+            }
+        },
+
+        created() {
+
+            if (this.productId !== '') {
+                axios.get(`/api/${this.model === 'product' ? 'products' : 'variations'}/${this.productId}`)
+                    .then(response => {
+                        this.images = response.data.data.images
+                    })
             }
         },
         
@@ -71,9 +79,51 @@
                         this.images.push(dataURL)
                     }
 
-                    reader.readAsDataURL(file)
+                    this.upload(file)
+                        .then(response => {
+                            this.imageIds.push(response.data.data.id)
+
+                            if (this.model !== 'product') {
+                                eventHub.$emit('variation:imagesAdded', this.imageIds)
+                            }
+
+                            reader.readAsDataURL(file)
+                        }).catch((error) => {
+
+                        if (error.response.status == 422) {
+                            this.errors = error.response.data.errors
+
+                            return
+                        }
+
+                        this.errors = 'Something went wrong. Try again.'
+                    })
                 }
 
+            },
+
+            upload (file) {
+                this.uploading = true
+
+                return axios.post(this.endpoint, this.packageUpload(file))
+                    .then(response => {
+                        this.uploading = false
+
+                        return Promise.resolve(response)
+                    })
+                    .catch(error => {
+                        this.uploading = false
+
+                        return Promise.reject(error)
+                    })
+            },
+
+            packageUpload (file) {
+                let fileData = new FormData()
+
+                fileData.append('image', file)
+
+                return fileData
             }
         }
     }

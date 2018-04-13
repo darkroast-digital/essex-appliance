@@ -25,17 +25,20 @@ const app = new Vue({
 // #SIMPLE MDE
 // =========================================================================
 
-var mde = document.getElementById('mde')
+var mde = document.querySelectorAll('.mde')
 
 if (mde) {
-    var simplemde = new SimpleMDE({ 
-        element: mde,
-        hideIcons: [
-            'fullscreen',
-            'side-by-side',
-            'image'
-        ]
-    });
+
+    mde.forEach(editor => {
+        let simplemde = new SimpleMDE({ 
+            element: editor,
+            hideIcons: [
+                'fullscreen',
+                'side-by-side',
+                'image'
+            ]
+        })
+    })
 }
 
 
@@ -213,5 +216,26 @@ if (overlay) {
             overlay.classList.remove('overlay-active');
         }
     });
+
+}
+
+
+
+
+// Price
+// =========================================================================
+
+let featuredCheck = document.querySelector('input[name="featured"]')
+
+if (featuredCheck) {
+    let price = document.querySelector('.price-field')
+
+    if (featuredCheck.checked) {
+        price.classList.add('--is-visible')
+    }
+
+    featuredCheck.addEventListener('click', e => {
+        price.classList.toggle('--is-visible')
+    })
 
 }

@@ -8,6 +8,7 @@ class Ad extends Model
 {
     protected $fillable = [
         'name',
+        'link',
         'image_id'
     ];
 

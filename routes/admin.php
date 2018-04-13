@@ -5,6 +5,8 @@ Route::group(['prefix' => 'panel', 'middleware' => 'auth', 'namespace' => 'Panel
 
     route::resource('/products', 'ProductsController', ['except' => ['show']]);
 
+    Route::post('/variations/store', 'VariationsController@store')->name('variation.store');
+
     route::resource('/posts', 'PostsController', ['except' => ['show']]);
 
     route::resource('/users', 'UsersController', ['except' => ['show']]);
@@ -22,3 +24,4 @@ Route::get('/logout', 'Auth\LoginController@logout')->name('auth.logout');
 Route::post('/media/ad', 'Media\\AdImageController@store')->name('adImage.store');
 Route::post('/media/avatar', 'Media\\AvatarController@store')->name('avatar.store');
 Route::post('/media/post', 'Media\\PostImageController@store')->name('postImage.store');
+Route::post('/media/product', 'Media\\ProductImageController@store')->name('productImage.store');

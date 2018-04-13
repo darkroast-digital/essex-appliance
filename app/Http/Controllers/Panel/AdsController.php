@@ -80,6 +80,18 @@ class AdsController extends Controller
         $cta_two = Ad::where('name', 'cta_two')->first();
         $cta_three = Ad::where('name', 'cta_three')->first();
 
+        $banner->link = $request->banner_link;
+        $banner->save();
+
+        $cta_one->link = $request->cta_one_link;
+        $cta_one->save();
+
+        $cta_two->link = $request->cta_two_link;
+        $cta_two->save();
+
+        $cta_three->link = $request->cta_three_link;
+        $cta_three->save();
+
         if ($request->banner) {
             $banner->image_id = $request->banner;
             $banner->save();

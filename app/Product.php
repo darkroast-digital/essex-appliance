@@ -2,9 +2,9 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
-use Parttimenobody\Tags\Taggable;
 use Laravel\Scout\Searchable;
+use Parttimenobody\Tags\Taggable;
+use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
@@ -18,8 +18,14 @@ class Product extends Model
         'description',
         'features',
         'specifications',
-        'price'
+        'price',
+        'hash',
     ];
+
+    public function variations()
+    {
+        return $this->hasMany(Variation::class);
+    }
 
     public function brand()
     {
@@ -49,10 +55,30 @@ class Product extends Model
         $colors = [];
 
         foreach ($tags as $color) {
-            array_push($colors, $color->name);
+            array_push($colors, $color->slug);
         }
 
         return $colors;
+    }
+
+    public function images()
+    {
+        return $this->morphMany('App\ProductImage', 'imageable');
+    }
+
+    public function imagePaths()
+    {
+        if (empty($this->images)) {
+            return false;
+        }
+
+        $images = [];
+
+        foreach ($this->images as $image) {
+            array_push($images, secure_url('/uploads' . $image->path));
+        }
+
+        return $images;
     }
 
     public function scopeIsBranded()
