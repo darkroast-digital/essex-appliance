@@ -28,3 +28,17 @@ route::resource('/variations', 'VariationsController', ['only' => ['index', 'sho
  * @return mixed
  */
 route::get('/colors', 'ColorsController@index')->name('colors.index');
+
+/**
+ * Return products data
+ *
+ * @return mixed
+ */
+route::get('/categories', 'CategoriesController@index')->name('categories.index');
+
+/**
+ * Return products data
+ *
+ * @return mixed
+ */
+route::get('/brands', 'BrandsController@index')->name('brands.index');
