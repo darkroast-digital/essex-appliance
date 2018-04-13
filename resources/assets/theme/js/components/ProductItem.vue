@@ -1,12 +1,18 @@
 <template>
     <div class="product">
-        <a :href="'products/' + product.name">
-            <div class="image-wrapper">
+        <div class="image-wrapper">
+            <a :href="'products/' + product.name">
                 <img src="/theme/img/product-1.jpg" draggable="false">
-            </div>
-
-            <p>{{ product.name }}</p>
-        </a>
+            </a>
+        </div>
+        
+        <div class="content-wrapper">
+            <a :href="'products/' + product.name">
+                <p>{{ product.name }}</p>
+            </a>
+            <p v-if="product.price != null" class="price">${{ product.price }}</p>
+            <p class="product-desc">{{ product.description }}</p>
+        </div>
     </div>
 </template>
 

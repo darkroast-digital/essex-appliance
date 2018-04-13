@@ -57,3 +57,4 @@ if (token) {
 
 window.slick = require('slick-carousel');
 window.GMaps = require('gmaps');
+window.zoom = require('jquery-zoom');

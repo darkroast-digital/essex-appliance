@@ -17,6 +17,7 @@
 <script>
     import product from './ProductItem'
     import paginationList from './PaginationList'
+    import eventHub from '../event'
 
     export default {
         components: {
@@ -41,6 +42,21 @@
                     this.products = response.data.data
                     this.pagination = response.data.meta.pagination
                 })
+        }, 
+
+        mounted() {
+            eventHub.$on('button:clicked', this.fetchNewData)
+        },
+
+        methods: {
+            fetchNewData(queryString) {
+                console.log('working')
+                axios.get(`${this.endpoint}/${queryString}`)
+                    .then(response => {
+                        this.products = response.data.data
+                        this.pagination = response.data.meta.pagination
+                    })
+            }
         }
 
     }

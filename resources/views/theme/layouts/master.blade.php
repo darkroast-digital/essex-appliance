@@ -21,24 +21,24 @@
 
     <!-- Mobile Theme Colour -->
 
-    <meta name="theme-color" content="#D82232">
+    <meta name="theme-color" content="#191919">
 
     <!-- Title and Description -->
 
     <title>Essex Appliance Centre | @yield('pageTitle')</title>
-    <meta type="keywords" content="">
-    <meta type="description" content="">
+    <meta type="keywords" content="Essex Appliance Centre, Southwest Ontario, appliances, Essex, kitchen appliances, kitchenware, laundry appliances, stoves, refrigerators, fridges, washers, dryers, dish washers, dishwashers, freezers, microwaves, appliances, Whirlpool, Maytag, KitchenAid, Jenn-Air, Amana">
+    <meta type="description" content="Essex Appliance Center is the premier place for all of your appliance needs in Southwest Ontario. With over 12,000 square feet of showroom space, and 15,000 square feet of warehouse, we have a wide selection of appliances for you to research and compare. Our knowledgeable staff are ready to assist you with expert advice and answers to your question.">
 
     <!-- Favicons -->
 
-    <link rel="icon" href="">
+    <link rel="icon" href="/theme/img/fav.png">
 
-    <meta property="og:title" content="">
-    <meta property="og:description" content="">
+    <meta property="og:title" content="Essex Appliance Centre | @yield('pageTitle')">
+    <meta property="og:description" content="Essex Appliance Center is the premier place for all of your appliance needs in Southwest Ontario. With over 12,000 square feet of showroom space, and 15,000 square feet of warehouse, we have a wide selection of appliances for you to research and compare. Our knowledgeable staff are ready to assist you with expert advice and answers to your question.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="">
-    <meta property="og:site_name" content="">
-    <meta property="og:image" content="">
+    <meta property="og:url" content="essexappliance.com">
+    <meta property="og:site_name" content="Essex Appliance Centre">
+    <meta property="og:image" content="/theme/img/og.jpg">
 
 </head>
 <body>
@@ -54,7 +54,6 @@
         <!-- /.header -->
 
         @include('theme.layouts.partials._navOffCanvas')
-        @include('theme.layouts.partials._productsOffCanvas')
 
         <!-- /.off-canvas -->
 

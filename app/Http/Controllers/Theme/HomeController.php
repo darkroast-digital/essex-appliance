@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Theme;
 
+use App\Ad;
+use App\Color;
 use App\Http\Controllers\Controller;
 use App\Post;
 use App\Product;
@@ -12,8 +14,13 @@ class HomeController extends Controller
 {
     public function index()
     {
+        $ads = Ad::all();
+        $banner = Ad::where('name', 'banner')->first();
         $posts = Post::orderBy('created_at', 'desc')->limit(3)->get();
-        return view('theme.home', compact('posts'));
+        $hotBuys = Product::where('featured', '1')->get();
+        $products = Product::orderBy('created_at', 'desc')->limit(10)->get();
+        
+        return view('theme.home', compact('posts', 'ads', 'banner', 'hotBuys', 'products'));
     }
 
     public function post()

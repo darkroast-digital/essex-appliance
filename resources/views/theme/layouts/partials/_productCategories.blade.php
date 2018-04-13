@@ -1,4 +1,4 @@
-<div class="cat">
+<div class="category">
     <label class="checkbox">
         <input type="checkbox" name="stoves">
         <span class="checkbox-button"></span>

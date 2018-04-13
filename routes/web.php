@@ -13,4 +13,5 @@ Route::group(['namespace' => 'Theme'], function () {
     Route::get('/products/{name}', 'ProductsController@show')->name('products.show');
     Route::get('/contact-us', 'ContactController@index')->name('contact');
     Route::post('/contact-us', 'ContactController@post');
+    Route::get('/services', 'ServicesController@index')->name('services');
 });

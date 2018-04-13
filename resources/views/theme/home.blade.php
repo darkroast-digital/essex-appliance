@@ -145,23 +145,15 @@
 
         <div class="ads">
             <div class="ads__container container--full">
-                <div class="column-4 ad">
-                    <a href="#" target="_blank">
-                        <img src="/theme/img/ad1.jpg" alt="Built to work hard for the long haul. Shop now." draggable="false">
-                    </a>
-                </div>
-
-                <div class="column-4 ad">
-                    <a href="#" target="_blank">
-                        <img src="/theme/img/ad2.jpg" alt="The largest selection of black stainless steel appliances. KitchenAid. Learn more." draggable="false">
-                    </a>
-                </div>
-
-                <div class="column-4 ad">
-                    <a href="#" target="_blank">
-                        <img src="/theme/img/ad3.jpg" alt="Amana. Just Right. Priced right. Easy to use. Quality products. Amana brand delivers on value. Shop now. " draggable="false">
-                    </a>
-                </div>
+                @foreach ($ads as $ad)
+                    @if ($ad->name != 'banner')
+                        <div class="column-4 ad">
+                            <a href="{{ $ad->link }}" target="_blank">
+                                <img src="{{ $ad->imagePath() }}" draggable="false">
+                            </a>
+                        </div>
+                    @endif
+                @endforeach
             </div>
         </div>
 
@@ -178,7 +170,22 @@
             <h3><span>Hot Buys</span> & In-Store Sales</h3>
 
             <div class="hot-buys-slider container--full">
-                <div class="hot-buys-slide container--full">
+
+                @foreach ($hotBuys as $product)
+                    <div class="hot-buys-slide container--full">
+                        <div class="column-7 image-wrapper">
+                            <img src="/theme/img/top-buy-slide.jpg" draggable="false">
+                        </div>
+
+                        <div class="column-5 content-wrapper">
+                            <h4><a href="#">{{ $product->name }}</a></h4>
+                            <p>{{ str_limit($product->description, 115, '...') }}</p>
+                            <h4 class="sale-price">Now Only <span>${{ $product->price }}</span></h4>
+                        </div>
+                    </div>
+                @endforeach
+
+                {{-- <div class="hot-buys-slide container--full">
                     <div class="column-7 image-wrapper">
                         <img src="/theme/img/top-buy-slide.jpg" draggable="false">
                     </div>
@@ -187,44 +194,10 @@
                         <h4><a href="">Samsung A500 Washer-Dryer Combo</a></h4>
                         <p>4.9cf Traditional Top Load Washer with Precise Fill Option</p>
                         <p>8.0cf Traditional Dryer With Timed or Sensor Dry Options</p>
-                        <h4 class="original">Original <span>$1049</span></h4>
                         <h4 class="sale-price">Now Only <span>$849</span></h4>
                     </div>
-                </div>
+                </div> --}}
 
-                {{-- End Hot-Buys Slide 1 --}}
-
-                <div class="hot-buys-slide container--full">
-                    <div class="column-7 image-wrapper">
-                        <img src="/theme/img/top-buy-slide.jpg" draggable="false">
-                    </div>
-
-                    <div class="column-5 content-wrapper">
-                        <h4><a href="">Samsung A500 Washer-Dryer Combo</a></h4>
-                        <p>4.9cf Traditional Top Load Washer with Precise Fill Option</p>
-                        <p>8.0cf Traditional Dryer With Timed or Sensor Dry Options</p>
-                        <h4 class="original">Original <span>$1049</span></h4>
-                        <h4 class="sale-price">Now Only <span>$849</span></h4>
-                    </div>
-                </div>
-
-                {{-- End Hot-Buys Slide 2 --}}
-
-                <div class="hot-buys-slide container--full">
-                    <div class="column-7 image-wrapper">
-                        <img src="/theme/img/top-buy-slide.jpg" draggable="false">
-                    </div>
-
-                    <div class="column-5 content-wrapper">
-                        <h4><a href="">Samsung A500 Washer-Dryer Combo</a></h4>
-                        <p>4.9cf Traditional Top Load Washer with Precise Fill Option</p>
-                        <p>8.0cf Traditional Dryer With Timed or Sensor Dry Options</p>
-                        <h4 class="original">Original <span>$1049</span></h4>
-                        <h4 class="sale-price">Now Only <span>$849</span></h4>
-                    </div>
-                </div>
-
-                {{-- End Hot-Buys Slide 3 --}}
             </div>
 
             {{-- End Hot-Buys Slider --}}
@@ -244,7 +217,23 @@
         </div>
 
         <div class="new-slider container--full">
-            <div class="new-slide">
+
+            @foreach ($products as $product)
+                <div class="new-slide">
+                    <a href="{{ @route('products.show', $product->name) }}">
+                        <div class="image-wrapper">
+                            <img src="/theme/img/product-1.jpg" draggable="false">
+                        </div>
+
+                        <p>{{ $product->name }}</p>
+                        @if ($product->price != null)
+                            <p><strong>${{ $product->price }}</strong></p>
+                        @endif
+                    </a>
+                </div>
+            @endforeach
+
+            {{-- <div class="new-slide">
                 <a href="#">
                     <div class="image-wrapper">
                         <img src="/theme/img/product-1.jpg" draggable="false">
@@ -253,126 +242,7 @@
                     <p>KitchenAid&reg; 30-Inch 5 Burner Dual Fuel Double Oven Convection Range</p>
                     <p><strong>$989.00</strong></p>
                 </a>
-            </div>
-
-            {{-- End New Slide 1 --}}
-
-            <div class="new-slide">
-                <a href="#">
-                    <div class="image-wrapper">
-                        <img src="/theme/img/product-2.jpg" draggable="false">
-                    </div>
-
-                    <p>Amana&reg; 29-inch Wide Bottom-Freezer Refrigerator with Garden Fresh&trade;</p>
-                    <p><strong>$789.00</strong></p>
-                </a>
-            </div>
-
-            {{-- End New Slide 2 --}}
-
-            <div class="new-slide">
-                <a href="#">
-                    <div class="image-wrapper">
-                        <img src="/theme/img/product-3.jpg" draggable="false">
-                    </div>
-
-                    <p>Maytag&reg; Top Load Dryer with the PowerDry System and Extra Moisture Sensor</p>
-                    <p><strong>$599.00</strong></p>
-                </a>
-            </div>
-
-            {{-- End New Slide 3 --}}
-
-            <div class="new-slide">
-                <a href="#">
-                    <div class="image-wrapper">
-                        <img src="/theme/img/product-4.jpg" draggable="false">
-                    </div>
-
-                    <p>Jenn-Air&reg; 72" Counter Depth French Door Refrigeratore</p>
-                    <p><strong>$1259.00</strong></p>
-                </a>
-            </div>
-
-            {{-- End New Slide 4 --}}
-
-            <div class="new-slide">
-                <a href="#">
-                    <div class="image-wrapper">
-                        <img src="/theme/img/product-5.jpg" draggable="false">
-                    </div>
-
-                    <p>Maytag&reg; 7.0 cu. ft. Dryer with Steam Enhanced Cycles</p>
-                    <p><strong>$699.00</strong></p>
-                </a>
-            </div>
-
-            {{-- End New Slide 5 --}}
-
-            <div class="new-slide">
-                <a href="#">
-                    <div class="image-wrapper">
-                        <img src="/theme/img/product-1.jpg" draggable="false">
-                    </div>
-
-                    <p>KitchenAid&reg; 30-Inch 5 Burner Dual Fuel Double Oven Convection Range</p>
-                    <p><strong>$989.00</strong></p>
-                </a>
-            </div>
-
-            {{-- End New Slide 1 --}}
-
-            <div class="new-slide">
-                <a href="#">
-                    <div class="image-wrapper">
-                        <img src="/theme/img/product-2.jpg" draggable="false">
-                    </div>
-
-                    <p>Amana&reg; 29-inch Wide Bottom-Freezer Refrigerator with Garden Fresh&trade;</p>
-                    <p><strong>$789.00</strong></p>
-                </a>
-            </div>
-
-            {{-- End New Slide 2 --}}
-
-            <div class="new-slide">
-                <a href="#">
-                    <div class="image-wrapper">
-                        <img src="/theme/img/product-3.jpg" draggable="false">
-                    </div>
-
-                    <p>Maytag&reg; Top Load Dryer with the PowerDry System and Extra Moisture Sensor</p>
-                    <p><strong>$599.00</strong></p>
-                </a>
-            </div>
-
-            {{-- End New Slide 3 --}}
-
-            <div class="new-slide">
-                <a href="#">
-                    <div class="image-wrapper">
-                        <img src="/theme/img/product-4.jpg" draggable="false">
-                    </div>
-
-                    <p>Jenn-Air&reg; 72" Counter Depth French Door Refrigeratore</p>
-                    <p><strong>$1259.00</strong></p>
-                </a>
-            </div>
-
-            {{-- End New Slide 4 --}}
-
-            <div class="new-slide">
-                <a href="#">
-                    <div class="image-wrapper">
-                        <img src="/theme/img/product-5.jpg" draggable="false">
-                    </div>
-
-                    <p>Maytag&reg; 7.0 cu. ft. Dryer with Steam Enhanced Cycles</p>
-                    <p><strong>$699.00</strong></p>
-                </a>
-            </div>
-
-            {{-- End New Slide 5 --}}
+            </div> --}}
 
         </div>
     </div>
@@ -382,8 +252,8 @@
 
 <section class="ad-banner">
     <div class="ad-banner__container container">
-        <a href="#" target="_blank">
-            <img src="/theme/img/ad-banner.jpg" alt="The largest selection of black stainless steel appliances. KitchenAid. Learn More" draggable="false">
+        <a href="{{ $banner->link }}" target="_blank">
+            <img src="{{ $banner->imagePath() }}" draggable="false">
         </a>
     </div>
 </section>

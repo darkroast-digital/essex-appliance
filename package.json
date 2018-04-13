@@ -26,6 +26,7 @@
     },
     "dependencies": {
         "gmaps": "^0.4.24",
+        "jquery-zoom": "^1.7.20",
         "simplemde": "^1.11.2",
         "slick-carousel": "^1.8.1",
         "vue-instantsearch": "^1.5.2"

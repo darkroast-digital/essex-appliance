@@ -4,6 +4,7 @@
 @section('pageTitle', 'Products')
 
 @section('content')
+@include('theme.layouts.partials._productsOffCanvas')
 
 <section class="main">
     <div class="main__container container">
@@ -59,7 +60,7 @@
 
         <div class="products column-9">
             
-            <div class="products__container">
+            <div class="products__container grid">
                 <product-list endpoint="{{ route('api.products.index') }}"></product-list>
             </div>
 

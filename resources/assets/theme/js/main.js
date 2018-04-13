@@ -6,10 +6,16 @@ window.Vue = require('vue');
 
 Vue.config.productionTip = false
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('button-component', require('./components/ButtonComponent.vue'));
+
+Vue.component('brands-list', require('./components/BrandsList.vue'));
+Vue.component('breadcrumbs', require('./components/BreadcrumbsList.vue'));
+Vue.component('categories-list', require('./components/CategoriesList.vue'));
+Vue.component('colors-list', require('./components/ColorsList.vue'));
+Vue.component('pagination-list', require('./components/PaginationList.vue'));
 Vue.component('product', require('./components/ProductItem.vue'));
 Vue.component('product-list', require('./components/ProductList.vue'));
-Vue.component('breadcrumbs', require('./components/BreadcrumbsList.vue'));
-Vue.component('pagination-list', require('./components/PaginationList.vue'));
+Vue.component('sidebar-item', require('./components/SidebarItem.vue'));
 
 const app = new Vue({
     el: '#app'
@@ -249,3 +255,45 @@ if (overlay) {
         })
     });
 }
+
+
+
+
+// #PRODUCTS DISPLAY
+// =========================================================================
+
+$('.grid-display').on('click', function(){
+    $('.list-display').removeClass('is--active');
+    $('.products__container').removeClass('list').addClass('grid');
+    $(this).addClass('is--active');
+});
+
+$('.list-display').on('click', function(){
+    $('.grid-display').removeClass('is--active');
+    $('.products__container').removeClass('grid').addClass('list');
+    $(this).addClass('is--active');
+});
+
+
+
+
+// #MAGNIFIER
+// =========================================================================
+
+var featuredImage = $('.featured-image .image-wrapper');
+var zoomImage = featuredImage.data('image');
+
+featuredImage.zoom({url: zoomImage});
+
+var featured = document.querySelector('.featured-image img');
+var imageDisplay = document.querySelectorAll('.image-display img');
+
+imageDisplay.forEach(trigger => {
+    trigger.addEventListener('click', function () {
+        var featuredSrc = featured.src;
+        featured.src = this.src;
+        zoomImage = this.src;
+        featuredImage.zoom({url: zoomImage});
+        this.src = featuredSrc;
+    });
+});

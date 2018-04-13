@@ -29,14 +29,24 @@
 
                 .images {
 
+                    .featured-image {
+                        height:300px;
+
+                        .image-wrapper {
+                            height:300px;
+                        }
+                    }
+
                     .image-wrapper {
                         width:100%;
                         border:solid 1px rgba($font-color, .1);
+                        height:100%;
 
                         img {
                             width:100%;
                             height:100%;
                             object-fit:cover;
+                            object-position:center center;
                         }
                     }
 

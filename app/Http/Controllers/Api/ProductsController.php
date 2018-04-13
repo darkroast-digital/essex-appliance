@@ -16,9 +16,22 @@ class ProductsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $paginator = Product::paginate(9);
+        $pageLength = 9;
+
+        if ($request->query('page-length')) {
+            $pageLength = $request->query('page-length');
+        }
+
+        if ($request->query('category')) {
+            $paginator = Product::hasTags($request->query('category'))->paginate($pageLength);
+        } else if ($request->query('brand')) { 
+            $paginator = Product::hasTags($request->query('brand'))->paginate($pageLength);
+        } else {
+            $paginator = Product::paginate($pageLength);
+        }
+        
         $products = $paginator->getCollection();
 
         $data = Fractal::create()

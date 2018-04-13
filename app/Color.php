@@ -11,4 +11,15 @@ class Color extends Model
     {
         return $this->belongsTo(Tag::class);
     }
+
+    public function colorName()
+    {
+        $tags = Tag::where('tag_type', 'color')->get();
+
+        foreach ($tags as $tag) {
+            if ($tag->id == $this->tag_id) {
+                return $tag->name;
+            }
+        }
+    }
 }

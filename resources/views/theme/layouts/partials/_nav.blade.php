@@ -1,5 +1,5 @@
 <nav class="nav">
-    <div class="container">
+    <div class="nav__container container">
         <ul class="nav-menu {{ app('request')->url() == route('home') ? 'full' : '' }}">
             @include('theme.layouts.partials._navLinks')
         </ul>
@@ -19,6 +19,7 @@
         </div>
 
         {{-- End Hamburger --}}
+
     </div>
 </nav>
 

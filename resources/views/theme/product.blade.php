@@ -13,51 +13,47 @@
     <div class="product__container container">
         <div class="left column-3">
             <div class="images">
-                <div class="featured-image">
-                    <div class="image-wrapper">
-                        <img src="/theme/img/product-1.jpg" draggable="false">
+                <div class="featured-image image-display">
+                    <div class="image-wrapper" data-image="../theme/img/oven-1.jpg">
+                        <img src="/theme/img/oven-1.jpg" draggable="false">
                     </div>
                 </div>
 
                 <div class="secondary-images container--full">
-                    <div class="secondary">
+                    <div class="secondary image-display">
                         <div class="image-wrapper">
-                            <img src="/theme/img/1.jpg" draggable="false">
+                            <img src="/theme/img/oven-2.jpg" draggable="false">
                         </div>
                     </div>
 
-                    <div class="secondary">
+                    <div class="secondary image-display">
                         <div class="image-wrapper">
-                            <img src="/theme/img/2.jpg" draggable="false">
+                            <img src="/theme/img/oven-3.jpg" draggable="false">
                         </div>
                     </div>
 
-                    <div class="secondary">
+                    <div class="secondary image-display">
                         <div class="image-wrapper">
-                            <img src="/theme/img/3.jpg" draggable="false">
+                            <img src="/theme/img/oven-4.jpg" draggable="false">
                         </div>
                     </div>
 
-                    <div class="secondary">
+                    <div class="secondary image-display">
                         <div class="image-wrapper">
-                            <img src="/theme/img/4.jpg" draggable="false">
+                            <img src="/theme/img/oven-5.jpg" draggable="false">
                         </div>
                     </div>
                 </div>
             </div>
             
             <div class="ads">
-                <div class="ad">
-                    <a href="" target="_blank">
-                        <img src="/theme/img/ad1.jpg" alt="Built to work hard for the long haul. Shop now." draggable="false">
-                    </a>
-                </div>
-
-                <div class="ad">
-                    <a href="" target="_blank">
-                        <img src="/theme/img/ad2.jpg" alt="The largest selection of black stainless steel appliances. KitchenAid. Learn more." draggable="false">
-                    </a>
-                </div>
+                @foreach ($ads as $ad)
+                    <div class="ad">
+                        <a href="{{ $ad->link }}" target="_blank">
+                            <img src="{{ $ad->imagePath() }}" draggable="false">
+                        </a>
+                    </div>
+                @endforeach
             </div>
 
         </div>
@@ -88,11 +84,11 @@
 
                 <div class="tabs__body">
                     <div class="tabs__content is--active" data-tab="1">
-                        {{ $product->features }}
+                        {!! $product->features !!}
                     </div>
 
                     <div class="tabs__content" data-tab="2">
-                        {{ $product->specifications }}
+                        {!! $product->specifications !!}
                     </div>
                 </div>
             </div>
