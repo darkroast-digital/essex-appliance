@@ -7,6 +7,7 @@ use Spatie\Fractal\Fractal;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Transformers\VariationTransformer;
+use League\Fractal\Pagination\IlluminatePaginatorAdapter;
 
 class VariationsController extends Controller
 {
@@ -47,5 +48,20 @@ class VariationsController extends Controller
         }
 
         return response('Variation not found', 404);
+    }
+
+    public function showSpecific(Request $request, $id)
+    {
+        $variations = Variation::where('product_id', $id)->get();
+
+        // return response()->json([
+        //     'data' => compact('variations')
+        // ]);
+
+        $data = Fractal::create()
+                ->collection($variations, new VariationTransformer())
+                ->toArray();
+
+        return response()->json($data);
     }
 }

@@ -34,7 +34,7 @@
             <div class="block --has-margin-bottom">
                 <label>Product Variations</label>
                 <div class="divider"></div>
-                <variations-list></variations-list>
+                <variations-list product-id="{{ isset($product->id) ? $product->id : '' }}"></variations-list>
 
                 <!-- /.variation-list -->
             </div>

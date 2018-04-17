@@ -21,6 +21,7 @@ route::resource('/products', 'ProductsController', ['only' => ['index', 'show']]
  * @return mixed
  */
 route::resource('/variations', 'VariationsController', ['only' => ['index', 'show']]);
+Route::get('/variations/product/{prodicutId}', 'VariationsController@showSpecific')->name('variations.specific');
 
 /**
  * Return products data

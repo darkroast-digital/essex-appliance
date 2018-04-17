@@ -154,7 +154,7 @@ class ProductsController extends Controller
             }
         }
 
-        $request->session()->flash('alert:sucess', 'Product was updated!');
+        $request->session()->flash('alert:success', 'Product was updated!');
 
         return redirect()->route('panel.products.index');
     }
@@ -165,8 +165,12 @@ class ProductsController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy(Request $request, Product $product)
     {
-        //
+        $product->delete();
+
+        $request->session()->flash('alert:error', 'Product was deleted!');
+
+        return redirect()->route('panel.products.index');
     }
 }

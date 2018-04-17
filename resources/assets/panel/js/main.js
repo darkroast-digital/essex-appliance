@@ -181,11 +181,21 @@ if (modalTrigger) {
         trigger.addEventListener('click', function (e) {
             e.preventDefault();
 
+            if (typeof trigger.dataset.modalid !== 'undefined') {
+                let id  = trigger.dataset.modalid,
+                    name = trigger.dataset.modalname,
+                    baseAction = document.querySelector('.modal-form').action
+
+                document.querySelector('.modal-form').action = `${baseAction}${id}`
+                document.querySelector('.modal-name').innerHTML = name
+            }
+
             modal.classList.toggle('modal-open');
             overlay.classList.toggle('overlay-active');
         });
     });
 }
+
 
 if (overlay) {
     overlay.addEventListener('click', function () {
@@ -238,4 +248,97 @@ if (featuredCheck) {
         price.classList.toggle('--is-visible')
     })
 
+}
+
+
+
+
+
+// #DASHBOARD CHARTS
+// =========================================================================
+
+// Sessions chart
+
+let chart = document.getElementById('sessionsChart');
+
+if (chart) {
+var sessionsChartContainer = chart.getContext('2d');
+var sessionsChart = new Chart(sessionsChartContainer, {
+    type: 'line',
+    data: {
+        labels: $('.sessionsChart').data('labels'),
+        datasets: [{
+            data: $('.sessionsChart').data('values'),
+            lineTension: .3,
+            backgroundColor: '#ff878750',
+            borderColor: '#c92a2a',
+            responsive: true
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        },
+        legend: {
+            display: false
+        }
+    }
+});
+
+
+
+// New users chart
+var newUsersContainer = document.getElementById('newUsersChart');
+var newUsersChart = new Chart(newUsersContainer, {
+    type: 'doughnut',
+    data: {
+        cutoutPercentage: 50,
+        labels: $('.newUsersChart').data('labels'),
+        datasets: [{
+            data: $('.newUsersChart').data('values'),
+            responsive: true,
+            backgroundColor: [
+                '#c92a2a',
+                '#e03131',
+                '#f03e3e',
+                '#fa5252',
+                '#ff6b6b',
+                '#ff8787',
+                '#ffa8a8',
+                '#ffc9c9',
+            ],
+            borderColor: [
+                '#c92a2a',
+                '#e03131',
+                '#f03e3e',
+                '#fa5252',
+                '#ff6b6b',
+                '#ff8787',
+                '#ffa8a8',
+                '#ffc9c9',
+            ]
+        }]
+    },
+    options: {
+        legend: {
+            position:'right'
+        },
+        scales: {
+            yAxes: [{
+                display:false,
+                ticks: {
+                    display:false
+                },
+                gridLines: {
+                    display:false
+                }
+            }],
+            xAxes:[]
+        }
+    }
+});
 }

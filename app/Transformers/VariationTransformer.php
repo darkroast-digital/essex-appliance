@@ -11,7 +11,10 @@ class VariationTransformer extends TransformerAbstract
     {
         return [
             'id' => $variation->id,
+            'product_id' => $variation->product_id,
             'sku' => $variation->sku,
+            'images' => $variation->imagePaths(),
+            'colors' => $variation->colors(),
         ];
     }
 }

@@ -111,8 +111,12 @@ class PostsController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Post $post)
+    public function destroy(Request $request, Post $post)
     {
-        //
+        $post->delete();
+
+        $request->session()->flash('alert:error', 'Post was deleted!');
+
+        return redirect()->route('panel.posts.index');
     }
 }

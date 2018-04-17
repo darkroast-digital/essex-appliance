@@ -26,7 +26,7 @@
 
                     <div class="field">
                         <label>Variation Images</label>
-                        <multi-image-upload 
+                        <multi-image-upload
                             endpoint="/media/product"
                             :product-id="variation.id ? variation.id : ''" 
                             model="model"
@@ -121,6 +121,9 @@
             toggleCurrent (data) {
                 this.variation.id = data.id
                 this.variation.sku = data.sku
+
+                // this.images = data.images
+                // this.colors = data.colors
 
                 this.isActive = !this.isActive
             },

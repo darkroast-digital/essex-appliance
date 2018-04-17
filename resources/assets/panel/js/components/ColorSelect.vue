@@ -43,14 +43,16 @@
                 axios.get(`/api/${this.model === 'product' ? 'products' : 'variations'}/${this.productId}`)
                     .then(response => {
 
-                        if (response.data.data.colors) {
-                            this.selected = response.data.data.colors
-                        }
+                        this.selected = response.data.data.colors
 
                     }).catch(error => {
                         console.log(error)
                     })
             }
+        },
+
+        mounted () {
+            eventHub.$on('form:showCurrent', this.populateCurrentColors)
         },
 
         methods: {
@@ -76,6 +78,11 @@
 
                 e.target.classList.add('selected')
 
+            },
+
+            populateCurrentColors (data) {
+                console.log(data.colors)
+                // this.colors = data.colors
             }
 
         }

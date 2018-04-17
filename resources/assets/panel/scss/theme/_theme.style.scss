@@ -19,6 +19,22 @@ $introBGHeight: 250px;
     display: block !important;
 }
 
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h3 {
+        font-size: ms(6);
+    }
+
+    h4 {
+        font-size: ms(2);
+        color: color(grey, 60);
+    }
+}
+
 
 
 

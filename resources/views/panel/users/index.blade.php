@@ -2,11 +2,27 @@
 
 @section('content')
 
+    <div class="modal">
+        <div class="block column-6">
+            <h6>Delete User: <span class="--has-color-font modal-name"></span></h6>
+            <hr>
+            <form action="/panel/users/" method="post" class="modal-form">
+                @csrf
+                @method('delete')
+                <p>Hey, looks like you want to delete this user, just make sure this is what you want to do before you follow through.</p>
+                <div class="button-group">
+                    <button type="submit" class="button-error">Delete User</button>
+                    <a href="#0" class="modal-trigger --has-color-font">Cancel, and go back</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <div class="container block">
         <div class="column-12 title-bar">
             <h6>Users</h6>
             <div class="button-group">
-                <a href="#0" class="--has-color-font">View Deleted</a>
+                {{-- <a href="#0" class="--has-color-font">View Deleted</a> --}}
                 <a href="{{ route('panel.users.create') }}" class="button button-secondary">Add New</a>
             </div>
         </div>
@@ -63,7 +79,7 @@
 
                             <!-- /.edit -->
 
-                            <a href="#0">
+                            <a href="#0" class="modal-trigger" data-modalid="{{ $user->id }}" data-modalname="{{ $user->name }}">
                                 <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 20 20" width="20" height="20" class="icon table-icon trash">
                                     <g>
                                         <path d="M6 2l2-2h4l2 2h4v2H2V2h4zM3 6h14l-1 14H4L3 6zm5 2v10h1V8H8zm3 0v10h1V8h-1z"></path>

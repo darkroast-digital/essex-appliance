@@ -1,6 +1,6 @@
 <template>
-    <li>
-        <a href="#0" @click.prevent="showForm">{{ this.variation.sku }}</a>
+    <li @click.prevent="showForm">
+        <a href="#0">{{ this.variation.sku }}</a>
     </li>
 </template>
 

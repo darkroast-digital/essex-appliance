@@ -85,7 +85,7 @@ class UsersController extends Controller
 
         $user->save();
 
-        $request->session()->flash('alert:sucess', 'User was updated!');
+        $request->session()->flash('alert:success', 'User was updated!');
 
         return redirect()->route('panel.users.index');
     }
@@ -96,8 +96,12 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy(Request $request, User $user)
     {
-        dd($user);
+        $user->delete();
+
+        $request->session()->flash('alert:error', 'User was deleted!');
+
+        return redirect()->route('panel.users.index');
     }
 }

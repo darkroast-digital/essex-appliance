@@ -22,6 +22,10 @@
             VariationItem
         },
 
+        props: [
+            'productId'
+        ],
+
         data () {
             return {
                 variations: [],
@@ -30,6 +34,17 @@
         },
 
         mounted () {
+            if (this.productId !== '') {
+                axios.get(`/api/variations/product/${this.productId}`)
+                    .then(response => {
+
+                        this.variations = response.data.data
+
+                    }).catch(error => {
+                        console.log(error)
+                    })
+            }
+
             eventHub.$on('variation:saved', this.pushVariation)
         },
 
@@ -39,8 +54,6 @@
             },
 
             pushVariation (data) {
-                console.log(data)
-
                 this.variationIds.push(data.id)
                 this.variations.push(data)
             }
