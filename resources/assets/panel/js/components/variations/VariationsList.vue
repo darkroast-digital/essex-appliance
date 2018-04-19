@@ -50,10 +50,19 @@
 
         methods: {
             toggleForm () {
-                eventHub.$emit('form:toggle')
+                eventHub.$emit('form:toggle', {  })
             },
 
             pushVariation (data) {
+                for (let index = 0; index < this.variations.length; index++) {
+                    let variation = this.variations[index];
+                    
+                    if (data.sku === variation.sku) {
+                        variation = data
+                        return
+                    }
+                }
+
                 this.variationIds.push(data.id)
                 this.variations.push(data)
             }

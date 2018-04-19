@@ -19,6 +19,7 @@ class ProductTransformer extends TransformerAbstract
             'description' => $product->description,
             'features' => $product->features,
             'specifications' => $product->specifications,
+            'featured' => $product->featured ? true : false,
             'price' => $product->price,
             'colors' => $product->colors(),
             'images' => $product->imagePaths()

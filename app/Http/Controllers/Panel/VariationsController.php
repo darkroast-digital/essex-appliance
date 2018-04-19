@@ -41,4 +41,37 @@ class VariationsController extends Controller
             ]
         ], 200);
     }
+
+    public function update(Request $request)
+    {
+        $colors = $request->variation_colors;
+        $images = $request->_variation_images;
+
+        $variation = Variation::where('sku', $request->sku)->first();
+
+        $variation->untag();
+
+        foreach ($colors as $color) {
+            $variation->tag($color);
+        }
+
+        if ($request->_variation_images) {
+            foreach ($images as $id) {
+                $image = ProductImage::find($id);
+
+                $image->imageable_id = $variation->id;
+                $image->imageable_type = 'App\Variation';
+
+                $image->save();
+            }
+        }
+
+        return response([
+            'data' => [
+                'id' => $variation->id,
+                'sku' => $variation->sku,
+                'images' => $request->_variation_images,
+            ]
+        ], 200);
+    }
 }

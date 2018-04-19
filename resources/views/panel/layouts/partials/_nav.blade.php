@@ -55,7 +55,7 @@
                 </a>
             </li>
 
-            <!-- /li -->
+            <!-- /li --> 
 
             <li class="dropdown">
                 <a href="{{ route('panel.users.index') }}" class="{{ strpos(app('request')->url(), 'user') ? 'active' : '' }}">

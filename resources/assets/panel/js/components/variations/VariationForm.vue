@@ -76,7 +76,7 @@
             return {
                 isActive: false,
                 isSaving: false,
-                mode: 'Edit',
+                mode: 'store',
                 variation: {
                     id: this.id,
                     sku: this.sku
@@ -126,6 +126,8 @@
                 // this.colors = data.colors
 
                 this.isActive = !this.isActive
+
+                this.mode = 'update'
             },
 
             saveVariation (e) {
@@ -137,8 +139,9 @@
                     variation_colors: this.colors
                 }
 
-                axios.post('/panel/variations/store', data)
+                axios.post(`/panel/variations/${this.mode === 'update' ? this.mode : 'store'}`, data)
                     .then(response => {
+
                         eventHub.$emit('variation:saved', response.data.data)
 
                         this.isSaving = false
@@ -154,6 +157,7 @@
 
             clearVariation () {
                 this.variation.sku = ''
+                eventHub.$emit('variation:clear')
             }
         }
 

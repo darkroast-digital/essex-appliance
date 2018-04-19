@@ -50,6 +50,11 @@
                     })
             }
         },
+
+        mounted () {
+            eventHub.$on('form:showCurrent', this.populateCurrentImages)
+            eventHub.$on('variation:clear', this.clearSelectedImages)
+        },
         
         methods: {
             enter () {
@@ -124,6 +129,21 @@
                 fileData.append('image', file)
 
                 return fileData
+            },
+
+            populateCurrentImages (data) {
+
+                if (data.images !== null && this.model !== 'product') {
+                        data.images.forEach(image => {
+                            this.images.push(image)
+                        })
+                }
+            },
+
+            clearSelectedImages () {
+                if (this.model !== 'product') {
+                    this.images = []
+                }
             }
         }
     }

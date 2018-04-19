@@ -13,6 +13,7 @@
             <span class="checked"></span>
             </li>
         </ul>
+        <div v-if="model === 'variation'"></div>
         <input v-if="selected" type="hidden" :name="model === 'product' ? 'colors' : 'variation_colors'" :value="selected">
     </div>
 </template>
@@ -29,7 +30,8 @@
         data () {
             return {
                 colors: [],
-                selected: []
+                selected: [],
+                initial: []
             }
         },
 
@@ -53,6 +55,7 @@
 
         mounted () {
             eventHub.$on('form:showCurrent', this.populateCurrentColors)
+            eventHub.$on('variation:clear', this.clearSelectedColors)
         },
 
         methods: {
@@ -81,8 +84,17 @@
             },
 
             populateCurrentColors (data) {
-                console.log(data.colors)
-                // this.colors = data.colors
+                if (data.colors !== null && this.model === 'variation') {
+                        data.colors.forEach(color => {
+                            this.selected.push(color)
+                        })
+                }
+            },
+
+            clearSelectedColors () {
+                if (this.model === 'variation') {
+                    this.selected = []
+                }
             }
 
         }
