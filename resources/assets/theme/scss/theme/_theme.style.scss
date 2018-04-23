@@ -3,3 +3,42 @@
 | #THEME
 |--------------------------------------------------------------------------
 */
+
+// #HEADER
+// =========================================================================
+
+.header {
+
+    .top-bar {
+        background:#191919;
+
+        &__container {
+            align-items:center;
+            justify-content:space-between;
+            padding:.5rem 0;
+
+            h5, p {
+                color:#ffffff;
+                margin-bottom:0;
+            }
+
+            h5 {
+                text-transform:uppercase;
+                font-weight:700;
+            }
+
+            p {
+                font-size:.9rem;
+            }
+        }
+    }
+
+    .brand {
+        padding:1rem 0;
+
+        &__container {
+            align-items:center;
+            justify-content:space-between;
+        }
+    }
+}
