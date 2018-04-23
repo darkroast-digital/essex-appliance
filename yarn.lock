@@ -3365,6 +3365,10 @@ glogg@^1.0.0:
   dependencies:
     sparkles "^1.0.0"
 
+gmaps@^0.4.24:
+  version "0.4.24"
+  resolved "https://registry.yarnpkg.com/gmaps/-/gmaps-0.4.24.tgz#07f22f0cfc3e4e32498950ffafd7ca635ffc100c"
+
 got@^5.0.0:
   version "5.7.1"
   resolved "https://registry.yarnpkg.com/got/-/got-5.7.1.tgz#5f81635a61e4a6589f180569ea4e381680a51f35"
@@ -4268,7 +4272,13 @@ isurl@^1.0.0-alpha5:
     has-to-string-tag-x "^1.2.0"
     is-object "^1.0.1"
 
-jquery@^3.2:
+jquery-zoom@^1.7.20:
+  version "1.7.20"
+  resolved "https://registry.yarnpkg.com/jquery-zoom/-/jquery-zoom-1.7.20.tgz#25b9f9dc50804b48c21f1796949a5f6ac17fbba7"
+  dependencies:
+    jquery ">=1.7"
+
+jquery@>=1.7, jquery@^3.2:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
 
@@ -6711,6 +6721,10 @@ simplemde@^1.11.2:
 slash@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/slash/-/slash-1.0.0.tgz#c41f2f6c39fc16d1cd17ad4b5d896114ae470d55"
+
+slick-carousel@^1.8.1:
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/slick-carousel/-/slick-carousel-1.8.1.tgz#a4bfb29014887bb66ce528b90bd0cda262cc8f8d"
 
 snapdragon-node@^2.0.1:
   version "2.1.1"

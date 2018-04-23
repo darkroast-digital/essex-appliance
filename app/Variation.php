@@ -48,6 +48,20 @@ class Variation extends Model
         return $colors;
     }
 
+    public function colorHex()
+    {
+        $tags = $this->tags()->where('tag_type', 'color')->get();
+        $colors = Color::all();
+
+        foreach ($tags as $tag) {
+            foreach ($colors as $color) {
+                if ($tag->id == $color->tag_id) {
+                    return $color->hex;
+                }
+            }
+        }
+    }
+
     public function images()
     {
         return $this->morphMany('App\ProductImage', 'imageable');

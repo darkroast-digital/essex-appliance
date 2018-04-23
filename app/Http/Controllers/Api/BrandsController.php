@@ -23,6 +23,7 @@ class BrandsController extends Controller
 
             $tmp = [
                 'name' => $brand['name'],
+                'slug' => $brand['slug'],
                 'count' => $brand['count'],
             ];
 

@@ -23,6 +23,7 @@ class CategoriesController extends Controller
 
             $tmp = [
                 'name' => $category['name'],
+                'slug' => $category['slug'],
                 'count' => $category['count'],
             ];
 
