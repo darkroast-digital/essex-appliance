@@ -17,6 +17,7 @@
         "mailgun/mailgun-php": "^2.5",
         "parttimenobody/tags": "dev-master",
         "php-http/curl-client": "^1.7",
+        "spatie/laravel-analytics": "^3.5",
         "spatie/laravel-fractal": "^5.3"
     },
     "require-dev": {
