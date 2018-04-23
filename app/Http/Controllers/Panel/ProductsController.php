@@ -80,7 +80,7 @@ class ProductsController extends Controller
             }
         }
 
-        $request->session()->flash('alert:sucess', 'Product was created!');
+        $request->session()->flash('alert:success', 'Product was created!');
 
         return redirect()->route('panel.products.index');
     }

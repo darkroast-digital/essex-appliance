@@ -7,6 +7,7 @@ Route::group(['prefix' => 'panel', 'middleware' => 'auth', 'namespace' => 'Panel
 
     Route::post('/variations/store', 'VariationsController@store')->name('variation.store');
     Route::post('/variations/update', 'VariationsController@update')->name('variation.update');
+    Route::post('/variations/delete/{id}', 'VariationsController@delete')->name('variation.delete');
 
     route::resource('/posts', 'PostsController', ['except' => ['show']]);
 

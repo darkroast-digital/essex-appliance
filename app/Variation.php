@@ -37,6 +37,17 @@ class Variation extends Model
         return $colors;
     }
 
+    public function colorsObject()
+    {
+        if (!$this->hasColors()) {
+            return null;
+        }
+
+        $colors = $this->tags()->where('tag_type', 'color')->get();
+
+        return $colors;
+    }
+
     public function images()
     {
         return $this->morphMany('App\ProductImage', 'imageable');

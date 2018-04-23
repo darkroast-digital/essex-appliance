@@ -46,11 +46,12 @@
             }
 
             eventHub.$on('variation:saved', this.pushVariation)
+            eventHub.$on('variation:deleted', this.removeVariation)
         },
 
         methods: {
             toggleForm () {
-                eventHub.$emit('form:toggle', {  })
+                eventHub.$emit('form:toggle')
             },
 
             pushVariation (data) {
@@ -65,6 +66,20 @@
 
                 this.variationIds.push(data.id)
                 this.variations.push(data)
+            },
+
+            removeVariation (data) {
+                for (let i = 0; i < this.variations.length; i++) {
+                    let variation = this.variations[i]
+                    
+                    if (data.sku === variation.sku) {
+                        let index = this.variations.indexOf(5)
+                        this.variations.splice(index, 1)
+
+                        return
+                    }
+                }
+
             }
         }
 

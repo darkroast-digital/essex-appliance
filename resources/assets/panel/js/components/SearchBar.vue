@@ -15,7 +15,6 @@
     </ais-index>
 </template>
 
-
 <script>
     import event from '../event'
 

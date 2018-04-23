@@ -29,7 +29,7 @@
 
             <!-- /.column-12 -->
 
-            <div class="column-12 --has-margin-bottom">
+            <div class="column-8 --has-margin-bottom">
                 <div class="block">
                     <label>Banner</label>
                     <hr>
@@ -42,7 +42,24 @@
                 <!-- /.block -->
 
             </div>
-            <!-- /.column-12 -->
+
+            <!-- /.column-9 -->
+
+            <div class="column-4 --has-margin-bottom">
+                <div class="block">
+                    <label>Menu</label>
+                    <hr>
+                    <label>Link</label>
+                    <input type="text" name="menu_link" value="{{ $menu->link ? $menu->link : '' }}" placeholder="https://example.com">
+                    <label>Image</label>
+                    <ad-upload endpoint="{{ route('adImage.store') }}" ad-name="menu" send-as="image" current-image="{{ $menu->image_id ? $menu->imagePath() : '' }}"></image-upload>
+                </div>
+
+                <!-- /.block -->
+
+            </div>
+            
+            <!-- /.column-3 -->
 
             <div class="column-4 --has-margin-bottom">
                 <div class="block">

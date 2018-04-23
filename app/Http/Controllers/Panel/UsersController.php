@@ -46,7 +46,7 @@ class UsersController extends Controller
             'password' => bcrypt($request->password)
         ]);
 
-        $request->session()->flash('alert:sucess', 'User was added!');
+        $request->session()->flash('alert:success', 'User was added!');
 
         return redirect()->route('panel.users.index');
     }

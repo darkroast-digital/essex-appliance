@@ -44,6 +44,22 @@ if (mde) {
 
 
 
+// Alert
+// =========================================================================
+
+let notif = document.querySelector('.alert')
+
+if (notif) {
+    let notifClose = notif.querySelector('.alert-close')
+
+    notifClose.addEventListener('click', e => {
+        notif.classList.add('alert-closed')
+    })
+}
+
+
+
+
 // #Tabs
 // =========================================================================
 

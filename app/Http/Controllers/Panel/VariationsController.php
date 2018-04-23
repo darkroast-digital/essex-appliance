@@ -74,4 +74,12 @@ class VariationsController extends Controller
             ]
         ], 200);
     }
+
+    public function delete(Request $request, $id)
+    {
+        $variation = Variation::find($id);
+        $variation->delete();
+
+        return response('Deleted', 200);
+    }
 }

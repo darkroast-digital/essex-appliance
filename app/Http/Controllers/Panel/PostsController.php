@@ -56,7 +56,7 @@ class PostsController extends Controller
             $post->publish();
         }
 
-        $request->session()->flash('alert:sucess', 'Post was created!');
+        $request->session()->flash('alert:success', 'Post was created!');
 
         return redirect()->route('panel.posts.index');
     }
@@ -100,7 +100,7 @@ class PostsController extends Controller
 
         $post->save();
 
-        $request->session()->flash('alert:sucess', 'Post was updated!');
+        $request->session()->flash('alert:success', 'Post was updated!');
 
         return redirect()->route('panel.posts.index');
     }
