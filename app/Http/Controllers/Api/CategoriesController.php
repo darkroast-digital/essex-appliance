@@ -19,9 +19,15 @@ class CategoriesController extends Controller
         $categories = [];
 
         foreach ($data as $category) {
-            $category = $category->toArray()['name'];
+            $category = $category->toArray();
 
-            array_push($categories, $category);
+            $tmp = [
+                'name' => $category['name'],
+                'slug' => $category['slug'],
+                'count' => $category['count'],
+            ];
+
+            array_push($categories, $tmp);
         }
 
         return response()->json([

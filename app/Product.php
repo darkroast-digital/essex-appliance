@@ -61,6 +61,39 @@ class Product extends Model
         return $colors;
     }
 
+    public function colorsObject()
+    {
+        if (!$this->hasColors()) {
+            return null;
+        }
+
+        $colors = $this->tags()->where('tag_type', 'color')->get();
+
+        return $colors;
+    }
+
+    public function colorHex()
+    {
+        $tags = $this->tags()->where('tag_type', 'color')->get();
+        $colors = Color::all();
+        $hex = [];
+
+        foreach ($tags as $tag) {
+
+
+            foreach ($colors as $color) {
+
+                
+                if ($tag->id == $color->tag_id) {
+                    array_push($hex, $color->hex);
+                }
+            }
+        }
+
+        return $hex;
+        
+    }
+
     public function images()
     {
         return $this->morphMany('App\ProductImage', 'imageable');

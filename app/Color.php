@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Color;
 use Illuminate\Database\Eloquent\Model;
 use Parttimenobody\Tags\Models\Tag;
 
@@ -22,4 +23,5 @@ class Color extends Model
             }
         }
     }
+
 }

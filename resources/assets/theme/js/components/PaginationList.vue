@@ -7,17 +7,19 @@
         <div class="pages">
             <p>Pages:</p> 
             <ul class="page-count">
-                <li v-if="currentPage > '1'"><a :href="'/products?page=' + prevPage"><i class="fas fa-caret-left"></i></a></li>
-                <li v-if="prevPage >= '1'"><a :href="'/products?page=' + prevPage">{{ prevPage }}</a></li>
-                <li class="current-page"><a :href="'/products?page=' + currentPage">{{ currentPage }}</a></li>
-                <li v-if="currentPage != data.total_pages"><a :href="'/products?page=' + nextPage">{{ nextPage }}</a></li>
-                <li v-if="currentPage != data.total_pages"><a :href="'/products?page=' + nextPage"><i class="fas fa-caret-right"></i></a></li>
+                <li v-if="currentPage > '1'"><a href="#0" @click.prevent="paginationClicked(prevPage)"><i class="fas fa-caret-left"></i></a></li>
+                <li v-if="prevPage > '0'"><a href="#0" @click.prevent="paginationClicked(prevPage)">{{ prevPage }}</a></li>
+                <li class="current-page"><a href="#0" @click.prevent="paginationClicked(currentPage)">{{ currentPage }}</a></li>
+                <li v-if="currentPage != data.total_pages"><a href="#0" @click.prevent="paginationClicked(nextPage)">{{ nextPage }}</a></li>
+                <li v-if="currentPage != data.total_pages"><a href="#0" @click.prevent="paginationClicked(nextPage)"><i class="fas fa-caret-right"></i></a></li>
             </ul>
         </div>
     </div>
 </template>
 
 <script>
+    import eventHub from '../event'
+
     export default {
 
         props: [
@@ -41,7 +43,13 @@
             },
 
             prevPage() {
-                return 1 - this.data.current_page
+                return -1 + this.data.current_page
+            }
+        },
+
+        methods: {
+            paginationClicked(pageNumber) {
+                eventHub.$emit('pagination:clicked', pageNumber)
             }
         }
     }

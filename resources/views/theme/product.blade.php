@@ -13,37 +13,23 @@
     <div class="product__container container">
         <div class="left column-3">
             <div class="images">
-                <div class="featured-image image-display">
-                    <div class="image-wrapper" data-image="../theme/img/oven-1.jpg">
-                        <img src="/theme/img/oven-1.jpg" draggable="false">
-                    </div>
-                </div>
-
-                <div class="secondary-images container--full">
-                    <div class="secondary image-display">
-                        <div class="image-wrapper">
-                            <img src="/theme/img/oven-2.jpg" draggable="false">
+                @if ($featured)
+                    <div class="featured-image image-display">
+                        <div class="image-wrapper" data-image="{{ $featured }}">
+                            <img src="{{ $featured }}" draggable="false">
                         </div>
                     </div>
 
-                    <div class="secondary image-display">
-                        <div class="image-wrapper">
-                            <img src="/theme/img/oven-3.jpg" draggable="false">
-                        </div>
+                    <div class="secondary-images container--full">
+                        @foreach ($secondary as $image)
+                            <div class="secondary image-display">
+                                <div class="image-wrapper">
+                                    <img src="{{ $image }}" draggable="false">
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
-
-                    <div class="secondary image-display">
-                        <div class="image-wrapper">
-                            <img src="/theme/img/oven-4.jpg" draggable="false">
-                        </div>
-                    </div>
-
-                    <div class="secondary image-display">
-                        <div class="image-wrapper">
-                            <img src="/theme/img/oven-5.jpg" draggable="false">
-                        </div>
-                    </div>
-                </div>
+                @endif
             </div>
             
             <div class="ads">
@@ -60,6 +46,11 @@
 
         <div class="right column-9">
             <h1>{{ $product->name }}</h1>
+
+            @if ($product->price)
+                <h2>${{ $product->price }}</h2>
+            @endif
+
             <p>Availability: {{ $product->available == 1 ? "In Stock" : "Not In Stock" }}</p>
 
             <hr>
@@ -70,8 +61,32 @@
             <p>{{ $product->description }}</p>
             <p>Available Finishes/Colors:</p>
             <div class="colors__container container--full">
-                <div class="color"></div>
-                <div class="color"></div>
+                @if ($product->colorsObject())
+                    @foreach ($product->colorsObject() as $color)
+                        @php
+                            $i = $loop->index;
+                        @endphp
+                        @foreach ($product->colorHex() as $hex)
+                            @if ($loop->index == $i)
+                                <a href="{{ route('products') }}/{{ $product->name }}">
+                                    <div class="color" style="background:{{ $hex }}" title="{{ $color->name }}"></div>
+                                </a>
+                            @endif
+                        @endforeach
+                    @endforeach
+                @endif
+                
+                @if ($variations)
+                    @foreach ($variations as $var) 
+                        @if (count($var->colorsObject()) > 0) 
+                            @foreach ($var->colorsObject() as $color)
+                                <a href="{{ route('products') }}/{{ $product->name }}?sku={{$var->sku}}">
+                                    <div class="color" style="background:{{ $var->colorHex() }}" title="{{ $color->name }}"></div>
+                                </a>
+                            @endforeach
+                        @endif
+                    @endforeach
+                @endif
             </div>
 
             <hr>
@@ -84,11 +99,11 @@
 
                 <div class="tabs__body">
                     <div class="tabs__content is--active" data-tab="1">
-                        {!! $product->features !!}
+                        {!! nl2br(e($product->features)) !!}
                     </div>
 
                     <div class="tabs__content" data-tab="2">
-                        {!! $product->specifications !!}
+                        {!! nl2br(e($product->specifications)) !!}
                     </div>
                 </div>
             </div>

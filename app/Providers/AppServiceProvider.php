@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Ad;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +14,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $menuAd = Ad::where('name', 'menu')->first();
+        $ads = Ad::all();
+        $banner = Ad::where('name', 'banner')->first();
+
+        view()->share(compact('menuAd', 'ads', 'banner'));
     }
 
     /**

@@ -60,6 +60,10 @@
                             margin:0 .3rem 0 0;
                             width:calc(25% - .25rem);
 
+                            .image-wrapper {
+                                height:60px;
+                            }
+
                             &:last-of-type {
                                 margin-right:0;
                             }
@@ -113,8 +117,6 @@
                     margin:.75rem 0 .5rem;
                 }
 
-
-                
                 .colors__container {
                     display:flex;
                     flex-wrap:wrap;
@@ -124,14 +126,7 @@
                         height:30px;
                         border:1px solid black;
                         margin-left:.25rem;
-
-                        &:first-of-type {
-                            background-color:white;
-                        }
-
-                        &:nth-of-type(2) {
-                            background-color:black;
-                        }
+                        cursor:pointer;
                     }
                 }
 

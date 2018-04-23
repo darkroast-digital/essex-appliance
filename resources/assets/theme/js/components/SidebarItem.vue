@@ -1,11 +1,11 @@
 <template>
-    <div :class="{{ tag.tag_type }}" :query-string="{{ tag.tag_type }} + '?=' + {{ tag.name }}">
-        <label class="checkbox" @click="buttonClicked">
-            <input type="checkbox" :name="{{ tag.name }}">
+    <div class="sidebarItem">
+        <label class="checkbox">
+            <input type="checkbox" :name="data.slug" @click="itemClicked">
             <span class="checkbox-button"></span>
-            {{ tag.name }}
+            {{ data.name }}
         </label>
-        <div class="count">({{ tag.count }})</div>
+        <div class="count">({{ data.count }})</div>
     </div>
 </template>
 
@@ -14,7 +14,17 @@
 
     export default {
         props: [
-            'tag'
-        ]
+            'data',
+            'query'
+        ],
+
+        methods: {
+            itemClicked (e) {
+                eventHub.$emit('item:clicked', {
+                    type: this.query,
+                    query: this.data.slug
+                })
+            }
+        }
     }
 </script>

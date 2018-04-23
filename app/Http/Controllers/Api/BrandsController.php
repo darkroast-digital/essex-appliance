@@ -19,9 +19,15 @@ class BrandsController extends Controller
         $brands = [];
 
         foreach ($data as $brand) {
-            $brand = $brand->toArray()['name'];
+            $brand = $brand->toArray();
 
-            array_push($brands, $brand);
+            $tmp = [
+                'name' => $brand['name'],
+                'slug' => $brand['slug'],
+                'count' => $brand['count'],
+            ];
+
+            array_push($brands, $tmp);
         }
 
         return response()->json([

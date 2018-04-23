@@ -1,5 +1,5 @@
 <div class="mega-menu container {{ app('request')->url() == route('home') ? 'full' : '' }}">
-    <div class="column-4 products">
+    <div class="column-3 products">
         <h3>Products</h3>
         <a href="{{ @route('products') }}?category=Stoves">Stoves</a>
         <a href="{{ @route('products') }}?category=Refrigerators">Refrigerators</a>
@@ -12,7 +12,7 @@
         <a href="{{ @route('products') }}?category=Other">Other</a>
     </div>
 
-    <div class="column-4 brands">
+    <div class="column-3 brands">
         <h3>Brands</h3>
         <a href="{{ @route('products') }}?brand=Whirlpool">Whirlpool</a>
         <a href="{{ @route('products') }}?brand=Maytag">Maytag</a>
@@ -22,7 +22,11 @@
         <a href="{{ @route('products') }}?brand=Other">Other</a>
     </div>
 
-    <div class="column-4 ad">
-        {{--  --}}
+    <div class="column-6 ad">
+        <div class="image-wrapper">
+            <a href="{{ $menuAd->link }}" target="_blank">
+                <img src="{{ $menuAd->imagePath() }}" draggable="false">
+            </a>
+        </div>
     </div>
 </div>

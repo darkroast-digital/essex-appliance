@@ -14,7 +14,11 @@
         </a>
     
         <div class="search">
-            {{-- searchbar --}}
+            <search-bar 
+                id="{{ config('scout.algolia.id') }}"
+                app-key="{{ env('ALGOLIA_SEARCH') }}"
+                name="products">
+            </search-bar>
         </div>
     </div>
 

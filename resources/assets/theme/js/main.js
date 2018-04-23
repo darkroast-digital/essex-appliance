@@ -1,8 +1,10 @@
 require('./bootstrap');
-
+import InstantSearch from 'vue-instantsearch';
 
 
 window.Vue = require('vue');
+
+Vue.use(InstantSearch);
 
 Vue.config.productionTip = false
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
@@ -12,10 +14,13 @@ Vue.component('brands-list', require('./components/BrandsList.vue'));
 Vue.component('breadcrumbs', require('./components/BreadcrumbsList.vue'));
 Vue.component('categories-list', require('./components/CategoriesList.vue'));
 Vue.component('colors-list', require('./components/ColorsList.vue'));
+Vue.component('colors-item', require('./components/ColorItem.vue'));
 Vue.component('pagination-list', require('./components/PaginationList.vue'));
 Vue.component('product', require('./components/ProductItem.vue'));
 Vue.component('product-list', require('./components/ProductList.vue'));
+Vue.component('search-bar', require('./components/SearchBar.vue'));
 Vue.component('sidebar-item', require('./components/SidebarItem.vue'));
+Vue.component('sorting-items', require('./components/SortingItems.vue'));
 
 const app = new Vue({
     el: '#app'

@@ -1,6 +1,6 @@
 <template>
-    <div class="brandlist">
-        <sidebar-item v-for="brand in brands" :brand="brand" :key="brand.id"></sidebar-item>
+    <div class="sidebarlist">
+        <sidebar-item v-for="brand in brands" :data="brand" :key="brand.id" query="brand"></sidebar-item>
     </div>
 </template>
 
@@ -11,11 +11,24 @@
     export default {
         
         components: {
-            brand
+            sidebarItem
         },
 
         props: [
-            'queryString'
+            'api'
         ],
+
+        data () {
+            return {
+                brands: []
+            }
+        },
+
+        mounted () {
+            axios.get(this.api)
+                .then(response => {
+                    this.brands = response.data.data.brands
+                })
+        }
     }
 </script>

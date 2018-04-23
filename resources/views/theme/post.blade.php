@@ -22,11 +22,11 @@
                 <div class="image-wrapper">
                     <img src="{{ $post->imagePath() }}" alt="{{ $post->title }}" draggable="false">
                 </div>
-                <p class="date"><i class="far fa-calendar"></i> {{ $post->created_at->format('F dS, Y') }} / By {{ $post->author() }}</p>
+                <p class="date"><i class="far fa-calendar"></i> {{ $post->created_at->format('F dS, Y') }}{{ $post->user_id != null ? ' / By ' . $post->author() : ''}}</p>
                 <h1>{{ $post->title }}</h1>
                 
                 <div class="post-body">
-                    {!! $post->content !!}
+                    {!! nl2br(e($post->content)) !!}
                 </div>
 
                 <div class="post-meta">

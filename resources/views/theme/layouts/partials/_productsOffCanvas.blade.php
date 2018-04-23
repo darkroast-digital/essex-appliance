@@ -10,23 +10,21 @@
 
     <div class="categories">
         <h3>Categories</h3>
-        @include('theme.layouts.partials._productCategories')
+        <categories-list api="{{ route('api.categories.index') }}"></categories-list>
     </div>
 
     <hr>
 
     <div class="brands">
         <h3>Brands</h3>
-        @include('theme.layouts.partials._productBrands')
+        <brands-list api="{{ route('api.brands.index') }}"></brands-list>
     </div>
 
     <hr>
 
     <div class="colors">
         <h3>Colors</h3>
-        <div class="samples__container container--full">
-            @include('theme.layouts.partials._productColors')
-        </div>
+        <colors-list api="{{ route('api.colors.index') }}"></colors-list>
     </div>
 
 </div>

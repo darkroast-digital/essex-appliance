@@ -12,7 +12,7 @@
             <h2>DIFFERENCE</h2>
             <p>30 years of quality service consectetur adipiscing elit, sed do eiusmod tempor dolor sit consectetur adipiscing elit, sed do eiusmod tempor dolor</p>
         </div>
-        <a href="#" class="button">Learn More</a>
+        <a href="{{ route('services') }}" class="button">Learn More</a>
     </div>
 </section>
 
@@ -27,7 +27,7 @@
                 <h3><span>Beautiful Downtown Essex</span></h3>
                 <p>Essex Appliance Center is the premier place for all of your appliance needs in Southwest Ontario.</p>
                 <p>With over 12,000 square feet of showroom space, and 15,000 square feet of warehouse, we have a wide selection of appliances for you to research and compare.</p>
-                <a href="#" class="button">Learn more about us</a>
+                <a href="{{ route('services') }}" class="button">Learn more about us</a>
             </div>
         </div>
 
@@ -146,7 +146,7 @@
         <div class="ads">
             <div class="ads__container container--full">
                 @foreach ($ads as $ad)
-                    @if ($ad->name != 'banner')
+                    @if ($ad->name != 'banner' && $ad->name != 'menu')
                         <div class="column-4 ad">
                             <a href="{{ $ad->link }}" target="_blank">
                                 <img src="{{ $ad->imagePath() }}" draggable="false">
@@ -203,7 +203,7 @@
             {{-- End Hot-Buys Slider --}}
 
             <div class="ribbon"></div>
-            <a href="#" class="ribbon-link"><span>Click Here To Find More</span> Hot Buys & In-Store Sales <i class="fas fa-caret-right"></i></a>
+            <a href="{{ @route('products') }}?featured=1" class="ribbon-link"><span>Click Here To Find More</span> Hot Buys & In-Store Sales <i class="fas fa-caret-right"></i></a>
         </div>
     </div>
 </section>

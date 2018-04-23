@@ -5,6 +5,7 @@ mix.js('resources/assets/theme/js/main.js', 'public/theme/js/app.js')
    .options({
        processCssUrls: false
    })
+   .sourceMaps()
    .browserSync({
        proxy: 'https://appliance.test/',
        https: true

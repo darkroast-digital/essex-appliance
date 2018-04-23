@@ -34,7 +34,7 @@
                 <div class="categories">
                     <h5>Categories</h5>
 
-                    @include('theme.layouts.partials._productCategories')
+                    <categories-list api="{{ route('api.categories.index') }}"></categories-list>
                 </div>
 
                 <hr>
@@ -42,7 +42,7 @@
                 <div class="brands">
                     <h5>Brands</h5>
 
-                    @include('theme.layouts.partials._productBrands')
+                    <brands-list api="{{ route('api.brands.index') }}"></brands-list>
                 </div>
 
                 <hr>
@@ -50,9 +50,7 @@
                 <div class="colors">
                     <h5>Colors</h5>
                     
-                    <div class="samples__container container--full">
-                        @include('theme.layouts.partials._productColors')
-                    </div>
+                    <colors-list api="{{ route('api.colors.index') }}"></colors-list>
                 </div>
 
             </div>
@@ -61,7 +59,9 @@
         <div class="products column-9">
             
             <div class="products__container grid">
-                <product-list endpoint="{{ route('api.products.index') }}"></product-list>
+                <product-list endpoint="{{ route('api.products.index') }}" initial-query="{{ $query }}">
+                </product-list>
+                <div class="loader">Loading...</div>
             </div>
 
         </div>
